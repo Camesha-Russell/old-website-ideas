@@ -47,19 +47,19 @@ const HeroSection = () => {
           </div>
 
           {/* Side Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
+          <div className="lg:col-span-5 flex flex-col gap-6">
             {sidePosts.map((post, i) => (
               <Link
                 key={i}
                 to={post.path}
-                className="group flex gap-5 items-start border border-border rounded-sm p-4 hover:shadow-sm transition-shadow"
+                className="group flex gap-6 items-center border border-border rounded-sm p-5 hover:shadow-sm transition-shadow"
               >
-                <div className="placeholder-img w-36 h-28 md:w-40 md:h-32 flex-shrink-0 rounded-sm" />
+                <div className="placeholder-img w-44 h-36 md:w-48 md:h-40 flex-shrink-0 rounded-sm" />
                 <div className="flex flex-col justify-center">
                   <span className="category-label text-muted-foreground">
                     {post.category}
                   </span>
-                  <h3 className="font-display text-base md:text-lg mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
+                  <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:text-muted-foreground transition-colors">
                     {post.title}
                   </h3>
                 </div>
