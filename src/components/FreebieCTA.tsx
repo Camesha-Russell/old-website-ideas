@@ -1,11 +1,11 @@
 const FreebieCTA = () => {
   return (
-    <section className="bg-accent">
-      <div className="max-w-[1400px] mx-auto px-4 py-16 md:py-24">
+    <section className="bg-accent overflow-visible relative">
+      <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center">
           {/* Left — Stacked guide covers */}
           <div className="lg:col-span-2 flex justify-center">
-            <div className="relative w-[280px] h-[360px] md:w-[320px] md:h-[420px]">
+            <div className="relative w-[280px] h-[360px] md:w-[320px] md:h-[420px] -mt-16 md:-mt-24">
               {/* Back cover */}
               <div className="absolute top-4 left-4 w-[200px] h-[280px] md:w-[230px] md:h-[320px] bg-white rounded-sm shadow-lg -rotate-6 flex flex-col items-center justify-center p-6">
                 <span className="font-serif-display text-foreground text-center text-sm md:text-base font-bold uppercase tracking-wide leading-tight">
@@ -32,23 +32,24 @@ const FreebieCTA = () => {
 
           {/* Right — Text + Form */}
           <div className="lg:col-span-3">
-            <h2 className="font-serif-display text-foreground text-3xl md:text-4xl lg:text-[42px] font-bold uppercase leading-tight tracking-wide">
-              Get Your Free Starter Kit and{" "}
-              <em className="not-italic italic">Simplify Your Parenting Journey.</em>
+            <h2 className="font-serif-display text-foreground text-xl md:text-2xl font-bold italic leading-tight tracking-wide">
+              Get Your Free Starter Kit and Simplify Your Parenting Journey.
             </h2>
-            <p className="mt-6 text-muted-foreground text-base leading-relaxed max-w-lg">
+            <p className="mt-3 text-muted-foreground text-sm leading-relaxed max-w-lg">
               Get the essential checklists, guides, and tips we use every day to make parenting easier — delivered straight to your inbox.
             </p>
 
-            <div className="mt-8 space-y-4 max-w-md">
-              <input
-                type="email"
-                placeholder="Your E-Mail"
-                className="w-full px-4 py-3 border border-border bg-white rounded-sm font-sans-nav text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-foreground"
-              />
-              <button className="btn-dark w-full text-[11px]">
-                Sign Up
-              </button>
+            <div className="mt-5 space-y-3 max-w-lg">
+              <div className="flex gap-0">
+                <input
+                  type="email"
+                  placeholder="Your E-Mail"
+                  className="flex-1 px-4 py-3 border border-border bg-white rounded-sm rounded-r-none font-sans-nav text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-foreground"
+                />
+                <button className="btn-dark text-[11px] rounded-l-none px-6 whitespace-nowrap">
+                  Sign Up
+                </button>
+              </div>
               <label className="flex items-start gap-2 cursor-pointer">
                 <input type="checkbox" className="mt-1 accent-foreground" />
                 <span className="text-muted-foreground text-xs leading-relaxed">
