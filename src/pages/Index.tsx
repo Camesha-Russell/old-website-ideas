@@ -9,6 +9,7 @@ import ShopThePost from "@/components/ShopThePost";
 import CategorySleep from "@/components/CategorySleep";
 import CategoryFeeding from "@/components/CategoryFeeding";
 import SignatureFeatures from "@/components/SignatureFeatures";
+import FreebieCTA from "@/components/FreebieCTA";
 import NewsletterBlock from "@/components/NewsletterBlock";
 import Footer from "@/components/Footer";
 
