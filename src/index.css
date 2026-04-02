@@ -57,9 +57,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -73,11 +73,11 @@
   }
 
   .font-serif-body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 
   .font-sans-nav {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .section-title {

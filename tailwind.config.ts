@@ -64,8 +64,8 @@ export default {
       },
       fontFamily: {
         'display': ['"Playfair Display"', 'serif'],
-        'body': ['"Open Sans"', 'sans-serif'],
-        'nav': ['"Open Sans"', 'sans-serif'],
+        'body': ['"Poppins"', 'sans-serif'],
+        'nav': ['"Montserrat"', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
