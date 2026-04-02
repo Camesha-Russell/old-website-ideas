@@ -22,6 +22,7 @@ const Index = () => {
       <CurrentlyTrending />
       <FeaturedSection />
       <ShopThePost />
+      <FreebieCTA />
       <RecentPosts />
       <CategorySleep />
       <CategoryFeeding />
