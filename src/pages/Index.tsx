@@ -1,16 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import TopNavBar from "@/components/TopNavBar";
+import MainHeader from "@/components/MainHeader";
+import HeroSection from "@/components/HeroSection";
+import CurrentlyTrending from "@/components/CurrentlyTrending";
+import WarmSectionBreak from "@/components/WarmSectionBreak";
+import FeaturedSection from "@/components/FeaturedSection";
+import RecentPosts from "@/components/RecentPosts";
+import CategorySleep from "@/components/CategorySleep";
+import CategoryFeeding from "@/components/CategoryFeeding";
+import SignatureFeatures from "@/components/SignatureFeatures";
+import NewsletterBlock from "@/components/NewsletterBlock";
+import Footer from "@/components/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background">
+      <TopNavBar />
+      <MainHeader />
+      <HeroSection />
+      <CurrentlyTrending />
+      <WarmSectionBreak />
+      <FeaturedSection />
+      <RecentPosts />
+      <CategorySleep />
+      <CategoryFeeding />
+      <SignatureFeatures />
+      <NewsletterBlock />
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
