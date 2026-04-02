@@ -1,10 +1,10 @@
-<svg width="800" height="210" viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="220" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
   <!-- transparent background -->
 
   <!-- Vertical divider -->
   <line x1="180" y1="24" x2="180" y2="186" stroke="#C07B60" stroke-width="1.1"/>
 
-  <!-- it's — bold italic -->
+  <!-- it's -->
   <text x="162"
     y="122"
     text-anchor="end"
@@ -24,9 +24,9 @@
     fill="#1C1714"
     letter-spacing="2">MOM</text>
 
-  <!-- approved -->
+  <!-- approved — dropped further -->
   <text x="620"
-    y="198"
+    y="210"
     text-anchor="end"
     font-family="'Courier New', Courier, monospace"
     font-weight="bold"
