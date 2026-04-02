@@ -20,7 +20,7 @@
     --secondary-foreground: 0 0% 11%;
 
     --muted: 34 20% 93%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 35%;
 
     --accent: 25 41% 85%;
     --accent-foreground: 0 0% 11%;
@@ -58,7 +58,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
   }
 
@@ -85,7 +85,7 @@
   }
 
   .category-label {
-    @apply font-sans-nav uppercase tracking-[0.15em] text-[12px] font-medium;
+    @apply font-sans-nav uppercase tracking-[0.15em] text-[12px] font-semibold text-foreground;
   }
 
   .nav-link {
