@@ -1,40 +1,29 @@
 
 
-# Optimize Currently Trending for Mobile
+# Add New Logo to Site
 
-## What the reference (SheShoppes) shows on mobile
-- **Cursive title** "Currently Trending" — centered, large
-- **Tab buttons** centered below the title (not inline with it), e.g. "BEAUTY CORNER" / "FASHION JUNCTION"
-- **Full-width image** — takes the full screen width, tall aspect ratio
-- **Title + excerpt + "READ MORE" button** stacked below the image (not side by side)
-- **Numbered pagination** (1 2 3 4 5) as clickable dots/numbers to switch between posts — replaces the full numbered list on mobile
-- **Product thumbnails** row at the bottom with left/right arrows
+## What changes
+Copy the uploaded SVG logo into the project and use it in `MainHeader.tsx` and `Footer.tsx` to replace the current text-based "It's Mom Approved" logos.
 
-## Current problems on mobile
-1. Header tries to squeeze cursive title + divider line + two tab buttons all in one horizontal row — overflows on 390px
-2. Featured post layout goes full-width image then text, which is fine, but the full 5-item numbered list below it is very long on mobile
-3. No numbered pagination dots — mobile users must scroll through the entire list
+## Steps
 
-## Plan
+### 1. Copy the logo file
+Copy `user-uploads://its-mom-approved-logo.svg` → `src/assets/its-mom-approved-logo.svg`
 
-### `src/components/CurrentlyTrending.tsx`
+### 2. `src/components/MainHeader.tsx`
+- Import the logo SVG
+- Replace the current `<Link>` with two `<span>` elements with an `<img>` tag using the logo
+- Size it appropriately: `h-12 md:h-14` (roughly 48–56px tall)
 
-**Header (mobile restructure):**
-- On mobile (`md:` breakpoint): stack vertically — cursive title centered on top, tabs centered below, no divider line
-- On desktop (`md:+`): keep current horizontal layout with title + divider + tabs
+### 3. `src/components/Footer.tsx`
+- Import the same logo
+- Replace the text-based brand block with the logo `<img>`, styled for dark background (may need `brightness` or `invert` filter since the logo has a light background — will check and handle)
 
-**Featured post (mobile):**
-- Full-width image (no side-by-side), title and excerpt below, "Read More" button — this already works with the `flex-col md:flex-row` pattern, just ensure the image is full-width without the `md:w-[55%]` constraint on mobile
-
-**Replace numbered list with pagination dots on mobile:**
-- Hide the `<ol>` numbered list on mobile (`hidden lg:block`)
-- Show a row of clickable numbers (1 2 3 4 5) on mobile (`flex lg:hidden`), centered
-- Active number gets a filled circle background (dark), others are plain text
-- Clicking a number updates `activePost`
-
-**Product carousel:**
-- Keep as-is (already scrollable)
+### Note on the SVG
+The logo has a `#FAF7F2` background rect. This blends with the off-white sections but may need the background rect removed or made transparent for the footer's dark background. I'll create a clean version or use CSS to handle it.
 
 ### Files changed
-- `src/components/CurrentlyTrending.tsx` only
+- `src/assets/its-mom-approved-logo.svg` (new)
+- `src/components/MainHeader.tsx`
+- `src/components/Footer.tsx`
 
