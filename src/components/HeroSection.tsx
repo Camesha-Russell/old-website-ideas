@@ -33,7 +33,9 @@ const HeroSection = () => {
           {/* Large Featured Card */}
           <div className="lg:col-span-7">
             <Link to={featuredPost.path} className="group block">
-              <div className="placeholder-img aspect-[16/10] rounded-sm mb-4" />
+              <div className="overflow-hidden rounded-sm mb-4">
+                <div className="placeholder-img aspect-[16/10] transition-transform duration-300 group-hover:scale-105" />
+              </div>
               <span className="category-label text-muted-foreground">
                 {featuredPost.category}
               </span>
