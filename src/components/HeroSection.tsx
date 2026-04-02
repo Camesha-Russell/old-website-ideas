@@ -54,12 +54,12 @@ const HeroSection = () => {
                 to={post.path}
                 className="group flex gap-6 items-center"
               >
-                <div className="placeholder-img w-44 h-36 md:w-48 md:h-40 flex-shrink-0 rounded-sm" />
+                <div className="placeholder-img w-44 h-36 md:w-48 md:h-40 flex-shrink-0" />
                 <div className="flex flex-col justify-center">
                   <span className="category-label text-muted-foreground">
                     {post.category}
                   </span>
-                  <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:text-muted-foreground transition-colors">
+                  <h3 className="font-display text-base md:text-lg mt-2 leading-snug group-hover:text-muted-foreground transition-colors">
                     {post.title}
                   </h3>
                 </div>
