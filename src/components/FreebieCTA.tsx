@@ -2,7 +2,7 @@ const FreebieCTA = () => {
   return (
     <section className="bg-accent overflow-visible relative">
       <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-8 items-center">
           {/* Left — Stacked guide covers, overflow BELOW the section */}
           <div className="lg:col-span-2 flex justify-center">
             <div className="relative w-[280px] h-[300px] md:w-[320px] md:h-[360px] mb-[-100px] md:mb-[-140px]">
