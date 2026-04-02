@@ -1,42 +1,63 @@
 
 
-# itsmomapproved.com — Implementation Plan
+# Section-by-Section Overhaul: Match Reference Exactly
 
-## Overview
-Build a magazine-style editorial blog homepage for moms of babies/toddlers (0-4), closely replicating the SheShoppes Edit Daily WordPress theme aesthetic. Warm, editorial, serif-heavy design with a structured content layout.
+After comparing the reference screenshots against our current site, here are all the differences I've identified and will fix:
 
-## Design System Setup
-- **Colors**: Near-black `#1C1C1C`, off-white `#F7F3EE`, warm taupe `#EDE8E0`, soft peach `#E8D5C4`, white `#FFFFFF`
-- **Fonts** (Google Fonts): Playfair Display (headlines + italic accents), Lora (body serif), Inter (sans-serif nav/labels)
-- **Buttons**: Peach pill buttons (`border-radius: 20px`, `#E8D5C4` bg, dark text). Secondary: dark bg, light text.
-- **Typography tokens**: Section titles uppercase + letter-spaced serif; category labels tiny all-caps 10-11px; body 15-16px serif; nav small-caps sans-serif
+---
 
-## Homepage Sections (12 Elements)
+## Section 1: Top Nav Bar
+**Current**: Looks close. Minor tweaks needed.
+- No changes needed — matches reference well.
 
-1. **Top Nav Bar** — Thin black bar with category links (Sleep, Feeding, Carriers & Strollers, Play & Development, Postpartum & Mom, Safety) + search icon
-2. **Main Header** — White bar with "THE itsmomapproved" logo (matching THE EDITdaily treatment), center nav links, peach "GET THE STARTER KIT" CTA
-3. **Hero Section** — 55/45 split: large featured card left, 3 stacked thumbnail cards right
-4. **Currently Trending** — Taupe bg, handwriting-style label, tab filters, large featured post left, numbered trending list right, horizontal product carousel below
-5. **Warm Section Break** — Full-width taupe placeholder strip
-6. **Featured Section** — Asymmetric 5-card grid matching the screenshot layout
-7. **Recent Posts** — 4-column card grid + "Explore Older Posts" button
-8. **Category: Sleep** — 2-column layout with category intro + 3 small cards left, large editorial image with overlay right
-9. **Category: Feeding** — Centered title, 2-col layout + 3-card row below
-10. **Signature Features Strip** — 4 equal taupe boxes (We Said No, Overhyped vs Worth It, Know Before You Buy, Ask itsmomapproved)
-11. **Newsletter Block** — Taupe bg, "Join Our Community" in italic serif, name/email fields + Sign Up button
-12. **Footer** — Dark 5-column footer with logo, link columns, social icons, bottom legal bar
+## Section 2: Main Header
+**Issues found**:
+- Logo: Currently just "It's Mom Approved" in one line of italic serif. Reference shows **two-line treatment**: "THE" in tiny small caps on top, "EDITdaily" in large bold italic serif below. We need: **"IT'S"** in tiny small caps above, **"Mom Approved"** in larger italic serif below.
+- Nav links: Currently `text-[11px]` — reference shows slightly larger, more spaced nav links.
+- CTA button: Reference "THE SHOP" has a subtle outline/border style, not a filled peach button. Our "GET THE STARTER KIT" is filled peach — keep it peach per the original brief, but consider making it more subtle with a border style.
 
-## Routing
-All 17 routes set up with placeholder pages. Only `/` (homepage) is fully built. Placeholder pages show a centered title with "Coming Soon" message.
+**Fix**: Rebuild logo as two-line treatment. Adjust nav sizing.
 
-## Responsive Behavior
-- Top nav collapses to hamburger on mobile
-- Hero stacks to single column
-- Card grids: 4 → 2 → 1 columns
-- All sections stack vertically on mobile
+## Section 3: Hero Section
+**Issues found**:
+- **Background**: Currently `bg-white`. Reference uses the warm off-white page background — should be `bg-background` (off-white `#F7F3EE`).
+- **Side cards**: Reference shows each side card inside a **thin border container** (subtle light grey border around each card). Currently no borders.
+- **Side card images**: Reference images are much larger — roughly square aspect, taking ~40% of card width. Currently `w-28 h-20 md:w-32 md:h-24` which is too small.
+- **Side card text**: Reference headline text is larger serif (Playfair Display, ~18-20px), currently `text-sm md:text-base`.
+- **Featured post image**: Aspect ratio looks good. Category label + title below image — matches.
+- **Spacing**: Reference has more generous padding around the hero.
 
-## Technical Notes
-- All images are warm neutral grey placeholder divs at correct aspect ratios — no external image services
-- No backend logic, no form submissions — layout and navigation only
-- Components will be organized by homepage section for maintainability
+**Fix**: Add thin borders to side cards, increase side card image size, increase headline font size, change bg to off-white.
+
+## Section 4: Currently Trending
+**Current**: Looks reasonable. The reference doesn't show this section in the new screenshots, so keep as-is with minor spacing cleanup.
+
+## Section 5: Warm Section Break
+**Current**: Fine as placeholder.
+
+## Section 6: Featured Section
+**Current**: Dark overlay mosaic grid. This matches the general concept from the original brief. Keep as-is.
+
+## Section 7: Recent Posts
+**Current**: Grid with excerpts. Looks functional. Keep as-is.
+
+## Section 8-9: Category Sections
+**Current**: Functional layouts. Keep as-is.
+
+## Section 10-12: Signature Features, Newsletter, Footer
+**Current**: Functional. Keep as-is.
+
+---
+
+## Priority Changes (what matters most)
+
+1. **Logo two-line treatment** — "IT'S" tiny small caps above, "Mom Approved" large italic serif below
+2. **Hero bg** — off-white not white
+3. **Hero side cards** — thin border, larger square images, bigger headline text
+4. **Page-wide bg** — ensure `bg-background` (off-white) is used consistently instead of `bg-white` for the main page sections
+
+## Files to Modify
+- `src/components/MainHeader.tsx` — Logo rebuild
+- `src/components/HeroSection.tsx` — Side card borders, image sizing, bg color
+- `src/pages/Index.tsx` — Ensure bg-background wrapper
 
