@@ -56,7 +56,9 @@ const HeroSection = () => {
                 to={post.path}
                 className="group flex gap-6 items-center border border-border p-5"
               >
-                <div className="placeholder-img w-44 h-36 md:w-48 md:h-40 flex-shrink-0" />
+                <div className="overflow-hidden flex-shrink-0">
+                  <div className="placeholder-img w-44 h-36 md:w-48 md:h-40 transition-transform duration-300 group-hover:scale-105" />
+                </div>
                 <div className="flex flex-col justify-center">
                   <span className="category-label text-muted-foreground">
                     {post.category}
