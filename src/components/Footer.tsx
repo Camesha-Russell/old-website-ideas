@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/its-mom-approved-logo.svg";
 
 const siteLinks = [
   { name: "Home", path: "/" },
