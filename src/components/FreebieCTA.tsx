@@ -13,13 +13,6 @@ const FreebieCTA = () => {
                 </span>
                 <div className="mt-3 w-10 h-[2px] bg-accent" />
               </div>
-              {/* Middle cover */}
-              <div className="absolute top-2 left-10 w-[180px] h-[250px] md:w-[210px] md:h-[290px] bg-white rounded-sm shadow-lg rotate-2 flex flex-col items-center justify-center p-6">
-                <span className="font-serif-display text-foreground text-center text-sm md:text-base font-bold uppercase tracking-wide leading-tight">
-                  Sleep<br />Training<br />Guide
-                </span>
-                <div className="mt-3 w-10 h-[2px] bg-accent" />
-              </div>
               {/* Front cover */}
               <div className="absolute top-0 left-16 w-[180px] h-[250px] md:w-[210px] md:h-[290px] bg-white rounded-sm shadow-xl rotate-6 flex flex-col items-center justify-center p-6">
                 <span className="font-serif-display text-foreground text-center text-sm md:text-base font-bold uppercase tracking-wide leading-tight">
