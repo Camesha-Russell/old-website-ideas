@@ -48,7 +48,7 @@ const CurrentlyTrending = () => {
                 <div className="placeholder-img aspect-[4/5] rounded-sm" />
               </div>
               <div className="flex flex-col justify-center">
-                <h3 className="font-display text-xl md:text-2xl leading-snug mb-3">
+                <h3 className="font-display text-lg md:text-xl leading-snug mb-3">
                   {trendingPosts[0]}
                 </h3>
                 <p className="font-body text-muted-foreground text-sm leading-relaxed mb-4">
