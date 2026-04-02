@@ -7,10 +7,6 @@ const recentPosts = [
   { category: "Postpartum & Mom", title: "The Nursing Pillow Showdown: Boppy vs My Brest Friend", excerpt: "Two cult-favourite nursing pillows go head-to-head in comfort, support, and value." },
   { category: "Feeding", title: "Sippy Cup Alternatives That Dentists Actually Recommend", excerpt: "Dentists weigh in on the best transition cups for healthy oral development." },
   { category: "Sleep", title: "Swaddle Transition: When and How to Stop", excerpt: "Signs your baby is ready to ditch the swaddle — and the products that make it easier." },
-  { category: "Safety", title: "Baby Monitor Comparison: Video vs Audio vs Smart", excerpt: "We break down the three main types of baby monitors and who each one is best for." },
-  { category: "Play & Development", title: "Best Sensory Toys for 6-12 Month Olds", excerpt: "Age-appropriate sensory play picks that actually hold a baby's attention." },
-  { category: "Postpartum & Mom", title: "Postpartum Fitness: When and How to Start", excerpt: "Evidence-based guidance on returning to exercise after birth." },
-  { category: "Carriers & Strollers", title: "Structured vs Wrap Carriers: A Side-by-Side Guide", excerpt: "Choosing between a structured carrier and a wrap? Here's what to consider." },
 ];
 
 const RecentPosts = () => {
