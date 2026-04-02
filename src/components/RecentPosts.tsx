@@ -27,9 +27,6 @@ const RecentPosts = () => {
               <h3 className="font-display text-sm md:text-base leading-snug group-hover:text-muted-foreground transition-colors mb-1.5">
                 {post.title}
               </h3>
-              <p className="font-body text-muted-foreground text-xs leading-relaxed">
-                {post.excerpt}
-              </p>
             </div>
           ))}
         </div>
