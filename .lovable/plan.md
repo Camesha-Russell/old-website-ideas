@@ -1,17 +1,17 @@
 
 
-# Fix Hero Side Cards
+# Add border box around Hero side cards
 
-## Issues
-1. **Dark border around placeholder images**: The three side card images show a thin dark outline. Need to remove any border and ensure clean edges.
-2. **Text too large**: Side card titles are `text-xl md:text-2xl` — reference shows them smaller, around `text-base md:text-lg`.
+The reference screenshot shows each side card enclosed in a thin light border container with padding. We previously removed this — now adding it back per the user's request.
 
-## Changes
+## Change
+**`src/components/HeroSection.tsx` line 55**: Add `border border-border p-5` back to the side card `<Link>` className.
 
-### `src/components/HeroSection.tsx`
-- Remove `rounded-sm` from side card placeholder images (line 57) to eliminate border appearance
-- Reduce headline size from `text-xl md:text-2xl` to `text-base md:text-lg` (line 62)
+```
+// From:
+className="group flex gap-6 items-center"
 
-### `src/index.css` (if needed)
-- Check if `.placeholder-img` has any border or outline and remove it
+// To:
+className="group flex gap-6 items-center border border-border p-5"
+```
 
