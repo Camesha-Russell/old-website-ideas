@@ -42,7 +42,7 @@ const HeroSection = () => {
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl mt-2 mb-3 leading-tight">
                 {featuredPost.title}
               </h2>
-              <p className="font-body text-muted-foreground text-sm leading-relaxed max-w-lg">
+              <p className="font-body text-muted-foreground text-[15px] leading-relaxed max-w-lg">
                 {featuredPost.excerpt}
               </p>
             </Link>

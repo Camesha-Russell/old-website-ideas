@@ -85,7 +85,7 @@
   }
 
   .category-label {
-    @apply font-sans-nav uppercase tracking-[0.15em] text-[10px] font-medium;
+    @apply font-sans-nav uppercase tracking-[0.15em] text-[12px] font-medium;
   }
 
   .nav-link {
