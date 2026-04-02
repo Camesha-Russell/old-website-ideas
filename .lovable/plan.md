@@ -1,17 +1,40 @@
 
 
-# Featured Section Fixes
+# Create "Shop the Post" Editorial Section
 
-## 1. Make "Featured" title bigger
-In `src/index.css`, update `.section-title` from `text-[11px]` to `text-lg md:text-xl` (or similar). Keep uppercase and tracking.
+## What it is
+A new full-width section matching the reference's layout: large lifestyle image on the right, with a serif title, description text, and a product thumbnail carousel on the left. This replaces `CategorySleep` in the page order (the section right after Recent Posts that currently corresponds to where this sits in the reference).
 
-## 2. Remove "Fun Ideas for an Unforgettable Playdate"
-Remove `featuredPosts[5]` from the array and delete the second card in the center column (lines 41-44). This makes the center column a single tall card matching the reference layout — no more awkward empty space.
+## Layout
 
-## 3. Fix awkward spacing on left and right columns
-The left (`col-span-3`) and right (`col-span-4`) cards currently don't fill their height, leaving gaps below the image. With the center now being a single card, all three columns in Row 1 will naturally align. Add `flex flex-col` and make the image `flex-1` on the left/right cards so they stretch to fill evenly.
+```text
+┌──────────────────────────────────────────────────────────┐
+│  (off-white background, full width)                      │
+│                                                          │
+│   Title (large serif)          ┌─────────────────────┐   │
+│   Description paragraph        │                     │   │
+│                                │   Large lifestyle   │   │
+│   ┌────┐ ┌────┐ ┌────┐ ┌────┐ │   image (edge to    │   │
+│   │prod│ │prod│ │prod│ │prod│ │   edge on right)     │   │
+│   └────┘ └────┘ └────┘ └────┘ │                     │   │
+│   ← →                         └─────────────────────┘   │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
+```
 
-### Files changed
-- `src/index.css` — increase `.section-title` font size
-- `src/components/FeaturedSection.tsx` — remove 6th post, remove second center card, adjust column stretch
+## Changes
+
+### New file: `src/components/ShopThePost.tsx`
+- Two-column grid (`grid-cols-1 lg:grid-cols-2`), no max-width constraint on the right image so it bleeds to edge
+- **Left column**: Padded content area with:
+  - Large serif title (`font-display text-3xl md:text-4xl`)
+  - Body paragraph (`font-body text-muted-foreground`)
+  - Row of 4 placeholder product thumbnails (square, bordered, in a flex row)
+  - Simple prev/next arrow buttons (outlined, square) below the thumbnails
+- **Right column**: Placeholder image covering full height (`aspect-[4/3] lg:aspect-auto lg:h-full`)
+- Background: `bg-[#F7F3EE]` (off-white from brand palette)
+- Placeholder content adapted for mom blog: e.g. "Our Favorite Nursery Essentials for a Cozy Space"
+
+### `src/pages/Index.tsx`
+- Import and add `<ShopThePost />` between `<RecentPosts />` and `<CategorySleep />`
 
