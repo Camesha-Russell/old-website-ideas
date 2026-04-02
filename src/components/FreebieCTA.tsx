@@ -3,25 +3,25 @@ const FreebieCTA = () => {
     <section className="bg-accent overflow-visible relative">
       <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center">
-          {/* Left — Stacked guide covers */}
+          {/* Left — Stacked guide covers, overflow BELOW the section */}
           <div className="lg:col-span-2 flex justify-center">
-            <div className="relative w-[280px] h-[360px] md:w-[320px] md:h-[420px] -mt-16 md:-mt-24">
+            <div className="relative w-[280px] h-[300px] md:w-[320px] md:h-[360px] mb-[-100px] md:mb-[-140px]">
               {/* Back cover */}
-              <div className="absolute top-4 left-4 w-[200px] h-[280px] md:w-[230px] md:h-[320px] bg-white rounded-sm shadow-lg -rotate-6 flex flex-col items-center justify-center p-6">
+              <div className="absolute top-4 left-4 w-[180px] h-[250px] md:w-[210px] md:h-[290px] bg-white rounded-sm shadow-lg -rotate-6 flex flex-col items-center justify-center p-6">
                 <span className="font-serif-display text-foreground text-center text-sm md:text-base font-bold uppercase tracking-wide leading-tight">
                   The Ultimate<br />Nursery<br />Checklist
                 </span>
                 <div className="mt-3 w-10 h-[2px] bg-accent" />
               </div>
               {/* Middle cover */}
-              <div className="absolute top-2 left-10 w-[200px] h-[280px] md:w-[230px] md:h-[320px] bg-white rounded-sm shadow-lg rotate-2 flex flex-col items-center justify-center p-6">
+              <div className="absolute top-2 left-10 w-[180px] h-[250px] md:w-[210px] md:h-[290px] bg-white rounded-sm shadow-lg rotate-2 flex flex-col items-center justify-center p-6">
                 <span className="font-serif-display text-foreground text-center text-sm md:text-base font-bold uppercase tracking-wide leading-tight">
                   Sleep<br />Training<br />Guide
                 </span>
                 <div className="mt-3 w-10 h-[2px] bg-accent" />
               </div>
               {/* Front cover */}
-              <div className="absolute top-0 left-16 w-[200px] h-[280px] md:w-[230px] md:h-[320px] bg-white rounded-sm shadow-xl rotate-6 flex flex-col items-center justify-center p-6">
+              <div className="absolute top-0 left-16 w-[180px] h-[250px] md:w-[210px] md:h-[290px] bg-white rounded-sm shadow-xl rotate-6 flex flex-col items-center justify-center p-6">
                 <span className="font-serif-display text-foreground text-center text-sm md:text-base font-bold uppercase tracking-wide leading-tight">
                   Feeding<br />Essentials<br />101
                 </span>
