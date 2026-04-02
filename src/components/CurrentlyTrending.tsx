@@ -14,7 +14,7 @@ const CurrentlyTrending = () => {
   const tabs = ["Mom Approved Picks", "This Week's Finds"];
 
   return (
-    <section className="bg-taupe">
+    <section className="bg-[hsl(30,15%,96%)]">
       <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
@@ -24,15 +24,15 @@ const CurrentlyTrending = () => {
             </span>
             <div className="w-24 h-[2px] bg-foreground/30 mt-1" />
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-6">
             {tabs.map((tab, i) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(i)}
-                className={`nav-link text-[10px] px-4 py-1.5 rounded-[20px] transition-colors ${
+                className={`nav-link text-[10px] pb-1 transition-colors border-b-2 ${
                   activeTab === i
-                    ? "bg-nearblack text-white"
-                    : "bg-white/60 text-foreground hover:bg-white"
+                    ? "border-foreground text-foreground"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {tab}
