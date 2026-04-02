@@ -52,7 +52,7 @@ const HeroSection = () => {
               <Link
                 key={i}
                 to={post.path}
-                className="group flex gap-6 items-center border border-border rounded-sm p-5 hover:shadow-sm transition-shadow"
+                className="group flex gap-6 items-center"
               >
                 <div className="placeholder-img w-44 h-36 md:w-48 md:h-40 flex-shrink-0 rounded-sm" />
                 <div className="flex flex-col justify-center">
