@@ -18,7 +18,7 @@ const CurrentlyTrending = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-16 md:py-20">
         {/* Header */}
         <div className="flex items-center gap-6 mb-10">
-          <span className="font-display italic text-4xl md:text-5xl text-foreground whitespace-nowrap">
+          <span className="text-3xl md:text-4xl text-foreground whitespace-nowrap" style={{ fontFamily: "'Satisfy', cursive" }}>
             Currently Trending
           </span>
           <div className="flex-grow h-[1px] bg-foreground/20" />
