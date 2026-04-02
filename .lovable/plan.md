@@ -1,14 +1,12 @@
 
 
-# Apply Satisfy Font to "Currently Trending" Title
+# Add More Side Padding to Currently Trending
 
-## Changes
+## Summary
+The reference site has wider side margins. Currently the section uses `px-4`. Increase to `px-8 md:px-16 lg:px-20` to match the reference's generous side padding.
 
-### `index.html`
-Add `Satisfy` to the Google Fonts link URL.
+## Change
 
-### `src/components/CurrentlyTrending.tsx`
-- Reduce title from `text-4xl md:text-5xl` → `text-3xl md:text-4xl`
-- Replace `font-display italic` with `style={{ fontFamily: "'Satisfy', cursive" }}`
-- Remove `italic` class
+### `src/components/CurrentlyTrending.tsx` (line 18)
+- Change `px-4` → `px-8 md:px-16 lg:px-20` on the inner container div
 
