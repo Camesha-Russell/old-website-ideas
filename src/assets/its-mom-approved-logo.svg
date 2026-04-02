@@ -1,27 +1,36 @@
-<svg width="800" height="290" viewBox="0 0 800 290" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="210" viewBox="0 0 800 210" xmlns="http://www.w3.org/2000/svg">
   <!-- transparent background -->
 
-  <line x1="226" y1="32" x2="226" y2="224" stroke="#C07B60" stroke-width="1.1"/>
+  <!-- Vertical divider -->
+  <line x1="180" y1="24" x2="180" y2="186" stroke="#C07B60" stroke-width="1.1"/>
 
-  <text x="210" y="134"
+  <!-- it's — bold italic -->
+  <text x="162"
+    y="122"
     text-anchor="end"
     font-family="Georgia, 'Times New Roman', serif"
     font-style="italic"
-    font-size="26"
+    font-weight="bold"
+    font-size="42"
     fill="#C07B60"
-    letter-spacing="2">it's</text>
+    letter-spacing="1">it's</text>
 
-  <text x="250" y="208"
+  <!-- MOM -->
+  <text x="210"
+    y="168"
     font-family="Georgia, 'Times New Roman', serif"
     font-weight="bold"
-    font-size="140"
+    font-size="96"
     fill="#1C1714"
-    letter-spacing="6">MOM</text>
+    letter-spacing="2">MOM</text>
 
-  <text x="648" y="242"
+  <!-- approved -->
+  <text x="620"
+    y="198"
     text-anchor="end"
     font-family="'Courier New', Courier, monospace"
-    font-size="19"
+    font-weight="bold"
+    font-size="33"
     fill="#8B4A2F"
-    letter-spacing="13">approved</text>
+    letter-spacing="5">approved</text>
 </svg>
