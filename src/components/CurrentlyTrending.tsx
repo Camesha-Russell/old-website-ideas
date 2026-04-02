@@ -42,7 +42,7 @@ const CurrentlyTrending = () => {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
           {/* Featured Post */}
           <div className="lg:col-span-7">
             <div className="placeholder-img aspect-[16/10] rounded-sm mb-4" />
@@ -78,7 +78,7 @@ const CurrentlyTrending = () => {
         </div>
 
         {/* Product Carousel */}
-        <div className="relative">
+        <div className="relative z-10">
           <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
             {Array.from({ length: 6 }).map((_, i) => (
               <div
