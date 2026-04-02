@@ -16,7 +16,7 @@ const MainHeader = () => {
 
   return (
     <header className="bg-white border-b border-border">
-      <div className="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between relative">
         {/* Logo */}
         <Link to="/">
           <img src={logo} alt="It's Mom Approved" className="h-16 md:h-20 w-auto" />
