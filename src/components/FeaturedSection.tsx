@@ -7,86 +7,59 @@ const featuredPosts = [
   { category: "Play & Development", title: "Fun Ideas for an Unforgettable Playdate" },
 ];
 
+const CardTextBlock = ({ category, title }: { category: string; title: string }) => (
+  <div className="p-4 md:p-6">
+    <span className="tracking-widest uppercase text-xs text-muted-foreground font-body">
+      {category}
+    </span>
+    <h3 className="font-display text-foreground text-xl md:text-2xl lg:text-3xl mt-2 leading-snug">
+      {title}
+    </h3>
+  </div>
+);
+
 const FeaturedSection = () => {
   return (
     <section className="bg-white">
       <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
         <h2 className="section-title text-foreground mb-10">Featured</h2>
 
-        {/* Mosaic Grid - matching reference collage */}
+        {/* Row 1: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 mb-3">
-          {/* Left tall card */}
-          <div className="md:col-span-3 group cursor-pointer relative overflow-hidden rounded-sm">
+          {/* Left — text above, image below */}
+          <div className="md:col-span-3 group cursor-pointer border border-border rounded-sm overflow-hidden">
+            <CardTextBlock category={featuredPosts[0].category} title={featuredPosts[0].title} />
             <div className="placeholder-img aspect-[3/4]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <span className="category-label text-white/70">{featuredPosts[0].category}</span>
-              <h3 className="font-display text-white text-base md:text-lg mt-1 leading-snug">
-                {featuredPosts[0].title}
-              </h3>
-            </div>
           </div>
 
-          {/* Center column - stacked */}
+          {/* Center — image above, text below */}
           <div className="md:col-span-5 flex flex-col gap-3">
-            {/* Wide landscape */}
-            <div className="group cursor-pointer relative overflow-hidden rounded-sm">
+            <div className="group cursor-pointer border border-border rounded-sm overflow-hidden flex-1">
               <div className="placeholder-img aspect-[16/9]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <span className="category-label text-white/70">{featuredPosts[1].category}</span>
-                <h3 className="font-display text-white text-base md:text-lg mt-1 leading-snug">
-                  {featuredPosts[1].title}
-                </h3>
-              </div>
+              <CardTextBlock category={featuredPosts[1].category} title={featuredPosts[1].title} />
             </div>
-            {/* Small card below */}
-            <div className="group cursor-pointer relative overflow-hidden rounded-sm">
+            <div className="group cursor-pointer border border-border rounded-sm overflow-hidden">
               <div className="placeholder-img aspect-[16/9]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <span className="category-label text-white/70">{featuredPosts[5].category}</span>
-                <h3 className="font-display text-white text-base md:text-lg mt-1 leading-snug">
-                  {featuredPosts[5].title}
-                </h3>
-              </div>
+              <CardTextBlock category={featuredPosts[5].category} title={featuredPosts[5].title} />
             </div>
           </div>
 
-          {/* Right tall card */}
-          <div className="md:col-span-4 group cursor-pointer relative overflow-hidden rounded-sm">
+          {/* Right — text above, image below */}
+          <div className="md:col-span-4 group cursor-pointer border border-border rounded-sm overflow-hidden">
+            <CardTextBlock category={featuredPosts[2].category} title={featuredPosts[2].title} />
             <div className="placeholder-img aspect-[3/4]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <span className="category-label text-white/70">{featuredPosts[2].category}</span>
-              <h3 className="font-display text-white text-base md:text-lg mt-1 leading-snug">
-                {featuredPosts[2].title}
-              </h3>
-            </div>
           </div>
         </div>
 
-        {/* Bottom row: 2 wide cards */}
+        {/* Row 2: 2 columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-          <div className="group cursor-pointer relative overflow-hidden rounded-sm">
+          <div className="group cursor-pointer border border-border rounded-sm overflow-hidden">
             <div className="placeholder-img aspect-[16/9]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <span className="category-label text-white/70">{featuredPosts[3].category}</span>
-              <h3 className="font-display text-white text-base md:text-lg mt-1 leading-snug">
-                {featuredPosts[3].title}
-              </h3>
-            </div>
+            <CardTextBlock category={featuredPosts[3].category} title={featuredPosts[3].title} />
           </div>
-          <div className="group cursor-pointer relative overflow-hidden rounded-sm">
+          <div className="group cursor-pointer border border-border rounded-sm overflow-hidden">
+            <CardTextBlock category={featuredPosts[4].category} title={featuredPosts[4].title} />
             <div className="placeholder-img aspect-[16/9]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4">
-              <span className="category-label text-white/70">{featuredPosts[4].category}</span>
-              <h3 className="font-display text-white text-base md:text-lg mt-1 leading-snug">
-                {featuredPosts[4].title}
-              </h3>
-            </div>
           </div>
         </div>
       </div>
