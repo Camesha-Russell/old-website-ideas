@@ -69,7 +69,11 @@
 
 @layer components {
   .font-serif-display {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-script {
+    font-family: 'Great Vibes', cursive;
   }
 
   .font-serif-body {
