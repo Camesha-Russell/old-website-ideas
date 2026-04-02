@@ -14,7 +14,7 @@ const CurrentlyTrending = () => {
   const tabs = ["Mom Approved Picks", "This Week's Finds"];
 
   return (
-    <section className="bg-taupe">
+    <section className="bg-[hsl(30,15%,96%)]">
       <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
