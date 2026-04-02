@@ -19,7 +19,7 @@ const MainHeader = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="It's Mom Approved" <img src={logo} alt="It's Mom Approved" className="h-14 md:h-16 w-auto" /> />
+          <img src={logo} alt="It's Mom Approved" className="h-14 md:h-16 w-auto" />
         </Link>
 
         {/* Center Nav - Desktop */}
