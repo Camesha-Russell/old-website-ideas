@@ -5,6 +5,7 @@ import CurrentlyTrending from "@/components/CurrentlyTrending";
 
 import FeaturedSection from "@/components/FeaturedSection";
 import RecentPosts from "@/components/RecentPosts";
+import ShopThePost from "@/components/ShopThePost";
 import CategorySleep from "@/components/CategorySleep";
 import CategoryFeeding from "@/components/CategoryFeeding";
 import SignatureFeatures from "@/components/SignatureFeatures";
@@ -20,6 +21,7 @@ const Index = () => {
       <CurrentlyTrending />
       <FeaturedSection />
       <RecentPosts />
+      <ShopThePost />
       <CategorySleep />
       <CategoryFeeding />
       <SignatureFeatures />
