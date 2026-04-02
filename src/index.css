@@ -81,7 +81,7 @@
   }
 
   .section-title {
-    @apply font-serif-display uppercase tracking-[0.25em] text-center text-sm;
+    @apply font-serif-display uppercase tracking-[0.25em] text-center text-[11px];
   }
 
   .category-label {
