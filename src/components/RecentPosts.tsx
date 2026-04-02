@@ -15,12 +15,12 @@ const RecentPosts = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
         <h2 className="section-title text-foreground mb-10">Recent Posts</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-10">
           {recentPosts.map((post, i) => (
             <div key={i} className="group cursor-pointer">
               <div className="placeholder-img aspect-[4/3] rounded-sm mb-3" />
-              <span className="category-label text-muted-foreground block">{post.category}</span>
-              <h3 className="font-display text-sm md:text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
+              <span className="category-label text-muted-foreground block mb-1.5">{post.category}</span>
+              <h3 className="font-display text-sm md:text-base leading-snug group-hover:text-muted-foreground transition-colors">
                 {post.title}
               </h3>
             </div>
