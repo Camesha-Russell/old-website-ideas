@@ -4,7 +4,6 @@ const featuredPosts = [
   { category: "Feeding", title: "The Bottle-to-Cup Transition Nobody Talks About" },
   { category: "Safety", title: "Baby-Proofing Your Home: Room-by-Room Checklist" },
   { category: "Postpartum & Mom", title: "Recovery Products That Made a Real Difference" },
-  { category: "Play & Development", title: "Fun Ideas for an Unforgettable Playdate" },
 ];
 
 const CardTextBlock = ({ category, title }: { category: string; title: string }) => (
@@ -26,28 +25,22 @@ const FeaturedSection = () => {
 
         {/* Row 1: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 mb-3">
-          {/* Left — text above, image below */}
-          <div className="md:col-span-3 group cursor-pointer border border-border rounded-sm overflow-hidden">
+          {/* Left — text above, image fills remaining height */}
+          <div className="md:col-span-3 group cursor-pointer border border-border rounded-sm overflow-hidden flex flex-col">
             <CardTextBlock category={featuredPosts[0].category} title={featuredPosts[0].title} />
-            <div className="placeholder-img aspect-[3/4]" />
+            <div className="placeholder-img flex-1 min-h-[200px]" />
           </div>
 
-          {/* Center — image above, text below */}
-          <div className="md:col-span-5 flex flex-col gap-3">
-            <div className="group cursor-pointer border border-border rounded-sm overflow-hidden flex-1">
-              <div className="placeholder-img aspect-[16/9]" />
-              <CardTextBlock category={featuredPosts[1].category} title={featuredPosts[1].title} />
-            </div>
-            <div className="group cursor-pointer border border-border rounded-sm overflow-hidden">
-              <div className="placeholder-img aspect-[16/9]" />
-              <CardTextBlock category={featuredPosts[5].category} title={featuredPosts[5].title} />
-            </div>
+          {/* Center — single tall card: image above, text below */}
+          <div className="md:col-span-5 group cursor-pointer border border-border rounded-sm overflow-hidden flex flex-col">
+            <div className="placeholder-img flex-1 min-h-[300px]" />
+            <CardTextBlock category={featuredPosts[1].category} title={featuredPosts[1].title} />
           </div>
 
-          {/* Right — text above, image below */}
-          <div className="md:col-span-4 group cursor-pointer border border-border rounded-sm overflow-hidden">
+          {/* Right — text above, image fills remaining height */}
+          <div className="md:col-span-4 group cursor-pointer border border-border rounded-sm overflow-hidden flex flex-col">
             <CardTextBlock category={featuredPosts[2].category} title={featuredPosts[2].title} />
-            <div className="placeholder-img aspect-[3/4]" />
+            <div className="placeholder-img flex-1 min-h-[200px]" />
           </div>
         </div>
 
