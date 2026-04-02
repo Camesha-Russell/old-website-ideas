@@ -1,0 +1,27 @@
+<svg width="800" height="290" viewBox="0 0 800 290" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="290" fill="#FAF7F2"/>
+
+  <line x1="226" y1="32" x2="226" y2="224" stroke="#C07B60" stroke-width="1.1"/>
+
+  <text x="210" y="134"
+    text-anchor="end"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-size="26"
+    fill="#C07B60"
+    letter-spacing="2">it's</text>
+
+  <text x="250" y="208"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="bold"
+    font-size="140"
+    fill="#1C1714"
+    letter-spacing="6">MOM</text>
+
+  <text x="648" y="242"
+    text-anchor="end"
+    font-family="'Courier New', Courier, monospace"
+    font-size="19"
+    fill="#8B4A2F"
+    letter-spacing="13">approved</text>
+</svg>
