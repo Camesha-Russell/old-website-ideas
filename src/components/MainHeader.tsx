@@ -32,7 +32,7 @@ const MainHeader = () => {
             <Link
               key={link.path}
               to={link.path}
-              className="nav-link text-foreground hover:text-muted-foreground transition-colors text-[11px]"
+              className="nav-link text-foreground hover:text-muted-foreground transition-colors text-[12px]"
             >
               {link.name}
             </Link>

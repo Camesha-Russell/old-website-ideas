@@ -27,9 +27,9 @@ const sidePosts = [
 
 const HeroSection = () => {
   return (
-    <section className="bg-white">
-      <div className="max-w-[1400px] mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <section className="bg-background">
+      <div className="max-w-[1400px] mx-auto px-4 py-10 md:py-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Large Featured Card */}
           <div className="lg:col-span-7">
             <Link to={featuredPost.path} className="group block">
@@ -47,19 +47,19 @@ const HeroSection = () => {
           </div>
 
           {/* Side Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-5">
+          <div className="lg:col-span-5 flex flex-col gap-4">
             {sidePosts.map((post, i) => (
               <Link
                 key={i}
                 to={post.path}
-                className="group flex gap-4 items-start"
+                className="group flex gap-5 items-start border border-border rounded-sm p-4 hover:shadow-sm transition-shadow"
               >
-                <div className="placeholder-img w-28 h-20 md:w-32 md:h-24 flex-shrink-0 rounded-sm" />
+                <div className="placeholder-img w-36 h-28 md:w-40 md:h-32 flex-shrink-0 rounded-sm" />
                 <div className="flex flex-col justify-center">
                   <span className="category-label text-muted-foreground">
                     {post.category}
                   </span>
-                  <h3 className="font-display text-sm md:text-base mt-1 leading-snug group-hover:text-muted-foreground transition-colors">
+                  <h3 className="font-display text-base md:text-lg mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
                     {post.title}
                   </h3>
                 </div>
