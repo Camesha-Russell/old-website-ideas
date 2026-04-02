@@ -16,7 +16,7 @@ const pageTitles: Record<string, string> = {
   "/we-said-no": "We Said No",
   "/hype-check": "Overhyped vs Actually Worth It",
   "/know-before-you-buy": "Know Before You Buy",
-  "/ask-itsmomapproved": "Ask Moms Approved",
+  "/ask-itsmomapproved": "Ask It's Mom Approved",
   "/starter-kit": "The Starter Kit",
   "/contact": "Contact",
   "/disclosure": "Disclosure",
