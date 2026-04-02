@@ -35,7 +35,7 @@ const FeaturedSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <span className="category-label text-white/70">{featuredPosts[1].category}</span>
-                <h3 className="font-display text-white text-sm mt-1 leading-snug">
+                <h3 className="font-display text-white text-base md:text-lg mt-1 leading-snug">
                   {featuredPosts[1].title}
                 </h3>
               </div>
