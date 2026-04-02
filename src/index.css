@@ -89,7 +89,7 @@
   }
 
   .nav-link {
-    @apply font-sans-nav uppercase tracking-[0.12em] text-xs font-medium;
+    @apply font-sans-nav uppercase tracking-[0.12em] text-[11px] font-medium;
   }
 
   .btn-peach {
