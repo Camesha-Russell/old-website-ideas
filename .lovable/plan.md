@@ -1,32 +1,40 @@
 
 
-# Fix Shop the Post — Match Reference Exactly
+# Optimize Currently Trending for Mobile
 
-## What the reference shows
-- **Image on LEFT**, flush to left edge (no padding), occupying ~47% width
-- **Text on RIGHT** with generous padding (~px-12 to px-16), vertically centered
-- Large serif title (~`text-3xl md:text-4xl`, Playfair Display)
-- Body paragraph in regular weight, muted color, ~`text-base`
-- 4 product thumbnails: ~100x100px squares with **white backgrounds**, subtle border, spaced with ~`gap-4`
-- Navigation arrows: simple thin chevrons (no border/box around them), ~20px, side by side below thumbnails
-- Off-white/beige background across entire section
-- No product name text under thumbnails on the reference
+## What the reference (SheShoppes) shows on mobile
+- **Cursive title** "Currently Trending" — centered, large
+- **Tab buttons** centered below the title (not inline with it), e.g. "BEAUTY CORNER" / "FASHION JUNCTION"
+- **Full-width image** — takes the full screen width, tall aspect ratio
+- **Title + excerpt + "READ MORE" button** stacked below the image (not side by side)
+- **Numbered pagination** (1 2 3 4 5) as clickable dots/numbers to switch between posts — replaces the full numbered list on mobile
+- **Product thumbnails** row at the bottom with left/right arrows
 
-## Changes needed
+## Current problems on mobile
+1. Header tries to squeeze cursive title + divider line + two tab buttons all in one horizontal row — overflows on 390px
+2. Featured post layout goes full-width image then text, which is fine, but the full 5-item numbered list below it is very long on mobile
+3. No numbered pagination dots — mobile users must scroll through the entire list
 
-### `src/components/ShopThePost.tsx`
-1. **Swap column order** — image div first (left), text div second (right)
-2. **Image**: remove padding, make it flush to left edge with `object-cover h-full` and min-height ~520px
-3. **Product thumbnails**: increase to `w-24 h-24 md:w-28 md:h-28`, add `bg-white` background, keep subtle border
-4. **Remove product name labels** — reference doesn't show text under thumbnails
-5. **Arrow buttons**: remove border/box styling, make them plain chevron icons (~`w-5 h-5`), use `ChevronLeft`/`ChevronRight` instead of `ArrowLeft`/`ArrowRight`
-6. **Increase body text** from `text-sm` → `text-base`
-7. **Increase spacing**: `mb-8` → `mb-10` between paragraph and thumbnails, `gap-3` → `gap-4` between thumbnails
+## Plan
 
-### `src/pages/Index.tsx`
-- Move `<ShopThePost />` from after `<RecentPosts />` to **before** it (between `<FeaturedSection />` and `<RecentPosts />`)
+### `src/components/CurrentlyTrending.tsx`
+
+**Header (mobile restructure):**
+- On mobile (`md:` breakpoint): stack vertically — cursive title centered on top, tabs centered below, no divider line
+- On desktop (`md:+`): keep current horizontal layout with title + divider + tabs
+
+**Featured post (mobile):**
+- Full-width image (no side-by-side), title and excerpt below, "Read More" button — this already works with the `flex-col md:flex-row` pattern, just ensure the image is full-width without the `md:w-[55%]` constraint on mobile
+
+**Replace numbered list with pagination dots on mobile:**
+- Hide the `<ol>` numbered list on mobile (`hidden lg:block`)
+- Show a row of clickable numbers (1 2 3 4 5) on mobile (`flex lg:hidden`), centered
+- Active number gets a filled circle background (dark), others are plain text
+- Clicking a number updates `activePost`
+
+**Product carousel:**
+- Keep as-is (already scrollable)
 
 ### Files changed
-- `src/components/ShopThePost.tsx`
-- `src/pages/Index.tsx`
+- `src/components/CurrentlyTrending.tsx` only
 
