@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/its-mom-approved-logo.svg";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -17,13 +18,8 @@ const MainHeader = () => {
     <header className="bg-white border-b border-border">
       <div className="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex flex-col items-start leading-none">
-          <span className="font-sans-nav uppercase tracking-[0.25em] text-[9px] md:text-[10px] text-muted-foreground">
-            It's
-          </span>
-          <span className="font-display italic text-2xl md:text-3xl text-foreground -mt-1">
-            Mom Approved
-          </span>
+        <Link to="/">
+          <img src={logo} alt="It's Mom Approved" className="h-12 md:h-14 w-auto" />
         </Link>
 
         {/* Center Nav - Desktop */}
