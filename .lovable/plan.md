@@ -1,31 +1,17 @@
 
 
-# Redesign Featured Section — Text Below Images
+# Featured Section Fixes
 
-## What changes
-Restyle `src/components/FeaturedSection.tsx` to match the reference layout where category and title appear **below** each image on a white background, not overlaid on the image.
+## 1. Make "Featured" title bigger
+In `src/index.css`, update `.section-title` from `text-[11px]` to `text-lg md:text-xl` (or similar). Keep uppercase and tracking.
 
-## Layout (matching reference)
+## 2. Remove "Fun Ideas for an Unforgettable Playdate"
+Remove `featuredPosts[5]` from the array and delete the second card in the center column (lines 41-44). This makes the center column a single tall card matching the reference layout — no more awkward empty space.
 
-**Row 1:** 3 columns (small | large | small)
-- Left & right cards: category + title text block on top, image below (or vice versa — reference alternates)
-- Center card: tall image on top, category + title below
+## 3. Fix awkward spacing on left and right columns
+The left (`col-span-3`) and right (`col-span-4`) cards currently don't fill their height, leaving gaps below the image. With the center now being a single card, all three columns in Row 1 will naturally align. Add `flex flex-col` and make the image `flex-1` on the left/right cards so they stretch to fill evenly.
 
-**Row 2:** 2 columns (large image left | text-only right + image right below)
-
-## Changes in `src/components/FeaturedSection.tsx`
-
-1. **Remove overlay approach** — delete `bg-gradient-to-t` overlays and `absolute` positioned text from all cards
-2. **Restructure each card** — image and text are separate stacked blocks:
-   - `<div>` for the image (no overlay)
-   - `<div className="p-4 md:p-6">` for category label + title below
-3. **Add thin border** — `border border-border` on each card to define edges (like reference)
-4. **Increase title size** — `text-xl md:text-2xl lg:text-3xl` with `font-display` for prominent serif titles
-5. **Category label** — dark text (`text-foreground`) with `tracking-widest uppercase text-xs`
-6. **Text color** — all text is dark on white background now, not white-on-image
-
-## Grid structure
-- Row 1: `grid-cols-12` — left `col-span-3`, center `col-span-5`, right `col-span-4` (keep current proportions)
-- Row 2: `grid-cols-2` (keep current)
-- Some cards show text-above-image, some show image-above-text, alternating like the reference
+### Files changed
+- `src/index.css` — increase `.section-title` font size
+- `src/components/FeaturedSection.tsx` — remove 6th post, remove second center card, adjust column stretch
 
