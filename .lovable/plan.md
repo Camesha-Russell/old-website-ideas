@@ -1,40 +1,32 @@
 
 
-# Create "Shop the Post" Editorial Section
+# Fix Shop the Post — Match Reference Exactly
 
-## What it is
-A new full-width section matching the reference's layout: large lifestyle image on the right, with a serif title, description text, and a product thumbnail carousel on the left. This replaces `CategorySleep` in the page order (the section right after Recent Posts that currently corresponds to where this sits in the reference).
+## What the reference shows
+- **Image on LEFT**, flush to left edge (no padding), occupying ~47% width
+- **Text on RIGHT** with generous padding (~px-12 to px-16), vertically centered
+- Large serif title (~`text-3xl md:text-4xl`, Playfair Display)
+- Body paragraph in regular weight, muted color, ~`text-base`
+- 4 product thumbnails: ~100x100px squares with **white backgrounds**, subtle border, spaced with ~`gap-4`
+- Navigation arrows: simple thin chevrons (no border/box around them), ~20px, side by side below thumbnails
+- Off-white/beige background across entire section
+- No product name text under thumbnails on the reference
 
-## Layout
+## Changes needed
 
-```text
-┌──────────────────────────────────────────────────────────┐
-│  (off-white background, full width)                      │
-│                                                          │
-│   Title (large serif)          ┌─────────────────────┐   │
-│   Description paragraph        │                     │   │
-│                                │   Large lifestyle   │   │
-│   ┌────┐ ┌────┐ ┌────┐ ┌────┐ │   image (edge to    │   │
-│   │prod│ │prod│ │prod│ │prod│ │   edge on right)     │   │
-│   └────┘ └────┘ └────┘ └────┘ │                     │   │
-│   ← →                         └─────────────────────┘   │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
-
-## Changes
-
-### New file: `src/components/ShopThePost.tsx`
-- Two-column grid (`grid-cols-1 lg:grid-cols-2`), no max-width constraint on the right image so it bleeds to edge
-- **Left column**: Padded content area with:
-  - Large serif title (`font-display text-3xl md:text-4xl`)
-  - Body paragraph (`font-body text-muted-foreground`)
-  - Row of 4 placeholder product thumbnails (square, bordered, in a flex row)
-  - Simple prev/next arrow buttons (outlined, square) below the thumbnails
-- **Right column**: Placeholder image covering full height (`aspect-[4/3] lg:aspect-auto lg:h-full`)
-- Background: `bg-[#F7F3EE]` (off-white from brand palette)
-- Placeholder content adapted for mom blog: e.g. "Our Favorite Nursery Essentials for a Cozy Space"
+### `src/components/ShopThePost.tsx`
+1. **Swap column order** — image div first (left), text div second (right)
+2. **Image**: remove padding, make it flush to left edge with `object-cover h-full` and min-height ~520px
+3. **Product thumbnails**: increase to `w-24 h-24 md:w-28 md:h-28`, add `bg-white` background, keep subtle border
+4. **Remove product name labels** — reference doesn't show text under thumbnails
+5. **Arrow buttons**: remove border/box styling, make them plain chevron icons (~`w-5 h-5`), use `ChevronLeft`/`ChevronRight` instead of `ArrowLeft`/`ArrowRight`
+6. **Increase body text** from `text-sm` → `text-base`
+7. **Increase spacing**: `mb-8` → `mb-10` between paragraph and thumbnails, `gap-3` → `gap-4` between thumbnails
 
 ### `src/pages/Index.tsx`
-- Import and add `<ShopThePost />` between `<RecentPosts />` and `<CategorySleep />`
+- Move `<ShopThePost />` from after `<RecentPosts />` to **before** it (between `<FeaturedSection />` and `<RecentPosts />`)
+
+### Files changed
+- `src/components/ShopThePost.tsx`
+- `src/pages/Index.tsx`
 
