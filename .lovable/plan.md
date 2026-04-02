@@ -1,12 +1,14 @@
 
 
-# Two Quick Fixes
+# Apply Satisfy Font to "Currently Trending" Title
 
-## 1. Featured Section — Bigger card titles
-All `h3` elements in `FeaturedSection.tsx` currently use `text-sm`. Change to `text-base md:text-lg` so titles like "Fun Ideas for an Unforgettable Playdate" are more readable over the images.
+## Changes
 
-**File:** `src/components/FeaturedSection.tsx` — update all 6 instances of `text-sm` on `h3` tags to `text-base md:text-lg`.
+### `index.html`
+Add `Satisfy` to the Google Fonts link URL.
 
-## 2. Recent Posts — Remove excerpt text
-In `RecentPosts.tsx`, remove the `<p>` element that renders `post.excerpt` (lines 30-32). This declutters the grid and leaves just the image, category label, and title.
+### `src/components/CurrentlyTrending.tsx`
+- Reduce title from `text-4xl md:text-5xl` → `text-3xl md:text-4xl`
+- Replace `font-display italic` with `style={{ fontFamily: "'Satisfy', cursive" }}`
+- Remove `italic` class
 
