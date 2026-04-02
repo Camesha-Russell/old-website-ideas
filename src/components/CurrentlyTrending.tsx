@@ -37,13 +37,13 @@ const CurrentlyTrending = () => {
 
   return (
     <section className="bg-[hsl(30,15%,96%)]">
-      <div className="max-w-[1400px] mx-auto px-8 md:px-16 lg:px-20 py-16 md:py-20">
-        {/* Header */}
-        <div className="flex items-center gap-6 mb-10">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-16 lg:px-20 py-12 md:py-20">
+        {/* Header — stacked on mobile, inline on md+ */}
+        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 mb-10">
           <span className="text-3xl md:text-4xl text-foreground whitespace-nowrap font-normal" style={{ fontFamily: "'Satisfy', cursive" }}>
             Currently Trending
           </span>
-          <div className="flex-grow h-[1px] bg-foreground/20" />
+          <div className="hidden md:block flex-grow h-[1px] bg-foreground/20" />
           <div className="flex gap-6">
             {tabs.map((tab, i) => (
               <button
@@ -63,10 +63,10 @@ const CurrentlyTrending = () => {
 
         {/* Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-          {/* Featured Post — side by side */}
+          {/* Featured Post */}
           <div className="lg:col-span-7">
             <div className="flex flex-col md:flex-row gap-6">
-              <div className="md:w-[55%] flex-shrink-0">
+              <div className="w-full md:w-[55%] flex-shrink-0">
                 <div className="placeholder-img aspect-[4/5] rounded-sm" />
               </div>
               <div className="flex flex-col justify-center">
@@ -81,8 +81,8 @@ const CurrentlyTrending = () => {
             </div>
           </div>
 
-          {/* Numbered List */}
-          <div className="lg:col-span-5">
+          {/* Numbered List — desktop only */}
+          <div className="hidden lg:block lg:col-span-5">
             <ol className="space-y-8">
               {currentPosts.map((post, i) => (
                 <li
@@ -109,6 +109,23 @@ const CurrentlyTrending = () => {
                 </li>
               ))}
             </ol>
+          </div>
+
+          {/* Numbered pagination — mobile only */}
+          <div className="flex lg:hidden justify-center gap-3">
+            {currentPosts.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActivePost(i)}
+                className={`w-9 h-9 rounded-full text-sm font-display transition-colors ${
+                  i === activePost
+                    ? "bg-foreground text-background"
+                    : "text-foreground/40 hover:text-foreground/70"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
           </div>
         </div>
 
