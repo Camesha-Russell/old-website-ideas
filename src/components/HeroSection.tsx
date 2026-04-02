@@ -59,7 +59,7 @@ const HeroSection = () => {
                   <span className="category-label text-muted-foreground">
                     {post.category}
                   </span>
-                  <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:text-muted-foreground transition-colors">
+                  <h3 className="font-display text-base md:text-lg mt-2 leading-snug group-hover:text-muted-foreground transition-colors">
                     {post.title}
                   </h3>
                 </div>
