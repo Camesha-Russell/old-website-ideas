@@ -93,13 +93,13 @@
   }
 
   .btn-peach {
-    @apply inline-block px-6 py-2.5 rounded-[20px] text-xs uppercase tracking-[0.1em] font-sans-nav font-medium transition-colors;
-    background-color: hsl(var(--peach));
-    color: hsl(var(--nearblack));
+    @apply inline-block px-6 py-2.5 rounded-none text-xs uppercase tracking-[0.1em] font-sans-nav font-medium transition-colors;
+    background-color: hsl(var(--nearblack));
+    color: hsl(var(--background));
   }
 
   .btn-peach:hover {
-    background-color: hsl(25 41% 80%);
+    background-color: hsl(0 0% 25%);
   }
 
   .btn-dark {
