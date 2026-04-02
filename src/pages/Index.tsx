@@ -20,8 +20,8 @@ const Index = () => {
       <HeroSection />
       <CurrentlyTrending />
       <FeaturedSection />
-      <RecentPosts />
       <ShopThePost />
+      <RecentPosts />
       <CategorySleep />
       <CategoryFeeding />
       <SignatureFeatures />
