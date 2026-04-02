@@ -1,38 +1,30 @@
 
 
-# Update Font Sizes to Match SheShoppes Reference
+# Update Currently Trending Section to Match SheShoppes Reference
 
-## Summary
-Align all font sizes across the site to the exact values found on the reference site.
+## Changes to `src/components/CurrentlyTrending.tsx`
 
-## Reference Sizes (from inspection)
-- **Top nav links**: 10px (already correct)
-- **Main nav links**: 11-12px (currently 12px — change to 11px)
-- **Category labels**: 10px (already correct)
-- **Section titles**: 11px (currently `text-sm` = 14px — reduce to 11px)
-- **Body text**: 15px, line-height 1.7 (already correct)
-- **Hero headline**: 32-36px (currently `text-2xl md:text-3xl lg:text-4xl` — fine, keep)
-- **Side card headlines**: keep `text-base md:text-lg`
-- **Trending section headline**: keep italic `text-2xl md:text-3xl`
-- **Trending numbered list titles**: 14px (currently `text-sm` — correct)
-- **Button text**: 10px (already correct)
-- **Body excerpt text**: 14px (`text-sm` — correct)
+### 1. Section title — decorative script font, larger size
+Change "Currently Trending" from `text-2xl md:text-3xl` to `text-4xl md:text-5xl` italic Playfair Display to match the large decorative heading style on the reference.
 
-## Changes
+### 2. Horizontal rule connecting title to tabs
+Replace the short `w-24` divider with a flexible `flex-grow` horizontal line between the title and tabs, all on one row. This creates the long line that stretches across the header area like the reference.
 
-### `src/index.css`
-1. `.section-title`: change `text-sm` to `text-[11px]` to match the reference's small uppercase section headers
-2. `.nav-link`: change `text-xs` (12px) to `text-[11px]`
+### 3. Tab label size
+Increase tab text from `text-[10px]` to `text-[12px]` to match the reference's slightly larger tab labels.
 
-### `src/components/MainHeader.tsx`
-- Main nav links: change `text-[12px]` → `text-[11px]` (line 35)
-- Mobile nav links: already `text-[11px]` — no change
+### 4. Featured post — side-by-side layout
+Change from stacked (image on top, text below) to a horizontal layout: image on the left (~50-60% width), text content on the right. Use `flex` with `gap-6` instead of the current vertical stack.
 
-### `src/components/TopNavBar.tsx`
-- Already `text-[10px]` — no change needed
+### 5. Numbered list — larger decorative numbers
+Make the numbers much larger and lighter (watermark-style): change from `text-2xl font-semibold` to `text-5xl font-light text-foreground/15` so they appear as big background-style numerals. Increase list title size from `text-sm` to `text-base font-medium`.
 
-### `src/components/CurrentlyTrending.tsx`
-- Tab buttons already `text-[10px]` — no change
+### 6. More vertical spacing in numbered list
+Change `space-y-4` to `space-y-6` and add a subtle bottom border (`border-b border-border pb-6`) to each item for visual separation like the reference.
 
-No other component changes needed. The global `.nav-link` and `.section-title` updates will cascade to all sections using those classes.
+### 7. Product carousel — remove white card backgrounds
+Remove the white card wrapper. Show placeholder images directly at `w-36 h-36 md:w-44 md:h-44` without the enclosing white box, matching the reference's cleaner product grid.
+
+### 8. Overall spacing
+Increase section vertical padding from `py-12 md:py-16` to `py-16 md:py-20` for more breathing room.
 
