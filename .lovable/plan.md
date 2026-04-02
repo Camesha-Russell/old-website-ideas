@@ -1,17 +1,18 @@
 
 
-# Subtle Background Color Update
+# Fix Currently Trending Section — Softer Background & Tab Style
 
-## What's Different
-The reference site uses a near-white background for the main content area — much more subtle than our current warm off-white (`#F7F3EE` / `hsl(37, 33%, 95%)`). The reference background reads almost white with just the faintest warmth. The placeholder images and section breaks provide the warmth contrast instead.
+## Problem
+The `bg-taupe` background (`hsl(34, 20%, 93%)`) creates too harsh a contrast against the near-white main background. The reference shows a much subtler shift — barely different from the main content area, just a whisper of warmth.
+
+Additionally, the reference tabs ("BEAUTY CORNER" / "FASHION JUNCTION") are **plain uppercase text with an underline on the active tab** — not filled pill buttons like ours.
 
 ## Changes
 
-### `src/index.css`
-- Change `--background` from `37 33% 95%` to `30 20% 98%` — a much lighter, barely-warm white (close to `#FAF9F7`)
-- Change `--warm-bg` to match
-- Adjust `--secondary` / `--muted` / `--taupe` slightly lighter to keep the subtle contrast without looking so heavy: `34 20% 93%`
-- Keep `--border` light: `34 15% 90%`
+### `src/components/CurrentlyTrending.tsx`
+1. **Background**: Change `bg-taupe` to a lighter value — use a custom class or inline style like `bg-[hsl(30,15%,96%)]` which is only ~2% darker than the main background, matching the reference's subtle shift.
+2. **Tab buttons**: Replace pill-shaped buttons with plain text tabs — uppercase, no background, with a bottom border on the active tab (like the reference).
 
-This makes the page feel airy and white like the reference, with warmth coming from the taupe/peach accents rather than the entire background.
+### `tailwind.config.ts` (optional)
+- Add a `taupe-light` color token (`hsl(30, 15%, 96%)`) if preferred over inline styles.
 
