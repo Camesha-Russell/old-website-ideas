@@ -102,7 +102,7 @@ const Footer = () => {
             <Link to="/privacy-policy" className="font-nav text-white/40 hover:text-white/60 text-[10px] transition-colors">Privacy Policy</Link>
           </div>
           <span className="font-nav text-white/30 text-[10px]">
-            © 2026 Moms Approved. All rights reserved.
+            © 2026 It's Mom Approved. All rights reserved.
           </span>
         </div>
       </div>

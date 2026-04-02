@@ -18,11 +18,8 @@ const MainHeader = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex flex-col items-start leading-none">
-          <span className="font-nav uppercase tracking-[0.3em] text-[9px] font-medium text-foreground">
-            The
-          </span>
-          <span className="font-display italic text-xl md:text-2xl text-foreground -mt-0.5">
-            Moms Approved
+          <span className="font-display italic text-xl md:text-2xl text-foreground">
+            It's Mom Approved
           </span>
         </Link>
 

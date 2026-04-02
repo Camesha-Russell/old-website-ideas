@@ -4,6 +4,7 @@ const featuredPosts = [
   { category: "Feeding", title: "The Bottle-to-Cup Transition Nobody Talks About" },
   { category: "Safety", title: "Baby-Proofing Your Home: Room-by-Room Checklist" },
   { category: "Postpartum & Mom", title: "Recovery Products That Made a Real Difference" },
+  { category: "Play & Development", title: "Fun Ideas for an Unforgettable Playdate" },
 ];
 
 const FeaturedSection = () => {
@@ -12,61 +13,77 @@ const FeaturedSection = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
         <h2 className="section-title text-foreground mb-10">Featured</h2>
 
-        {/* Row 1: 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
-          {/* Medium card */}
-          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
-            <div className="placeholder-img aspect-[4/3]" />
-            <div className="p-4">
-              <span className="category-label text-muted-foreground">{featuredPosts[0].category}</span>
-              <h3 className="font-display text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
+        {/* Mosaic Grid - matching reference collage */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 mb-3">
+          {/* Left tall card */}
+          <div className="md:col-span-3 group cursor-pointer relative overflow-hidden rounded-sm">
+            <div className="placeholder-img aspect-[3/4]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <span className="category-label text-white/70">{featuredPosts[0].category}</span>
+              <h3 className="font-display text-white text-sm mt-1 leading-snug">
                 {featuredPosts[0].title}
               </h3>
             </div>
           </div>
 
-          {/* Tall center card */}
-          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
-            <div className="placeholder-img aspect-[3/4]" />
-            <div className="p-4">
-              <span className="category-label text-muted-foreground">{featuredPosts[1].category}</span>
-              <h3 className="font-display text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
-                {featuredPosts[1].title}
-              </h3>
+          {/* Center column - stacked */}
+          <div className="md:col-span-5 flex flex-col gap-3">
+            {/* Wide landscape */}
+            <div className="group cursor-pointer relative overflow-hidden rounded-sm">
+              <div className="placeholder-img aspect-[16/9]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <span className="category-label text-white/70">{featuredPosts[1].category}</span>
+                <h3 className="font-display text-white text-sm mt-1 leading-snug">
+                  {featuredPosts[1].title}
+                </h3>
+              </div>
+            </div>
+            {/* Small card below */}
+            <div className="group cursor-pointer relative overflow-hidden rounded-sm">
+              <div className="placeholder-img aspect-[16/9]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <span className="category-label text-white/70">{featuredPosts[5].category}</span>
+                <h3 className="font-display text-white text-sm mt-1 leading-snug">
+                  {featuredPosts[5].title}
+                </h3>
+              </div>
             </div>
           </div>
 
-          {/* Medium card */}
-          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
-            <div className="placeholder-img aspect-[4/3]" />
-            <div className="p-4">
-              <span className="category-label text-muted-foreground">{featuredPosts[2].category}</span>
-              <h3 className="font-display text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
+          {/* Right tall card */}
+          <div className="md:col-span-4 group cursor-pointer relative overflow-hidden rounded-sm">
+            <div className="placeholder-img aspect-[3/4]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <span className="category-label text-white/70">{featuredPosts[2].category}</span>
+              <h3 className="font-display text-white text-sm mt-1 leading-snug">
                 {featuredPosts[2].title}
               </h3>
             </div>
           </div>
         </div>
 
-        {/* Row 2: 2 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {/* Wide card */}
-          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
+        {/* Bottom row: 2 wide cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="group cursor-pointer relative overflow-hidden rounded-sm">
             <div className="placeholder-img aspect-[16/9]" />
-            <div className="p-4">
-              <span className="category-label text-muted-foreground">{featuredPosts[3].category}</span>
-              <h3 className="font-display text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
+            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <span className="category-label text-white/70">{featuredPosts[3].category}</span>
+              <h3 className="font-display text-white text-sm mt-1 leading-snug">
                 {featuredPosts[3].title}
               </h3>
             </div>
           </div>
-
-          {/* Tall card */}
-          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
-            <div className="placeholder-img aspect-[4/3]" />
-            <div className="p-4">
-              <span className="category-label text-muted-foreground">{featuredPosts[4].category}</span>
-              <h3 className="font-display text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
+          <div className="group cursor-pointer relative overflow-hidden rounded-sm">
+            <div className="placeholder-img aspect-[16/9]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-nearblack/70 via-nearblack/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <span className="category-label text-white/70">{featuredPosts[4].category}</span>
+              <h3 className="font-display text-white text-sm mt-1 leading-snug">
                 {featuredPosts[4].title}
               </h3>
             </div>
