@@ -18,7 +18,6 @@ const Index = () => {
       <MainHeader />
       <HeroSection />
       <CurrentlyTrending />
-      <WarmSectionBreak />
       <FeaturedSection />
       <RecentPosts />
       <CategorySleep />
