@@ -1,5 +1,5 @@
 <svg width="800" height="290" viewBox="0 0 800 290" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="800" height="290" fill="#FAF7F2"/>
+  <!-- transparent background -->
 
   <line x1="226" y1="32" x2="226" y2="224" stroke="#C07B60" stroke-width="1.1"/>
 

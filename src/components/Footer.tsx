@@ -38,7 +38,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <span className="block font-display italic text-lg text-white">It's Mom Approved</span>
+              <img src={logo} alt="It's Mom Approved" className="h-12 w-auto brightness-0 invert" />
             </Link>
             <p className="font-body text-white/50 text-xs leading-relaxed">
               Research-backed product recommendations for moms of babies and toddlers aged 0–4. Honest reviews you can trust.
