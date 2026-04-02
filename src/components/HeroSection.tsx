@@ -39,7 +39,7 @@ const HeroSection = () => {
               <span className="category-label text-muted-foreground">
                 {featuredPost.category}
               </span>
-              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl mt-2 mb-3 leading-tight">
+              <h2 className="font-display text-xl md:text-2xl lg:text-3xl mt-2 mb-3 leading-tight">
                 {featuredPost.title}
               </h2>
               <p className="font-body text-muted-foreground text-[15px] leading-relaxed max-w-lg">
