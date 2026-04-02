@@ -27,9 +27,9 @@ const CategoryFeeding = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pb-8">
           {feedingPosts.map((post, i) => (
-            <div key={i} className="group cursor-pointer pb-4">
+            <div key={i} className="group cursor-pointer">
               <div className="placeholder-img aspect-[4/3] rounded-sm mb-3" />
               <span className="category-label text-muted-foreground block">{post.category}</span>
               <h3 className="font-display text-sm md:text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">

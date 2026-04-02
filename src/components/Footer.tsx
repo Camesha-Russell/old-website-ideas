@@ -37,8 +37,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <span className="block font-nav uppercase tracking-[0.3em] text-[8px] text-white/60">The</span>
-              <span className="block font-display italic text-lg text-white -mt-0.5">Moms Approved</span>
+              <span className="block font-display italic text-lg text-white">It's Mom Approved</span>
             </Link>
             <p className="font-body text-white/50 text-xs leading-relaxed">
               Research-backed product recommendations for moms of babies and toddlers aged 0–4. Honest reviews you can trust.
@@ -103,7 +102,7 @@ const Footer = () => {
             <Link to="/privacy-policy" className="font-nav text-white/40 hover:text-white/60 text-[10px] transition-colors">Privacy Policy</Link>
           </div>
           <span className="font-nav text-white/30 text-[10px]">
-            © 2026 Moms Approved. All rights reserved.
+            © 2026 It's Mom Approved. All rights reserved.
           </span>
         </div>
       </div>
