@@ -94,12 +94,14 @@
 
   .btn-peach {
     @apply inline-block px-6 py-2.5 rounded-none text-xs uppercase tracking-[0.1em] font-sans-nav font-medium transition-colors;
-    background-color: hsl(var(--nearblack));
-    color: hsl(var(--background));
+    background: transparent;
+    color: hsl(var(--nearblack));
+    border: 1.5px solid hsl(var(--nearblack));
   }
 
   .btn-peach:hover {
-    background-color: hsl(0 0% 25%);
+    background-color: hsl(var(--nearblack));
+    color: hsl(var(--warm-bg));
   }
 
   .btn-dark {
