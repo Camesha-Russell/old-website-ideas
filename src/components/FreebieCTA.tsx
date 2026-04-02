@@ -25,7 +25,7 @@ const FreebieCTA = () => {
 
           {/* Right — Text + Form */}
           <div className="lg:col-span-3">
-            <h2 className="font-serif-display text-foreground text-xl md:text-2xl font-bold italic leading-tight tracking-wide">
+            <h2 className="font-serif-display text-foreground text-lg md:text-xl font-bold italic leading-tight tracking-wide">
               Get Your Free Starter Kit and Simplify Your Parenting Journey.
             </h2>
             <p className="mt-3 text-muted-foreground text-sm leading-relaxed max-w-lg">
