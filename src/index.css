@@ -113,7 +113,7 @@
   }
 
   .placeholder-img {
-    @apply w-full h-full;
+    @apply w-full;
     background-color: hsl(34 14% 82%);
   }
 }
