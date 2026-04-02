@@ -12,9 +12,9 @@ const FeaturedSection = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
         <h2 className="section-title text-foreground mb-10">Featured</h2>
 
-        {/* Asymmetric Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {/* Top left - medium */}
+        {/* Row 1: 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+          {/* Medium card */}
           <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
             <div className="placeholder-img aspect-[4/3]" />
             <div className="p-4">
@@ -25,10 +25,10 @@ const FeaturedSection = () => {
             </div>
           </div>
 
-          {/* Center - tall */}
-          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer md:row-span-2">
-            <div className="placeholder-img aspect-[3/4] md:h-full md:aspect-auto md:min-h-[400px]" />
-            <div className="p-4 md:absolute md:bottom-0 md:left-0 md:right-0 md:bg-white/90 md:backdrop-blur-sm relative">
+          {/* Tall center card */}
+          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
+            <div className="placeholder-img aspect-[3/4]" />
+            <div className="p-4">
               <span className="category-label text-muted-foreground">{featuredPosts[1].category}</span>
               <h3 className="font-display text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
                 {featuredPosts[1].title}
@@ -36,7 +36,7 @@ const FeaturedSection = () => {
             </div>
           </div>
 
-          {/* Top right - medium */}
+          {/* Medium card */}
           <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
             <div className="placeholder-img aspect-[4/3]" />
             <div className="p-4">
@@ -46,9 +46,12 @@ const FeaturedSection = () => {
               </h3>
             </div>
           </div>
+        </div>
 
-          {/* Bottom left - wide */}
-          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer lg:col-span-1">
+        {/* Row 2: 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Wide card */}
+          <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
             <div className="placeholder-img aspect-[16/9]" />
             <div className="p-4">
               <span className="category-label text-muted-foreground">{featuredPosts[3].category}</span>
@@ -58,7 +61,7 @@ const FeaturedSection = () => {
             </div>
           </div>
 
-          {/* Bottom right - tall */}
+          {/* Tall card */}
           <div className="border border-border rounded-sm overflow-hidden group cursor-pointer">
             <div className="placeholder-img aspect-[4/3]" />
             <div className="p-4">

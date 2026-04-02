@@ -17,7 +17,7 @@ const features = [
     path: "/know-before-you-buy",
   },
   {
-    title: "Ask itsmomapproved",
+    title: "Ask Moms Approved",
     description: "Your questions, honestly answered",
     path: "/ask-itsmomapproved",
   },

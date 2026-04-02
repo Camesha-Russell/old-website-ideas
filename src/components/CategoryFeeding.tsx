@@ -7,10 +7,10 @@ const feedingPosts = [
 const CategoryFeeding = () => {
   return (
     <section className="bg-white">
-      <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
+      <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-20">
         <h2 className="section-title text-foreground mb-10">Feeding</h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
           {/* Wide Image Left */}
           <div className="group cursor-pointer">
             <div className="placeholder-img aspect-[16/10] rounded-sm" />
@@ -29,9 +29,9 @@ const CategoryFeeding = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {feedingPosts.map((post, i) => (
-            <div key={i} className="group cursor-pointer">
+            <div key={i} className="group cursor-pointer pb-4">
               <div className="placeholder-img aspect-[4/3] rounded-sm mb-3" />
-              <span className="category-label text-muted-foreground">{post.category}</span>
+              <span className="category-label text-muted-foreground block">{post.category}</span>
               <h3 className="font-display text-sm md:text-base mt-1.5 leading-snug group-hover:text-muted-foreground transition-colors">
                 {post.title}
               </h3>

@@ -42,7 +42,7 @@ const CurrentlyTrending = () => {
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
           {/* Featured Post */}
           <div className="lg:col-span-7">
             <div className="placeholder-img aspect-[16/10] rounded-sm mb-4" />
@@ -89,10 +89,10 @@ const CurrentlyTrending = () => {
               </div>
             ))}
           </div>
-          <button className="absolute left-0 top-1/2 -translate-y-1/2 -ml-3 w-8 h-8 bg-white rounded-full shadow flex items-center justify-center hover:bg-muted transition-colors hidden md:flex">
+          <button className="absolute left-0 top-1/2 -translate-y-1/2 -ml-3 w-8 h-8 bg-white rounded-full shadow items-center justify-center hover:bg-muted transition-colors hidden md:flex">
             <ChevronLeft size={16} />
           </button>
-          <button className="absolute right-0 top-1/2 -translate-y-1/2 -mr-3 w-8 h-8 bg-white rounded-full shadow flex items-center justify-center hover:bg-muted transition-colors hidden md:flex">
+          <button className="absolute right-0 top-1/2 -translate-y-1/2 -mr-3 w-8 h-8 bg-white rounded-full shadow items-center justify-center hover:bg-muted transition-colors hidden md:flex">
             <ChevronRight size={16} />
           </button>
         </div>

@@ -22,7 +22,7 @@ const MainHeader = () => {
             The
           </span>
           <span className="font-display italic text-xl md:text-2xl text-foreground -mt-0.5">
-            itsmomapproved
+            Moms Approved
           </span>
         </Link>
 
