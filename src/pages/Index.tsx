@@ -2,7 +2,7 @@ import TopNavBar from "@/components/TopNavBar";
 import MainHeader from "@/components/MainHeader";
 import HeroSection from "@/components/HeroSection";
 import CurrentlyTrending from "@/components/CurrentlyTrending";
-import WarmSectionBreak from "@/components/WarmSectionBreak";
+
 import FeaturedSection from "@/components/FeaturedSection";
 import RecentPosts from "@/components/RecentPosts";
 import CategorySleep from "@/components/CategorySleep";
