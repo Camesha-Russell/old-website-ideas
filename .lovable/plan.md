@@ -1,18 +1,23 @@
 
 
-# Fix Currently Trending Section — Softer Background & Tab Style
+# Swap Fonts to Match SheShoppes Edit Daily
 
-## Problem
-The `bg-taupe` background (`hsl(34, 20%, 93%)`) creates too harsh a contrast against the near-white main background. The reference shows a much subtler shift — barely different from the main content area, just a whisper of warmth.
-
-Additionally, the reference tabs ("BEAUTY CORNER" / "FASHION JUNCTION") are **plain uppercase text with an underline on the active tab** — not filled pill buttons like ours.
+## Summary
+Replace **Lora** (body) and **Inter** (nav/labels) with **Open Sans** to match the reference site. Keep **Playfair Display** for headings (already matches).
 
 ## Changes
 
-### `src/components/CurrentlyTrending.tsx`
-1. **Background**: Change `bg-taupe` to a lighter value — use a custom class or inline style like `bg-[hsl(30,15%,96%)]` which is only ~2% darker than the main background, matching the reference's subtle shift.
-2. **Tab buttons**: Replace pill-shaped buttons with plain text tabs — uppercase, no background, with a bottom border on the active tab (like the reference).
+### `index.html`
+- Replace the Google Fonts `<link>` to load **Open Sans** (weights 300, 400, 500, 600) instead of Lora and Inter. Keep Playfair Display.
 
-### `tailwind.config.ts` (optional)
-- Add a `taupe-light` color token (`hsl(30, 15%, 96%)`) if preferred over inline styles.
+### `src/index.css`
+- Change `body` font-family from `'Lora', serif` to `'Open Sans', sans-serif`
+- Update `.font-serif-body` to `'Open Sans', sans-serif`
+- Update `.font-sans-nav` to `'Open Sans', sans-serif`
+
+### `tailwind.config.ts`
+- Change `fontFamily.body` from `Lora` to `Open Sans, sans-serif`
+- Change `fontFamily.nav` from `Inter` to `Open Sans, sans-serif`
+
+No other files need changes — all components already reference these tokens.
 
