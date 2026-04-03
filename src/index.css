@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 20% 98%;
+    --foreground: 0 0% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11%;
+
+    --primary: 0 0% 11%;
+    --primary-foreground: 37 33% 95%;
+
+    --secondary: 34 20% 93%;
+    --secondary-foreground: 0 0% 11%;
+
+    --muted: 34 20% 93%;
+    --muted-foreground: 0 0% 35%;
+
+    --accent: 25 41% 85%;
+    --accent-foreground: 0 0% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 34 15% 90%;
+    --input: 34 18% 85%;
+    --ring: 0 0% 11%;
+
+    --radius: 0.5rem;
+
+    --warm-bg: 30 20% 98%;
+    --taupe: 34 20% 93%;
+    --peach: 25 41% 85%;
+    --nearblack: 0 0% 11%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .font-serif-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-serif-body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .font-sans-nav {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .section-title {
+    @apply font-serif-display uppercase tracking-[0.25em] text-center text-2xl md:text-3xl font-bold;
+  }
+
+  .category-label {
+    @apply font-sans-nav uppercase tracking-[0.15em] text-[12px] font-semibold text-foreground;
+  }
+
+  .nav-link {
+    @apply font-sans-nav uppercase tracking-[0.12em] text-[11px] font-medium;
+  }
+
+  .btn-peach {
+    @apply inline-block px-6 py-2.5 rounded-none text-xs uppercase tracking-[0.1em] font-sans-nav font-medium transition-colors;
+    background: transparent;
+    color: hsl(var(--nearblack));
+    border: 1.5px solid hsl(var(--nearblack));
+  }
+
+  .btn-peach:hover {
+    background-color: hsl(var(--nearblack));
+    color: hsl(var(--warm-bg));
+  }
+
+  .btn-dark {
+    @apply inline-block px-6 py-2.5 rounded-[20px] text-xs uppercase tracking-[0.1em] font-sans-nav font-medium transition-colors;
+    background-color: hsl(var(--nearblack));
+    color: hsl(var(--warm-bg));
+  }
+
+  .btn-dark:hover {
+    background-color: hsl(0 0% 20%);
+  }
+
+  .placeholder-img {
+    @apply w-full;
+    background-color: hsl(34 14% 82%);
+  }
+}

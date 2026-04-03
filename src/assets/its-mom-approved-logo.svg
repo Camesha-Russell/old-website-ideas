@@ -1,0 +1,36 @@
+<svg width="800" height="220" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- transparent background -->
+
+  <!-- Vertical divider -->
+  <line x1="180" y1="24" x2="180" y2="186" stroke="#C07B60" stroke-width="1.1"/>
+
+  <!-- it's -->
+  <text x="162"
+    y="122"
+    text-anchor="end"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic"
+    font-weight="bold"
+    font-size="42"
+    fill="#C07B60"
+    letter-spacing="1">it's</text>
+
+  <!-- MOM -->
+  <text x="210"
+    y="168"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-weight="bold"
+    font-size="96"
+    fill="#1C1714"
+    letter-spacing="2">MOM</text>
+
+  <!-- approved — dropped further -->
+  <text x="620"
+    y="210"
+    text-anchor="end"
+    font-family="'Courier New', Courier, monospace"
+    font-weight="bold"
+    font-size="33"
+    fill="#C07B60"
+    letter-spacing="5">approved</text>
+</svg>
