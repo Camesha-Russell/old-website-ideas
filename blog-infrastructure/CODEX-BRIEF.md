@@ -96,15 +96,17 @@ Templates are at `blog-infrastructure/templates/`. Each one has `{{PLACEHOLDER}}
 
 ## How a Post Gets to You (The Handoff)
 
-Cowork produces a handoff file at: `blog-infrastructure/handoffs/[slug]-handoff.md`
+Cowork delivers the handoff **directly into this Codex conversation** via Chrome automation — you do not need to look for files or poll a folder. When a post passes all 15 quality checks, Cowork automatically navigates to this tab and pastes the handoff text.
 
-The handoff has status `READY FOR CLAUDE CODE` when it's ready for you.
+A backup copy is also saved at: `blog-infrastructure/handoffs/[slug]-handoff.md`
+
+The handoff status will be `READY FOR CODEX` when pasted.
 
 It contains two sections:
 1. **FRONTMATTER FIELDS** — values for every `{{PLACEHOLDER}}` in the template
 2. **CONTENT SECTIONS** — named blocks of post body text (e.g., `OUR_PICK_SECTION`, `REVIEWS_SECTION`)
 
-Your job: read the handoff, pick the right template, fill every placeholder, save the completed file.
+Your job: read the pasted handoff, pick the right template, fill every placeholder, save the completed file.
 
 ---
 

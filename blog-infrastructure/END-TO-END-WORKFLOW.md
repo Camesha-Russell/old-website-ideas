@@ -22,12 +22,14 @@ PHASE 3: OPTIMIZE
 PHASE 4: QUALITY CHECK
   └── Cowork: /review-post → all 15 checklist items must pass
 
-PHASE 5: HANDOFF
+PHASE 5: HANDOFF DELIVERY (AUTOMATIC — no manual steps)
   └── Cowork: creates handoff file → saves to blog-infrastructure/handoffs/
+  └── Cowork: uses Chrome MCP to navigate to Codex tab and paste handoff directly
+  └── Codex URL: https://chatgpt.com/codex/tasks/task_e_69d02a9ca120832dbf824b4f19d17d11
 
 PHASE 6: PUBLISH TO DRAFT
-  └── Claude Code: reads handoff + CLAUDE.md → creates .mdx file in src/content/posts/
-  └── Claude Code: reports back "file created, ready for Cowork review"
+  └── Codex: reads pasted handoff + CODEX-BRIEF.md → creates .mdx file in src/content/posts/
+  └── Codex: reports back "file created, ready for Cowork review"
 
 PHASE 7: VERIFY
   └── Cowork: runs post-review checklist (COWORK-HANDOFF-FORMAT.md)
@@ -52,9 +54,9 @@ PHASE 8: GO LIVE
 | SEO optimization | Cowork | `/seo-optimize` |
 | Affiliate link setup | Cowork | `/affiliate-optimizer` |
 | Quality check | Cowork | `/review-post` |
-| Handoff file creation | Cowork | Manual file creation using `COWORK-HANDOFF-FORMAT.md` |
-| Blog infrastructure setup (once) | Claude Code | `CLAUDE.md` setup instructions |
-| File creation in codebase | Claude Code | `CLAUDE.md` + templates |
+| Handoff file creation + delivery | Cowork | Auto-creates file + Chrome MCP pastes into Codex tab |
+| Blog infrastructure setup (once) | Codex | `CODEX-BRIEF.md` setup instructions |
+| File creation in codebase | Codex | `CODEX-BRIEF.md` + templates |
 | Post-publish verification | Cowork | `COWORK-HANDOFF-FORMAT.md` post-review checklist |
 | Final go-live approval | Camesha | Lovable dashboard — change status to "published" |
 
@@ -70,8 +72,8 @@ PHASE 8: GO LIVE
 | /seo-optimize | 5 minutes |
 | /affiliate-optimizer | 5-10 minutes |
 | /review-post | 5 minutes |
-| Handoff file creation | 5 minutes |
-| Claude Code file creation | 5 minutes |
+| Handoff + Chrome delivery to Codex | 2 minutes (Cowork does it automatically) |
+| Codex file creation | 5 minutes |
 | Cowork post-publish verify | 5 minutes |
 | Camesha final review | 5 minutes |
 
@@ -107,9 +109,9 @@ PHASE 8: GO LIVE
 2. Say: "Let's write a post" or "Research brief"
 3. Cowork runs `/research-brief`, picks the best post for today
 4. Approve the topic
-5. Cowork writes, optimizes, checks quality, and creates the handoff
-6. Open Claude Code, point it at CLAUDE.md and the handoff file
-7. Claude Code creates the .mdx file
+5. Cowork writes, optimizes, checks quality
+6. Cowork auto-delivers handoff to Codex via Chrome (no action needed from you)
+7. Codex creates the .mdx file in the repo
 8. Cowork verifies
 9. You approve in Lovable
 
