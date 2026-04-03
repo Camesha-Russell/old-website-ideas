@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pillar Post Template — itsmomapproved.com</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: #f5f2ee; color: #1a1a1a; font-size: 17px; line-height: 1.75; }
+
+  .annotation { font-family: 'Arial', sans-serif; font-size: 11px; font-weight: 700; background: #7c5cbf; color: white; padding: 2px 7px; border-radius: 10px; position: relative; top: -2px; margin-left: 8px; letter-spacing: 0.5px; white-space: nowrap; }
+  .annotation-block { font-family: 'Arial', sans-serif; font-size: 11px; background: #f5f0ff; border-left: 3px solid #7c5cbf; color: #4a2d8a; padding: 6px 10px; margin: 8px 0 4px; border-radius: 0 4px 4px 0; }
+
+  .page-wrap { max-width: 780px; margin: 0 auto; background: #fff; padding-bottom: 60px; }
+
+  .ftc { background: #fafafa; border-bottom: 1px solid #e8e4de; padding: 10px 32px; font-family: 'Arial', sans-serif; font-size: 12px; color: #777; line-height: 1.5; }
+
+  .post-header { padding: 36px 32px 24px; border-bottom: 1px solid #e8e4de; }
+  .pillar-tag { display: inline-block; font-family: 'Arial', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #d4956a; margin-bottom: 14px; }
+  .post-title { font-size: 34px; font-weight: 700; line-height: 1.2; color: #1a1a1a; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .post-meta { font-family: 'Arial', sans-serif; font-size: 13px; color: #999; margin-bottom: 16px; }
+  .post-meta span { margin-right: 16px; }
+
+  /* OPENING — Dr. Jazmine register */
+  .opening-block { padding: 28px 32px 0; }
+  .opening-text { font-size: 18px; line-height: 1.8; color: #2a2a2a; margin-bottom: 14px; font-style: italic; }
+  .opening-text strong { font-style: normal; color: #1a1a1a; }
+
+  /* METHODOLOGY BADGE */
+  .methodology { background: #f9f4ee; border: 1px solid #e8d5be; border-radius: 10px; padding: 14px 20px; margin: 20px 32px 0; display: flex; align-items: flex-start; gap: 12px; }
+  .methodology-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .methodology-text { font-family: 'Arial', sans-serif; font-size: 13px; color: #6b4c2a; line-height: 1.55; }
+  .methodology-text strong { color: #4a2e10; font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; display: block; margin-bottom: 3px; }
+
+  /* QUICK REFERENCE TABLE */
+  .quick-ref { margin: 32px 32px 0; }
+  .quick-ref-label { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #888; margin-bottom: 14px; }
+  .quick-ref-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 8px; margin-bottom: 6px; font-size: 15px; border: 1px solid #e8e4de; }
+  .quick-ref-item.top { background: #f9f4ee; border-color: #d4956a; }
+  .quick-ref-item.budget { background: #f2f7f2; border-color: #b8d8b8; }
+  .quick-ref-item.other { background: #fafafa; }
+  .qr-badge { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+  .qr-badge.top { background: #d4956a; color: white; }
+  .qr-badge.budget { background: #4a7a4a; color: white; }
+  .qr-badge.other { background: #ddd; color: #555; }
+  .qr-name { font-weight: 700; color: #1a1a1a; }
+  .qr-price { font-family: 'Arial', sans-serif; font-weight: 700; color: #555; font-size: 14px; }
+  .qr-desc { font-family: 'Arial', sans-serif; font-size: 12px; color: #888; margin-top: 1px; }
+  .qr-left { display: flex; flex-direction: column; }
+
+  /* BODY */
+  .body-content { padding: 32px 32px 0; }
+  h2 { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-top: 40px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e8e2da; line-height: 1.3; }
+  h3 { font-size: 17px; font-weight: 700; color: #3a3a3a; margin-top: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 18px; color: #2a2a2a; }
+  p em { font-style: italic; color: #555; }
+
+  /* PRODUCT SECTIONS */
+  .product-section { margin-bottom: 36px; padding-bottom: 36px; border-bottom: 1px solid #f0ebe4; }
+  .product-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 18px; }
+  .product-image-lg { width: 200px; min-width: 200px; height: 200px; background: #e8e2da; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #a89e94; font-family: 'Arial', sans-serif; font-size: 12px; font-weight: 600; text-align: center; flex-shrink: 0; }
+  .product-header-text { flex: 1; padding-top: 4px; }
+  .product-type-tag { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #d4956a; margin-bottom: 6px; }
+  .product-type-tag.budget { color: #4a7a4a; }
+  .product-type-tag.use-case { color: #5a7aaa; }
+  .product-title { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+  .product-price { font-family: 'Arial', sans-serif; font-weight: 700; font-size: 17px; color: #555; margin-bottom: 14px; }
+  .cta-btn { display: inline-block; background: #d4956a; color: white; font-family: 'Arial', sans-serif; font-weight: 700; font-size: 14px; padding: 11px 22px; border-radius: 8px; text-decoration: none; letter-spacing: 0.3px; cursor: pointer; }
+  .cta-btn.green { background: #4a7a4a; }
+  .cta-btn.blue { background: #4a6a9a; }
+
+  /* WOULDN'T BUY */
+  .skip-block { background: #fff5f5; border: 1px solid #f5b8b8; border-left: 4px solid #e05c5c; border-radius: 0 10px 10px 0; padding: 20px 24px; margin: 28px 0; }
+  .skip-label { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #c04040; margin-bottom: 8px; }
+  .skip-product { font-size: 17px; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+  .skip-reason { font-size: 15px; color: #5a2020; line-height: 1.6; margin-bottom: 10px; }
+  .skip-redirect { font-family: 'Arial', sans-serif; font-size: 13px; color: #4a7a4a; font-weight: 700; }
+
+  /* BUYING CRITERIA */
+  .criteria-list { list-style: none; padding: 0; margin: 16px 0 0; }
+  .criteria-list li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #f0ebe4; font-size: 16px; }
+  .criteria-list li:last-child { border-bottom: none; }
+  .criteria-num { font-family: 'Arial', sans-serif; font-size: 13px; font-weight: 800; color: #d4956a; min-width: 24px; padding-top: 2px; }
+  .criteria-text strong { display: block; font-weight: 700; color: #1a1a1a; margin-bottom: 3px; }
+  .criteria-text span { font-size: 14px; color: #666; }
+
+  /* BOTTOM LINE */
+  .bottom-line { background: #f9f4ee; border-radius: 12px; padding: 24px 28px; margin: 40px 0 0; }
+  .bottom-line-label { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #d4956a; margin-bottom: 10px; }
+  .bottom-line p { margin-bottom: 0; font-size: 17px; }
+
+  .pillar-link { background: #f5f2ee; border-radius: 10px; padding: 18px 22px; margin-top: 36px; display: flex; align-items: center; gap: 14px; text-decoration: none; border: 1px solid #e8e4de; }
+  .pillar-link-icon { width: 44px; height: 44px; background: #d4956a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0; }
+  .pillar-link-text { font-family: 'Arial', sans-serif; }
+  .pillar-link-text small { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #d4956a; margin-bottom: 2px; }
+  .pillar-link-text strong { font-size: 15px; color: #1a1a1a; }
+
+  .section-divider { height: 1px; background: #e8e2da; margin: 36px 0; }
+
+  .annotation-panel { background: #1a1a1a; color: #fff; font-family: 'Arial', sans-serif; font-size: 13px; padding: 24px 32px; margin-top: 48px; line-height: 1.6; }
+  .annotation-panel h3 { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: #a88fe0; margin-bottom: 16px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+  .annotation-panel ul { padding-left: 18px; }
+  .annotation-panel li { margin-bottom: 8px; color: #ccc; }
+  .annotation-panel li strong { color: #fff; }
+  .annotation-panel li em { color: #c4a8f0; font-style: normal; }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- FTC -->
+  <div class="ftc">
+    <span class="annotation">① ALWAYS TOP</span>
+    Heads up: this post contains affiliate links. If you buy through our links, we may earn a small commission at no extra cost to you. We research every product we recommend. We only share what we'd tell a friend.
+  </div>
+
+  <!-- HEADER -->
+  <div class="post-header">
+    <div class="pillar-tag">🤝 Carriers &amp; Strollers <span class="annotation">② PILLAR TAG</span></div>
+    <div class="post-title">Best Baby Carriers for Newborns: What We Actually Found After Testing</div>
+    <div class="post-meta">
+      <span>April 3, 2026</span>
+      <span>12 min read <span class="annotation">③ Longer read time — pillar posts are 1,800-2,400 words</span></span>
+    </div>
+  </div>
+
+  <!-- OPENING — Dr. Jazmine register -->
+  <div class="opening-block">
+    <div class="annotation-block">④ Opening paragraph: Dr. Jazmine voice. Acknowledges what Maya is navigating FIRST, then delivers the answer. This is the only content type that opens with empathy before the verdict. 2-3 sentences max before getting to the recommendation.</div>
+    <p class="opening-text">
+      There are approximately four thousand baby carrier options and none of the best-of lists seem to agree.
+      <strong>Here's what we actually found after cross-referencing hip-healthy certifications, 40,000+ Amazon reviews, and input from a certified babywearing educator: for most newborns, the Ergobaby Omni 360 is the one worth owning.</strong>
+      If you need it today and the price is a stretch, the Boba Wrap gets you there for $40 less.
+    </p>
+  </div>
+
+  <!-- METHODOLOGY -->
+  <div class="methodology">
+    <div class="methodology-icon">🔬</div>
+    <div class="methodology-text">
+      <strong>How We Researched This</strong>
+      We cross-referenced 40,000+ Amazon reviews, pediatric hip dysplasia safety databases, International Hip Dysplasia Institute certifications, and a certified babywearing educator's breakdown of positioning for newborns.
+    </div>
+  </div>
+  <div class="annotation-block" style="margin: 8px 32px 0;">⑤ Methodology badge: required on every pillar post — more prominent here than on product posts because Maya is using this as a trusted reference, not just one recommendation. Specific sources named. "After extensive research" is not acceptable here.</div>
+
+  <!-- QUICK REFERENCE -->
+  <div class="quick-ref">
+    <div class="quick-ref-label">Quick Reference <span class="annotation">⑥ SCANNABLE — for the Maya who has 3 minutes</span></div>
+
+    <div class="quick-ref-item top">
+      <div class="qr-left">
+        <span class="qr-name">Ergobaby Omni 360</span>
+        <span class="qr-desc">Best overall — hip-healthy, grows newborn to toddler</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="qr-price">$180</span>
+        <span class="qr-badge top">Top Pick</span>
+      </div>
+    </div>
+
+    <div class="quick-ref-item budget">
+      <div class="qr-left">
+        <span class="qr-name">Boba Wrap</span>
+        <span class="qr-desc">Best budget — simple, newborn-safe, no buckles</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="qr-price">$40</span>
+        <span class="qr-badge budget">Budget</span>
+      </div>
+    </div>
+
+    <div class="quick-ref-item other">
+      <div class="qr-left">
+        <span class="qr-name">Baby Tula Free-to-Grow</span>
+        <span class="qr-desc">Best for city moms — slim profile, public transit friendly</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="qr-price">$149</span>
+        <span class="qr-badge other">City Pick</span>
+      </div>
+    </div>
+
+    <div class="quick-ref-item other" style="border-color:#f5b8b8; background:#fff8f8;">
+      <div class="qr-left">
+        <span class="qr-name">BabyBjörn One Air</span>
+        <span class="qr-desc" style="color:#c04040;">We don't recommend this — see below</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="qr-price" style="color:#c04040;">$200</span>
+        <span class="qr-badge" style="background:#e05c5c;color:white;">Skip</span>
+      </div>
+    </div>
+  </div>
+  <div class="annotation-block" style="margin: 8px 32px 0;">⑥ Quick reference table: every pick in one scan. The Skip product appears here too — in red — so Maya sees immediately that not everything passes. This is a trust signal. Sites that only show winners lose credibility. The table includes the skip so she can see it wasn't just omitted.</div>
+
+  <!-- BODY -->
+  <div class="body-content">
+
+    <h2>Best Overall: Ergobaby Omni 360 <span style="font-weight:400;font-size:18px;color:#888;">($180)</span></h2>
+
+    <div class="product-section">
+      <div class="product-header">
+        <div class="product-image-lg">PRODUCT<br>IMAGE<br>200×200<br>Left-aligned</div>
+        <div class="product-header-text">
+          <div class="product-type-tag">⭐ Best Overall</div>
+          <div class="product-title">Ergobaby Omni 360</div>
+          <div class="product-price">$180</div>
+          <a class="cta-btn" href="#">Shop Ergobaby Omni 360 →</a>
+        </div>
+      </div>
+      <p><strong>4.7 stars across 18,000+ Amazon reviews.</strong> The Omni 360 earns the top spot because it's the only carrier in this price range that covers every stage without adapting: newborn inward-facing, toddler outward-facing, hip carries, back carries. Maya buys it once and it follows the baby.</p>
+      <p>The hip-healthy certification from the International Hip Dysplasia Institute is the specific thing that separates it from carriers that look similar but aren't verified. <em>For newborns especially, positioning matters — and this is one of the few carriers that gets it right out of the box without an infant insert.</em></p>
+    </div>
+    <div class="annotation-block">⑦ Product image LEFT-aligned for pillar posts — different from product posts where it's right-aligned. Why: pillar posts have more picks. Left-aligned with text wrapping right creates a consistent visual rhythm across multiple sections. CTA button sits inside the product header block so it's always adjacent to the product name and price.</div>
+
+    <h2>Best Budget: Boba Wrap <span style="font-weight:400;font-size:18px;color:#888;">($40)</span></h2>
+
+    <div class="product-section">
+      <div class="product-header">
+        <div class="product-image-lg" style="background:#d4e8d4;">BUDGET<br>PRODUCT<br>IMAGE<br>200×200</div>
+        <div class="product-header-text">
+          <div class="product-type-tag budget">💚 Best Budget</div>
+          <div class="product-title">Boba Wrap</div>
+          <div class="product-price" style="color:#4a7a4a;">$40</div>
+          <a class="cta-btn green" href="#">Shop Boba Wrap →</a>
+        </div>
+      </div>
+      <p>The Boba Wrap doesn't do everything the Ergobaby does. <strong>It's a stretch wrap — one piece of fabric, no buckles, no hardware.</strong> For moms who want a newborn-safe carry that feels as close as possible to just holding the baby, it's the call. The learning curve is real (15 minutes of YouTube), but once it's clicked it's clicked.</p>
+      <p><em>The trade-off: it maxes out at around 15 lbs, so you'll outgrow it. If this is baby one of potentially several, it makes more sense to invest in the Ergobaby. If budget is genuinely the constraint right now, the Boba gets the job done for the first four months.</em></p>
+    </div>
+
+    <h2>Best for City Moms: Baby Tula Free-to-Grow <span style="font-weight:400;font-size:18px;color:#888;">($149)</span></h2>
+
+    <div class="product-section">
+      <div class="product-header">
+        <div class="product-image-lg" style="background:#d4d8e8;">CITY PICK<br>IMAGE<br>200×200</div>
+        <div class="product-header-text">
+          <div class="product-type-tag use-case">🚇 Best for City Moms</div>
+          <div class="product-title">Baby Tula Free-to-Grow</div>
+          <div class="product-price" style="color:#4a6a9a;">$149</div>
+          <a class="cta-btn blue" href="#">Shop Baby Tula →</a>
+        </div>
+      </div>
+      <p>The Tula is narrower and flatter than the Ergobaby. On a subway car or maneuvering through a coffee shop, that matters. <strong>It's also one of the better-looking carriers — and for city moms who are wearing this thing every day, aesthetics are not a trivial consideration.</strong></p>
+    </div>
+    <div class="annotation-block">⑧ Use-case picks: only include when the situation is genuinely distinct and the product genuinely wins for that reason. "Best Organic" or "Best for Stylish Moms" don't qualify — they're padding. City vs. suburban is a real use-case split with real trade-offs.</div>
+
+    <!-- WOULDN'T BUY — required section -->
+    <h2>What We Wouldn't Buy</h2>
+    <div class="skip-block">
+      <div class="skip-label">🚫 Skip This <span class="annotation">⑨ RED = stop signal. Required on every pillar post.</span></div>
+      <div class="skip-product">BabyBjörn One Air — $200</div>
+      <div class="skip-reason">It's the most-marketed carrier in this category and one of the least value-per-dollar options on this list. The One Air consistently gets flagged in reviews for hip positioning — the leg spread is narrower than what the IHDI recommends for the "M" position in newborns. For $200, that's not acceptable. The Ergobaby is $20 less and certified.</div>
+      <div class="skip-redirect">→ Get the Ergobaby Omni 360 instead ($180) — IHDI-certified, same price range, better positioning.</div>
+    </div>
+    <div class="annotation-block">⑨ Skip section: red-tinted callout, always present. This is the most trust-building element on a pillar page. Competitors don't include it because it kills the affiliate commission on that product. We include it because the one honest "skip" earns more trust than ten positive picks. Positioned after all the positive picks so Maya has context for what a good carrier looks like before reading why one doesn't make it.</div>
+
+    <!-- BUYING CRITERIA -->
+    <h2>What to Look For</h2>
+    <div class="annotation-block" style="margin-bottom: 12px;">⑩ Buying criteria: specific to THIS category, not generic tips. These should be the exact factors that informed the picks above — so the post's reasoning is transparent. If Maya reads this section she should feel like she could now evaluate any carrier herself.</div>
+    <ul class="criteria-list">
+      <li>
+        <span class="criteria-num">01</span>
+        <div class="criteria-text">
+          <strong>IHDI hip-healthy certification</strong>
+          <span>The International Hip Dysplasia Institute certifies carriers that support the "M" position — knees higher than hips, fabric from knee to knee. Not all carriers have this. Check before you buy.</span>
+        </div>
+      </li>
+      <li>
+        <span class="criteria-num">02</span>
+        <div class="criteria-text">
+          <strong>Newborn-ready without an insert</strong>
+          <span>Infant inserts are sold separately, easy to lose, and one more thing to wrestle with at 3am. Carriers that fit a newborn out of the box are worth paying more for.</span>
+        </div>
+      </li>
+      <li>
+        <span class="criteria-num">03</span>
+        <div class="criteria-text">
+          <strong>Weight range that covers the full first year</strong>
+          <span>Many budget carriers max out at 15 lbs. That's 3-4 months. A carrier that grows to 33+ lbs is a different value proposition entirely.</span>
+        </div>
+      </li>
+      <li>
+        <span class="criteria-num">04</span>
+        <div class="criteria-text">
+          <strong>Lower back support for the wearer</strong>
+          <span>Maya's body matters too. A carrier that transfers weight to the hips rather than the shoulders is the difference between comfortable and done by noon.</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- BOTTOM LINE -->
+    <div class="section-divider"></div>
+    <div class="bottom-line">
+      <div class="bottom-line-label">The Bottom Line <span class="annotation">⑪ Warm close — Dr. Jazmine voice. Not a summary. Not a CTA disguised as a conclusion.</span></div>
+      <p>The Ergobaby Omni 360 is the carrier most families won't outgrow. If the price is a stretch right now, the Boba Wrap gets you through the newborn stage and gives you time to save for the upgrade. Both are safe, both are certified, both are good calls. You know your situation better than any list does.</p>
+    </div>
+    <div class="annotation-block">⑪ Bottom line card: branded callout. Dr. Jazmine closes — warm, direct, acknowledges Maya's agency. Never a summary of what was already said. One line that sends her off with confidence. The "you know your situation" framing is intentional — it respects the reader and avoids being prescriptive about a decision that involves budget, lifestyle, and preference.</div>
+
+    <!-- PILLAR LINK — note: pillar pages link DOWN to cluster posts, not up -->
+    <div style="margin-top: 32px;">
+      <div class="annotation-block">⑫ Pillar pages link DOWN to cluster posts, not up to another pillar. Each related comparison post gets a natural inline mention + link within its relevant section. These placeholders appear here for posts not yet written.</div>
+      <div style="background:#fafafa; border: 1px dashed #ccc; border-radius: 8px; padding: 14px 18px; font-family: Arial, sans-serif; font-size: 13px; color: #888; margin-top: 8px;">
+        [FUTURE LINK] → Ergobaby Omni 360 vs Carrier X — Full Comparison (link when live)
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ANNOTATION PANEL -->
+  <div class="annotation-panel">
+    <h3>Pillar Post Design Decisions</h3>
+    <ul>
+      <li><strong>① FTC top:</strong> <em>Same as product post — always first, always exact language.</em></li>
+      <li><strong>② Pillar tag:</strong> <em>Orients Maya. On a pillar page she needs to know she's in the definitive category guide, not a single-product post.</em></li>
+      <li><strong>③ Longer read time (12 min):</strong> <em>Pillar posts are 1,800-2,400 words. Setting the expectation signals depth and earns the read from Maya who is doing serious research.</em></li>
+      <li><strong>④ Dr. Jazmine opening:</strong> <em>The only content type that opens with empathy before the answer. One sentence acknowledging the overwhelm, then immediately into the recommendation. Not a long warmup — a knowing nod, then the answer.</em></li>
+      <li><strong>⑤ Methodology badge:</strong> <em>More prominent here than on product posts. Maya is using this page as a trusted reference. She needs to see HOW you know what you know — not "after extensive research" but actual named sources.</em></li>
+      <li><strong>⑥ Quick reference table:</strong> <em>For the 3-minute Maya. Every pick at a glance — including the skip in red. Sites that only show winners look like paid placement. The skip in the table is a trust signal that nothing was bought.</em></li>
+      <li><strong>⑦ Image left-aligned:</strong> <em>Different from product posts (right-aligned). Why: pillar posts have multiple product sections. Left-aligned with text wrapping right creates a consistent rhythm across all sections. Switching alignment per section creates visual chaos.</em></li>
+      <li><strong>⑧ Use-case picks only when genuinely distinct:</strong> <em>City vs. suburban is a real split. "Best Organic" is padding. Every additional section must earn its place by addressing a situation where the top pick genuinely isn't the right answer.</em></li>
+      <li><strong>⑨ Skip section required:</strong> <em>Red callout. The most trust-building element on the page. Never softened, never removed. Direct reason + immediate redirect. This is what separates itsmomapproved.com from every affiliate site that only shows winners.</em></li>
+      <li><strong>⑩ Buying criteria numbered:</strong> <em>Numbered list, not bullets — implies a ranked priority. Each criterion names the specific factor and why it matters for THIS category. Generic tips ("make sure it's comfortable") don't make the cut.</em></li>
+      <li><strong>⑪ Bottom line card:</strong> <em>Branded warm-toned callout. Dr. Jazmine closes. Respects Maya's agency — doesn't tell her what to do, gives her the information and trusts her to decide. No "click here to buy" energy.</em></li>
+      <li><strong>⑫ Links down, not up:</strong> <em>Pillar pages are the authority node. They link down to cluster/comparison posts. Never link from a pillar page up to another pillar — that dilutes topical authority.</em></li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

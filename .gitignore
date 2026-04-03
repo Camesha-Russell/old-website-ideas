@@ -1,0 +1,8 @@
+# Binary skill files — not needed in repo
+*.skill
+
+# macOS
+.DS_Store
+
+# Session-specific files
+.git/

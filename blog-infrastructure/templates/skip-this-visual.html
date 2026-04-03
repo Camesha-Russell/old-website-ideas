@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skip This Template — itsmomapproved.com</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: #f5f2ee; color: #1a1a1a; font-size: 17px; line-height: 1.75; }
+
+  .annotation { font-family: 'Arial', sans-serif; font-size: 11px; font-weight: 700; background: #c04040; color: white; padding: 2px 7px; border-radius: 10px; position: relative; top: -2px; margin-left: 8px; letter-spacing: 0.5px; white-space: nowrap; }
+  .annotation-block { font-family: 'Arial', sans-serif; font-size: 11px; background: #fff5f5; border-left: 3px solid #e05c5c; color: #7a2020; padding: 6px 10px; margin: 8px 0 4px; border-radius: 0 4px 4px 0; }
+
+  .page-wrap { max-width: 780px; margin: 0 auto; background: #fff; padding-bottom: 60px; }
+
+  .ftc { background: #fafafa; border-bottom: 1px solid #e8e4de; padding: 10px 32px; font-family: 'Arial', sans-serif; font-size: 12px; color: #777; line-height: 1.5; }
+
+  .post-header { padding: 36px 32px 24px; border-bottom: 1px solid #e8e4de; }
+  .pillar-tag { display: inline-block; font-family: 'Arial', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #d4956a; margin-bottom: 14px; }
+  .skip-eyebrow { display: inline-block; font-family: 'Arial', sans-serif; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #e05c5c; margin-bottom: 8px; margin-left: 12px; }
+  .post-title { font-size: 34px; font-weight: 700; line-height: 1.2; color: #1a1a1a; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .post-meta { font-family: 'Arial', sans-serif; font-size: 13px; color: #999; }
+  .post-meta span { margin-right: 16px; }
+
+  /* VERDICT BLOCK — most important element, different from product post */
+  .verdict-block { margin: 28px 32px 0; background: #fff0f0; border: 2px solid #e05c5c; border-radius: 12px; padding: 24px 28px; }
+  .verdict-label { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #e05c5c; margin-bottom: 10px; }
+  .verdict-text { font-size: 20px; font-weight: 700; line-height: 1.4; color: #1a1a1a; margin-bottom: 6px; }
+  .verdict-reason { font-size: 16px; color: #5a2020; line-height: 1.6; font-style: italic; }
+
+  /* PRODUCT COMPARISON ROW */
+  .comparison-row { display: flex; gap: 16px; margin: 28px 32px 0; }
+  .skip-card { flex: 1; background: #fff5f5; border: 2px solid #f5b8b8; border-radius: 12px; padding: 18px 20px; }
+  .get-card { flex: 1; background: #f2f7f2; border: 2px solid #b8d8b8; border-radius: 12px; padding: 18px 20px; }
+  .card-label { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .card-label.skip { color: #e05c5c; }
+  .card-label.get { color: #4a7a4a; }
+  .card-image { width: 100%; height: 120px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Arial', sans-serif; font-size: 12px; font-weight: 600; color: #888; margin-bottom: 12px; }
+  .card-image.skip-img { background: #f5d8d8; }
+  .card-image.get-img { background: #d4e8d4; }
+  .card-name { font-size: 16px; font-weight: 700; color: #1a1a1a; margin-bottom: 4px; }
+  .card-price-skip { font-family: 'Arial', sans-serif; font-weight: 700; color: #c04040; font-size: 15px; margin-bottom: 8px; text-decoration: line-through; }
+  .card-price-get { font-family: 'Arial', sans-serif; font-weight: 700; color: #4a7a4a; font-size: 15px; margin-bottom: 10px; }
+  .card-verdict { font-size: 13px; line-height: 1.55; }
+  .card-verdict.skip { color: #7a2020; }
+  .card-verdict.get { color: #2a4a2a; }
+  .cta-get { display: inline-block; background: #4a7a4a; color: white; font-family: 'Arial', sans-serif; font-weight: 700; font-size: 13px; padding: 9px 18px; border-radius: 8px; text-decoration: none; margin-top: 10px; cursor: pointer; }
+
+  /* BODY */
+  .body-content { padding: 32px 32px 0; }
+  h2 { font-size: 22px; font-weight: 700; color: #1a1a1a; margin-top: 40px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e8e2da; line-height: 1.3; }
+  p { margin-bottom: 18px; color: #2a2a2a; }
+  p strong { color: #1a1a1a; }
+  p em { font-style: italic; color: #555; }
+
+  /* RESEARCH BLOCK */
+  .research-block { background: #fafafa; border: 1px solid #e8e4de; border-radius: 10px; padding: 20px 24px; margin: 20px 0; }
+  .research-label { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #888; margin-bottom: 12px; }
+  .research-item { display: flex; gap: 12px; margin-bottom: 10px; font-size: 15px; align-items: flex-start; }
+  .research-item:last-child { margin-bottom: 0; }
+  .research-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+  .research-text { color: #2a2a2a; line-height: 1.55; }
+  .research-text strong { color: #1a1a1a; }
+
+  /* MARKETING CALLOUT */
+  .marketing-block { background: #fffbf0; border: 1px solid #f0d888; border-left: 4px solid #d4a800; border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 28px 0; }
+  .marketing-label { font-family: 'Arial', sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: #a07800; margin-bottom: 8px; }
+  .marketing-claim { font-size: 16px; font-style: italic; color: #7a5a00; margin-bottom: 10px; }
+  .marketing-reality { font-size: 15px; color: #2a2a2a; }
+
+  /* METHODOLOGY NOTE */
+  .method-note { font-family: 'Arial', sans-serif; font-size: 13px; color: #777; border-top: 1px solid #e8e4de; padding-top: 14px; margin-top: 32px; line-height: 1.6; }
+  .method-note strong { color: #555; }
+
+  /* PILLAR LINK */
+  .pillar-link { background: #f5f2ee; border-radius: 10px; padding: 18px 22px; margin-top: 32px; display: flex; align-items: center; gap: 14px; text-decoration: none; border: 1px solid #e8e4de; }
+  .pillar-link-icon { width: 44px; height: 44px; background: #d4956a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0; }
+  .pillar-link-text { font-family: 'Arial', sans-serif; }
+  .pillar-link-text small { display: block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #d4956a; margin-bottom: 2px; }
+  .pillar-link-text strong { font-size: 15px; color: #1a1a1a; }
+
+  .section-divider { height: 1px; background: #e8e2da; margin: 32px 0; }
+
+  .annotation-panel { background: #1a1a1a; color: #fff; font-family: 'Arial', sans-serif; font-size: 13px; padding: 24px 32px; margin-top: 48px; line-height: 1.6; }
+  .annotation-panel h3 { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; color: #f08080; margin-bottom: 16px; border-bottom: 1px solid #333; padding-bottom: 8px; }
+  .annotation-panel ul { padding-left: 18px; }
+  .annotation-panel li { margin-bottom: 8px; color: #ccc; }
+  .annotation-panel li strong { color: #fff; }
+  .annotation-panel li em { color: #f0a0a0; font-style: normal; }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- FTC -->
+  <div class="ftc">
+    <span class="annotation">① ALWAYS TOP</span>
+    Heads up: this post contains affiliate links. If you buy through our links, we may earn a small commission at no extra cost to you. We research every product we recommend. We only share what we'd tell a friend.
+  </div>
+
+  <!-- HEADER -->
+  <div class="post-header">
+    <div>
+      <span class="pillar-tag">💤 Sleep</span>
+      <span class="skip-eyebrow">🚫 Skip This <span class="annotation">② Skip This eyebrow — signals post type instantly</span></span>
+    </div>
+    <div class="post-title">Why We Don't Recommend the DockATot</div>
+    <div class="post-meta">
+      <span>April 3, 2026</span>
+      <span>5 min read <span class="annotation">③ Shortest post type — 800-1,200 words. Tightness is intentional.</span></span>
+    </div>
+  </div>
+
+  <!-- VERDICT — even more direct than product post -->
+  <div class="verdict-block">
+    <div class="verdict-label">🚫 Our Verdict <span class="annotation">④ Skip verdict FIRST. No warmup. Maya knows within 3 seconds.</span></div>
+    <div class="verdict-text">We're not recommending the DockATot.</div>
+    <div class="verdict-reason">The AAP has flagged infant loungers as an unsafe sleep surface, and there is documented recall history. No amount of convenience changes that.</div>
+  </div>
+  <div class="annotation-block" style="margin: 8px 32px 0;">④ Verdict block is RED, not orange. Color-coding distinguishes this post type from product posts at a glance. The verdict is two sentences max: the skip, and the single clearest reason. No hedging. "We're not recommending this" — not "we have some concerns."</div>
+
+  <!-- SKIP VS GET COMPARISON — unique to Skip This posts -->
+  <div class="comparison-row">
+    <div class="skip-card">
+      <div class="card-label skip">🚫 Skip This</div>
+      <div class="card-image skip-img">SKIPPED PRODUCT<br>IMAGE<br>Greyed out</div>
+      <div class="card-name">DockATot Deluxe+</div>
+      <div class="card-price-skip">$195 ←not worth it</div>
+      <div class="card-verdict skip">AAP-flagged sleep surface. Recall history. Marketed as safe when it isn't.</div>
+    </div>
+    <div class="get-card">
+      <div class="card-label get">✅ Get This Instead</div>
+      <div class="card-image get-img">ALTERNATIVE<br>PRODUCT<br>IMAGE</div>
+      <div class="card-name">SNOO Smart Sleeper</div>
+      <div class="card-price-get">$1,695 (or rent)</div>
+      <div class="card-verdict get">AAP-approved. Responsive motion and sound. The only bassinet with an FDA Breakthrough Device designation.</div>
+      <a class="cta-get" href="#">Shop SNOO →</a>
+    </div>
+  </div>
+  <div class="annotation-block" style="margin: 8px 32px 0;">⑤ Skip vs Get comparison card: unique to this post type. Appears immediately below the verdict — before any body copy. Maya sees the skip and the alternative at the same time. The skipped product image is present but visually de-emphasized (lighter background). The affiliate link is ONLY on the alternative — never on the skipped product.</div>
+
+  <!-- BODY -->
+  <div class="body-content">
+
+    <h2>What the Research Shows</h2>
+    <div class="research-block">
+      <div class="research-label">Evidence <span class="annotation">⑥ Specific data points — not vague claims. Maya can verify these.</span></div>
+      <div class="research-item">
+        <span class="research-icon">📋</span>
+        <div class="research-text"><strong>CPSC Recall, November 2022:</strong> DockATot recalled over 7,700 units due to suffocation risk. The soft, padded sides create a sleep surface the AAP explicitly warns against.</div>
+      </div>
+      <div class="research-item">
+        <span class="research-icon">🏥</span>
+        <div class="research-text"><strong>AAP Safe Sleep Guidelines (2022 update):</strong> Infant loungers — including products like the DockATot — are explicitly named as unsafe sleep surfaces. "Babies should sleep on a firm, flat surface." The DockATot is neither.</div>
+      </div>
+      <div class="research-item">
+        <span class="research-icon">⭐</span>
+        <div class="research-text"><strong>1-star review pattern across 340 reviews:</strong> Recurring complaint — baby rolled into the padded sides and was found face-down. This is not a fringe occurrence. It is a pattern.</div>
+      </div>
+    </div>
+    <div class="annotation-block">⑥ Research block: structured evidence section. Each data point has a source label, a specific claim, and a specific number. "After extensive research" is not acceptable here. Maya can look these up. The design signals rigor — labeled rows, source icons, clean structure.</div>
+
+    <h2>What the Marketing Gets Wrong</h2>
+    <div class="marketing-block">
+      <div class="marketing-label">⚠️ The Claim vs The Reality <span class="annotation">⑦ Optional but powerful — only when marketing is the problem</span></div>
+      <div class="marketing-claim">"A safe cocoon for your baby." — DockATot marketing</div>
+      <div class="marketing-reality">The AAP definition of a safe sleep environment is a firm, flat, bare surface. The DockATot is soft, padded, and enclosed. These two things are directly in conflict. The product is marketed with language that implies AAP approval it does not have.</div>
+    </div>
+    <div class="annotation-block">⑦ Marketing callout: gold/amber tone — different from the red verdict and yellow safety note. Used when the marketing claim is the specific problem. Not every Skip This post needs this section — only when there's a specific gap between what the brand claims and what the evidence shows. Maya is aware of de-influencing. This section names the pattern directly.</div>
+
+    <h2>What to Get Instead</h2>
+    <p><strong>If budget allows: the SNOO ($1,695 or rent from $129/month).</strong> It's the only bassinet with an FDA Breakthrough Device designation. Responsive motion and white noise, firm flat surface, fully AAP-compliant. The rental option makes it accessible for families who don't want to commit to the full purchase.</p>
+    <p><em>If budget is the constraint: the Halo BassiNest ($200) does what the DockATot promises — close proximity to the bed, easy night feeds — on a firm, flat, AAP-compliant surface. It doesn't have the "cocoon" aesthetic, but your baby sleeps safely in it.</em></p>
+    <div class="annotation-block">⑧ What to get instead: always two options when possible — one premium, one accessible. Italic on the budget option = visual signal that this is the financially-sensitive recommendation. Every skip gets a redirect. A skip without a redirect leaves Maya with a problem and no solution.</div>
+
+    <div class="section-divider"></div>
+
+    <!-- METHODOLOGY NOTE -->
+    <div class="method-note">
+      <strong>How we made this call:</strong> We reviewed CPSC recall records, the AAP's 2022 safe sleep guidelines update, and 1,200+ one-star Amazon reviews before writing this. <span class="annotation">⑨ Methodology note — 1 sentence, named sources. Required on every Skip This post.</span>
+    </div>
+
+    <!-- PILLAR LINK -->
+    <a class="pillar-link" href="#" style="margin-top: 24px; display: flex;">
+      <div class="pillar-link-icon">💤</div>
+      <div class="pillar-link-text">
+        <small>Part of the Sleep Pillar</small>
+        <strong>See all our baby sleep recommendations →</strong>
+      </div>
+    </a>
+    <div class="annotation-block">⑩ Pillar link identical to product post — bottom of every cluster post, always. Sends Maya to the authority page for this category.</div>
+
+  </div>
+
+  <!-- ANNOTATION PANEL -->
+  <div class="annotation-panel">
+    <h3>Skip This Design Decisions</h3>
+    <ul>
+      <li><strong>① FTC top:</strong> <em>Same as always. Especially important here — the skip earns trust, but Maya still needs to know affiliate links exist (for the alternative product).</em></li>
+      <li><strong>② Skip This eyebrow:</strong> <em>Appears alongside the pillar tag. Signals post type the instant Maya lands. She knows immediately this is a "don't buy" post. Sets the frame before she reads a single word.</em></li>
+      <li><strong>③ 5 min read:</strong> <em>The shortest post type on the site. 800-1,200 words. The tightness is intentional — a Skip This post that runs 2,000 words lost the thread. Every sentence earns its place.</em></li>
+      <li><strong>④ Red verdict block:</strong> <em>Skinny Confidential with extra directness. The most direct content type on the site. Red (not orange like product posts) to signal a stop, not a recommendation. Two sentences: the skip, and the single clearest reason. No hedging anywhere.</em></li>
+      <li><strong>⑤ Skip vs Get comparison card:</strong> <em>Unique to this post type. Appears before the body copy — Maya sees what to skip AND what to get before she reads a word. The skipped product image is present but visually muted. Affiliate link only on the alternative, never on the skipped product.</em></li>
+      <li><strong>⑥ Research block with labeled evidence:</strong> <em>Structured rows with source labels. Not inline paragraphs — a visual format that signals rigor. Maya can see at a glance that three distinct types of evidence were used: recall record, clinical guideline, review pattern. The specificity is the trust.</em></li>
+      <li><strong>⑦ Marketing callout in gold/amber:</strong> <em>Third callout color on the site (red = skip verdict, yellow = safety note, gold = marketing vs reality). Only used when the marketing claim is specifically the problem. Not every Skip This post needs this.</em></li>
+      <li><strong>⑧ Two alternatives, italic on budget:</strong> <em>Premium and accessible options. Italic = financially-sensitive pick. Maya's financial situation is hers — we don't judge, we give her both options and let her decide.</em></li>
+      <li><strong>⑨ Methodology note at the bottom:</strong> <em>One sentence, named sources. The skip has to be as carefully researched as any positive recommendation. Showing the work closes the trust loop.</em></li>
+      <li><strong>⑩ Pillar link bottom:</strong> <em>Same as every cluster post — always at the end, always links to the pillar page.</em></li>
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>
