@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 import mdx from "@mdx-js/rollup";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import Sitemap from "vite-plugin-sitemap";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -21,6 +22,14 @@ export default defineConfig(({ mode }) => ({
     }),
     react(),
     mode === "development" && componentTagger(),
+    Sitemap({
+      hostname: "https://itsmomapproved.com",
+      dynamicRoutes: [
+        "/blog",
+        "/blog/best-sleep-products-2026",
+        "/blog/feeding-essentials-guide",
+      ],
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {
