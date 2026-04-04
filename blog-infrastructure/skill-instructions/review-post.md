@@ -88,7 +88,53 @@ Rules:
 - `PillarLink` uses `to` + `label` props: `<PillarLink to="/sleep" label="Sleep" />`
 - No `{{` remaining in the file — verify before saving
 
-### Step 3: If this is a multi-post session
+### Step 3: Run /pinterest skill and append to queue files
+
+Immediately after writing the MDX file, do two things:
+
+**A. Run the pinterest skill** to generate 3 pins for this post. Then append the output to `blog-infrastructure/pinterest-queue.md` using this format:
+
+```
+---
+## [Post Title]
+**Slug:** [slug]
+**Pillar board:** [pillar name]
+**Post URL:** https://itsmomapproved.com/blog/[slug]
+
+**Pin 1**
+Headline: [headline]
+Description: [full pin description]
+Text overlay: [short text for image overlay]
+
+**Pin 2**
+Headline: [headline]
+Description: [full pin description]
+Text overlay: [short text for image overlay]
+
+**Pin 3**
+Headline: [headline]
+Description: [full pin description]
+Text overlay: [short text for image overlay]
+
+*Image file: /images/posts/[slug].jpg (create in Canva — see image-prompts.md)*
+```
+
+**B. Append a Canva image prompt** to `blog-infrastructure/image-prompts.md` using this format:
+
+```
+---
+## [Post Title]
+**Slug:** [slug]
+**File to save as:** /images/posts/[slug].jpg
+
+**Featured image prompt (1200x630px):**
+[Write a specific Canva AI / Magic Media prompt for this post. Be concrete: describe the scene, lighting, mood, and subject. Example: "Soft natural light, white nursery shelf with a cream-colored Hatch Rest white noise machine glowing softly, newborn sleeping in background, warm tones, lifestyle photo style, no text"]
+
+**Pinterest pin background prompt (1000x1500px):**
+[Same scene but vertical crop — describe what should be visible in a tall format]
+```
+
+### Step 4: If this is a multi-post session
 
 If more posts are queued for this session, tell the user: "Post [N] done — MDX file written. Moving to the next post." Do NOT push to GitHub yet. Wait until all posts for the session are complete, then push everything in one commit.
 
@@ -116,11 +162,14 @@ git commit -m "Add [N] draft posts: [comma-separated titles]"
 git push https://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@github.com/Camesha-Russell/old-website-ideas.git HEAD:main
 ```
 
-### Step 5: Tell Camesha
+### Step 6: Tell Camesha
 
 "[N] posts written and pushed to GitHub as drafts:
 - [Post title 1]
 - [Post title 2]
 - [Post title 3]
 
-Go to your Lovable dashboard and flip each one from draft to published when you're ready. That's it."
+**To do when you're ready:**
+1. Approve in Lovable — flip each post from draft to published
+2. Images — open `blog-infrastructure/image-prompts.md`, paste each prompt into Canva Magic Media, save as `/images/posts/[slug].jpg`
+3. Pinterest — open `blog-infrastructure/pinterest-queue.md`, all 3 pins per post are ready to copy-paste when you're posting"
