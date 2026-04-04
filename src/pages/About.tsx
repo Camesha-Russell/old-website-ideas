@@ -96,12 +96,12 @@ const About = () => {
               <div>
                 <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR VALUE</h3>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  We earn trust by recommending less. Every product that makes it here cleared a real bar. Plenty didn't, and we tell you which ones and why.
+                  We recommend less so that what we do recommend actually means something. Every pick on this site earned its place. Most things didn't make it.
                 </p>
               </div>
               <div>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  Its Mom Approved was built on one idea: the most useful thing we can do for a mom who's close to a decision is be honest with her. That means naming the actual price, showing our research, and saying don't buy this when the data points that way.
+                  Its Mom Approved is built on one idea: a site that recommends everything is recommending nothing. We protect the yes by saying no often, with real research behind every call.
                 </p>
               </div>
             </div>
