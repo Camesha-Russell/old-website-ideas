@@ -78,7 +78,7 @@ const About = () => {
 
       {/* SECTION 3: WHAT WE DO */}
       <section className="bg-background">
-        <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-10 md:px-16 py-20 md:py-28">
           {/* Header */}
           <div className="text-center mb-20">
             <span className="nav-link text-muted-foreground text-[11px] tracking-[0.25em] block mb-6">
