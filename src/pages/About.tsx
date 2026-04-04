@@ -25,8 +25,8 @@ const About = () => {
           <span className="nav-link text-white/80 text-[10px] tracking-[0.2em] block mb-4">
             ITS MOM APPROVED
           </span>
-          <h1 className="font-serif-display italic text-white text-3xl md:text-4xl lg:text-[44px] leading-snug">
-            Your honest, research-backed source for baby and toddler products that actually earn your trust
+          <h1 className="font-serif-display font-bold text-white text-3xl md:text-4xl lg:text-[44px] leading-snug">
+            The honest answer for every baby product decision.
           </h1>
         </div>
       </section>
@@ -47,15 +47,15 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
                 <div className="space-y-6">
                   <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                    If you're here, you're probably the mom who Googled this at 11pm while the baby finally slept. You've been burned by a review that made something sound life-changing, and then it wasn't. You've returned things. You've seen through the sponsored content. You just want someone who will be straight with you. That's exactly why this site exists.
+                    If you're here, you're probably the mom who Googled this at 11pm while the baby finally slept. You've been let down by a review that made something sound essential, and then it wasn't. You've seen through the sponsored content. You've returned things you were sure about. You just want someone who will be straight with you. That's exactly why this site exists.
                   </p>
                   <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                    Its Mom Approved was built for the mom who doesn't have time to wade through ten conflicting reviews and figure out which ones are real. You need someone who already did the work and will give you the honest answer, including when that answer is: don't buy it.
+                    Its Mom Approved was built for the mom who doesn't have time to read ten conflicting reviews and figure out which ones are real. You need a team that already did the work and will give you the honest answer, including when that answer is: don't buy it.
                   </p>
                 </div>
                 <div>
                   <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                    We say skip it just as readily as we say buy it, and we back both with real research. Every recommendation on this site is earned, not paid for. We looked at the reviews, the safety data, and the real-mom feedback before we said yes. And when something didn't clear that bar, we tell you exactly what to get instead. Because one honest skip earns more trust than ten breathless recommendations.
+                    We say skip it just as readily as we say buy it, and we back both with real research. Every recommendation on this site is earned, not paid for. We reviewed the safety data, dug through the one-star reviews, and looked at real-mom feedback before we said yes. When something didn't clear the bar, we tell you exactly what to get instead. One honest skip earns more trust than ten breathless recommendations.
                   </p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ const About = () => {
               WHAT WE DO
             </span>
             <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[40px] leading-snug max-w-3xl mx-auto text-foreground">
-              We help moms of babies and toddlers cut through the noise with honest, research-backed picks they can actually trust.
+              We say yes when the research earns it. We say no when it doesn't. And we always show our work.
             </h2>
           </div>
 
@@ -96,12 +96,12 @@ const About = () => {
               <div>
                 <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR VALUE</h3>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  We earn trust by recommending less. Every product that makes it here cleared a real bar. Plenty didn't, and we tell you which ones and why.
+                  We recommend less so that what we do recommend actually means something. Every pick on this site earned its place. Most things didn't make it.
                 </p>
               </div>
               <div>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  Its Mom Approved was built on one idea: the most useful thing we can do for a mom who's close to a decision is be honest with her. That means naming the actual price, showing our research, and saying don't buy this when the data points that way.
+                  Its Mom Approved is built on one idea: a site that recommends everything is recommending nothing. We protect the yes by saying no often, with real research behind every call.
                 </p>
               </div>
             </div>
@@ -111,12 +111,12 @@ const About = () => {
               <div>
                 <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR MISSION</h3>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  To give every mom a clear, honest answer within seconds of landing here. No buried verdicts. No vague praise. Just the real call and exactly how we got there.
+                  To get every mom to a clear, confident answer in seconds, not hours. No rabbit holes. No conflicting opinions. Just the real verdict.
                 </p>
               </div>
               <div>
                 <p className="font-serif-display italic text-2xl md:text-3xl leading-snug text-foreground">
-                  Our mission is to help moms spend less time researching and more time with the babies they're shopping for. We give you the real answer, and we show our work.
+                  Less time researching. More time with your baby. That's the whole point.
                 </p>
               </div>
             </div>
@@ -126,12 +126,12 @@ const About = () => {
               <div>
                 <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR COMMITMENT</h3>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  We say skip it just as readily as we say buy it. And we always tell you what to get instead.
+                  Every recommendation is backed by real data. We look at the safety record, the reviews, the recalls, and the real-mom feedback. Then we tell you what we actually think.
                 </p>
               </div>
               <div>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  Every recommendation cleared a real threshold. We looked at the reviews, the safety data, the recalls, and the real-mom experience before we said yes. When something didn't clear the bar, we said so, and pointed you to something better.
+                  When a product cleared the bar, we tell you why and what to look for. When it didn't, we say so and point you to what actually works. No vague praise. No buried verdicts.
                 </p>
               </div>
             </div>

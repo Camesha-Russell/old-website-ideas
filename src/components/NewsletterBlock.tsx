@@ -9,7 +9,7 @@ const NewsletterBlock = () => {
               Subscribe via email
             </span>
             <h2 className="font-display italic text-3xl md:text-4xl mt-2 text-foreground">
-              Join Our Community
+              Be the first to know what's worth it, and what to skip.
             </h2>
           </div>
 
