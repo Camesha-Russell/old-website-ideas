@@ -25,8 +25,8 @@ const About = () => {
           <span className="nav-link text-white/80 text-[10px] tracking-[0.2em] block mb-4">
             ITS MOM APPROVED
           </span>
-          <h1 className="font-serif-display italic text-white text-3xl md:text-4xl lg:text-[44px] leading-snug">
-            Your honest, research-backed source for baby and toddler products that actually earn your trust
+          <h1 className="font-serif-display font-bold text-white text-3xl md:text-4xl lg:text-[44px] leading-snug">
+            The honest answer for every baby product decision.
           </h1>
         </div>
       </section>
