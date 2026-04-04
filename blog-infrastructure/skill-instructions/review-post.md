@@ -65,17 +65,62 @@ Be direct. This is a quality control tool, not a pep talk. Flag what needs fixin
 
 ---
 
-## After a READY TO PUBLISH verdict — automatic Codex handoff
+## After a READY TO PUBLISH verdict — MDX creation
 
-When the verdict is **READY TO PUBLISH**, immediately take these steps without waiting for the user to ask:
+When the verdict is **READY TO PUBLISH**, immediately write the MDX file. No browser, no Codex, no handoff files — all backend.
 
-1. **Create the handoff file.** Format the post content using the spec in `blog-infrastructure/COWORK-HANDOFF-FORMAT.md`. Save it to `blog-infrastructure/handoffs/[slug]-handoff.md` with status `READY FOR CODEX`.
+### Step 1: Read the correct MDX template
 
-2. **Deliver to Codex via Chrome.** Use the Chrome MCP to:
-   - Navigate to: `https://chatgpt.com/codex/tasks/task_e_69d02a9ca120832dbf824b4f19d17d11`
-   - Paste the full handoff file content into the Codex message input
-   - Send the message
+Use the Glob tool with pattern `**/blog-infrastructure/templates/[post-type]-template.mdx` to locate the right template. Read it in full. Post types: `product-post`, `pillar-post`, `skip-this`.
 
-3. **Confirm delivery.** Tell Camesha: "Handoff delivered to Codex. File saved at `blog-infrastructure/handoffs/[slug]-handoff.md`. Codex will create the MDX file — check back in a few minutes."
+### Step 2: Write the completed MDX file
 
-If the Chrome MCP is unavailable or the paste fails, save the handoff file and tell Camesha: "Handoff file is ready at `blog-infrastructure/handoffs/[slug]-handoff.md` — Chrome delivery failed. Open Codex manually and paste the file contents to publish."
+Fill every `{{PLACEHOLDER}}` with the post's content and frontmatter values. Save to:
+`[workspace-root]/src/content/posts/[slug].mdx`
+
+To find the workspace root: Glob `**/blog-infrastructure/END-TO-END-WORKFLOW.md` and derive root from the path.
+
+Rules:
+- `status` is always `"draft"`
+- `<AffiliateDisclosure />` must be the first element in the post body
+- `SourceReviewQuote` blocks must be present (from the writing phase)
+- `CommentsSection` is auto-rendered by the app — do NOT add it to the MDX
+- `PillarLink` uses `to` + `label` props: `<PillarLink to="/sleep" label="Sleep" />`
+- No `{{` remaining in the file — verify before saving
+
+### Step 3: If this is a multi-post session
+
+If more posts are queued for this session, tell the user: "Post [N] done — MDX file written. Moving to the next post." Do NOT push to GitHub yet. Wait until all posts for the session are complete, then push everything in one commit.
+
+If this is the last post (or only post), proceed to the GitHub push below.
+
+### Step 4: GitHub push (end of session)
+
+```bash
+cd /tmp
+git clone https://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@github.com/Camesha-Russell/old-website-ideas.git itsma-session-push
+cd itsma-session-push
+git config user.email "camesha.russell03@gmail.com"
+git config user.name "Camesha Russell"
+```
+
+Copy each new MDX file from the workspace into the cloned repo:
+```bash
+cp [workspace]/src/content/posts/[slug].mdx src/content/posts/[slug].mdx
+```
+
+Then commit and push all at once:
+```bash
+git add src/content/posts/
+git commit -m "Add [N] draft posts: [comma-separated titles]"
+git push https://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@github.com/Camesha-Russell/old-website-ideas.git HEAD:main
+```
+
+### Step 5: Tell Camesha
+
+"[N] posts written and pushed to GitHub as drafts:
+- [Post title 1]
+- [Post title 2]
+- [Post title 3]
+
+Go to your Lovable dashboard and flip each one from draft to published when you're ready. That's it."
