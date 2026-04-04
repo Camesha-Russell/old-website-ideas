@@ -36,7 +36,7 @@ const About = () => {
       {/* SECTION 2: FOUNDER — "You found your people" */}
       <section className="bg-background">
         <div className="max-w-[1200px] mx-auto px-6 py-24 md:py-32 lg:py-36">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1fr] gap-x-14 gap-y-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1fr] gap-x-14 gap-y-10 items-stretch">
             {/* Left: headline + two text blocks */}
             <div className="lg:col-span-2 flex flex-col gap-10">
               {/* Headline */}
@@ -68,7 +68,7 @@ const About = () => {
             </div>
 
             {/* Right: stacked photos */}
-            <div className="hidden lg:flex flex-col gap-5">
+            <div className="hidden lg:flex flex-col justify-between">
               <img
                 src={aboutGroup}
                 alt="Moms laughing together with kids"
