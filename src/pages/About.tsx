@@ -68,7 +68,7 @@ const About = () => {
             </div>
 
             {/* Right: stacked photos */}
-            <div className="hidden lg:flex flex-col gap-5">
+            <div className="<div className="hidden lg:flex flex-col justify-between">">
               <img
                 src={aboutGroup}
                 alt="Moms laughing together with kids"
