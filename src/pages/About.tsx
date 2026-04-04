@@ -126,12 +126,12 @@ const About = () => {
               <div>
                 <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR COMMITMENT</h3>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  We say skip it just as readily as we say buy it. And we always tell you what to get instead.
+                  Every recommendation is backed by real data. We look at the safety record, the reviews, the recalls, and the real-mom feedback. Then we tell you what we actually think.
                 </p>
               </div>
               <div>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  Every recommendation cleared a real threshold. We looked at the reviews, the safety data, the recalls, and the real-mom experience before we said yes. When something didn't clear the bar, we said so, and pointed you to something better.
+                  When a product cleared the bar, we tell you why and what to look for. When it didn't, we say so and point you to what actually works. No vague praise. No buried verdicts.
                 </p>
               </div>
             </div>
