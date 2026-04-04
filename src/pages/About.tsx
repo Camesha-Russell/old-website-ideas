@@ -55,7 +55,7 @@ const About = () => {
                 </div>
                 <div>
                   <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                    We say skip it just as readily as we say buy it, and we back both with real research. Every recommendation on this site is earned, not paid for. We looked at the reviews, the safety data, and the real-mom feedback before we said yes. And when something didn't clear that bar, we tell you exactly what to get instead. Because one honest skip earns more trust than ten breathless recommendations.
+                    We say skip it just as readily as we say buy it, and we back both with real research. Every recommendation on this site is earned, not paid for. We reviewed the safety data, dug through the one-star reviews, and looked at real-mom feedback before we said yes. When something didn't clear the bar, we tell you exactly what to get instead. One honest skip earns more trust than ten breathless recommendations.
                   </p>
                 </div>
               </div>
