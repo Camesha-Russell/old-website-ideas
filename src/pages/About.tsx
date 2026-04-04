@@ -63,14 +63,22 @@ const About = () => {
             </div>
 
             {/* Col 3: Photo */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex flex-col gap-4">
               <img
-                src={aboutFounder}
-                alt="Founder portrait"
+                src={aboutFriends}
+                alt="Women laughing together over smartphone"
                 className="w-full h-auto object-cover"
                 loading="lazy"
                 width={640}
-                height={860}
+                height={430}
+              />
+              <img
+                src={aboutFounder}
+                alt="Moms chatting at the park"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                width={640}
+                height={430}
               />
             </div>
           </div>
