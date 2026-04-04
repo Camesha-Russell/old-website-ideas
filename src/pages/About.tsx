@@ -66,6 +66,14 @@ const About = () => {
             {/* Col 3: Photo */}
             <div className="hidden lg:flex flex-col gap-4">
               <img
+                src={aboutGroup}
+                alt="Moms laughing together with kids"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                width={640}
+                height={430}
+              />
+              <img
                 src={aboutFriends}
                 alt="Women laughing together over smartphone"
                 className="w-full h-auto object-cover"
