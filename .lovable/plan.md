@@ -1,60 +1,16 @@
 
 
-# Phased SEO + Blog Infrastructure Plan
+## Fix: Align image stack with text content in "You found your people" section
 
-## Reality check on your AI's advice
+**Problem**: The three stacked images on the right don't align with the text. There's a large gap, and the images should span from the "You found your people." headline (top) down to the "don't buy it." line (bottom).
 
-Your AI is **right** about the SEO problem with SPAs — Google does deprioritize JS-rendered content. However, some adjustments are needed for Lovable:
+**Solution**: Change the image column from `gap-5` spacing to `justify-between`, so the images stretch to fill the exact same vertical space as the text. Also set the grid to `items-stretch` so both columns share the same height.
 
-- **`vite-ssg`**: This fundamentally changes how the app boots and requires a different router (`createMemoryHistory`). It conflicts with Lovable's preview/hosting system. It only works once you export to GitHub and build externally (e.g., Vercel).
-- **Vercel deployment**: Lovable can connect to GitHub, then you connect that repo to Vercel separately. This is a manual step outside Lovable.
+### Changes to `src/pages/About.tsx`
 
-So the practical approach: **build everything inside Lovable now, then deploy externally when ready to launch.**
+1. **Grid container** (line 39): Change `items-start` to `items-stretch` so the image column matches the full height of the text column.
 
----
+2. **Image column** (line 71): Change `gap-5` to `justify-between` so images distribute evenly from top to bottom of the text block, with the first image aligned to "You found your people." and the last image aligned to the end of the body text.
 
-## Phase 1 — MDX Blog System (build first, SEO comes free later)
-
-Already planned. Create the full blog with MDX posts, frontmatter, listing page, post pages, and shared components.
-
-Files: `vite.config.ts`, `src/lib/blog.ts`, `src/pages/Blog.tsx`, `src/pages/BlogPost.tsx`, `src/content/posts/*.mdx`, `src/components/blog/*.tsx`, `src/App.tsx`
-
-## Phase 2 — Per-Page SEO Tags
-
-Add `react-helmet-async` and set up on every blog post page:
-
-- **OG tags**: `og:title`, `og:description`, `og:image`, `og:type`, `og:url` — all from frontmatter
-- **Twitter cards**: `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`
-- **Canonical URL**: `<link rel="canonical" />`
-- **JSON-LD Article schema**: headline, datePublished, description, author, image — injected as `<script type="application/ld+json">`
-- **Extended frontmatter**: add `featuredImageAlt` and `canonicalUrl` fields
-
-Files: `src/pages/BlogPost.tsx`, `package.json`
-
-## Phase 3 — Sitemap + Robots
-
-- Install `vite-plugin-sitemap` to auto-generate `sitemap.xml` at build time
-- Update `robots.txt` to point to sitemap: `Sitemap: https://itsmomapproved.com/sitemap.xml`
-
-Files: `vite.config.ts`, `public/robots.txt`
-
-## Phase 4 — GitHub Export + Vercel + SSG
-
-This is the step that actually solves the Google indexing problem:
-
-1. Connect Lovable project to GitHub (Project Settings → GitHub)
-2. Add `vite-ssg` to the exported repo — converts every route to static HTML at build time
-3. Connect GitHub repo to Vercel
-4. Configure Vercel build command to use `vite-ssg build`
-
-This phase involves steps **outside Lovable** (Vercel dashboard, GitHub settings). I can give you exact instructions when you're ready.
-
----
-
-## Suggested order
-
-**Phase 1 → Phase 2 → Phase 3** can all be done inside Lovable now.
-**Phase 4** happens when you're ready to go live with real content.
-
-Want to start with Phase 1 (the MDX blog system)?
+This is a two-line CSS change — no structural or content changes needed.
 
