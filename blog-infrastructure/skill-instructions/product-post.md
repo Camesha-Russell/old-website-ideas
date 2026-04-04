@@ -39,10 +39,29 @@ Name the product. Name the price as an actual dollar amount. One sentence on wha
 **5. Will It Last?**
 Will this product still be useful at 12 months? 18 months? 3 years? Say so plainly. Maya has been burned by products that worked at 4 months and ended up on Facebook Marketplace by spring. She needs to know whether this is a phase product or a long-haul one.
 
-**6. Internal link to pillar page**
-Link to the pillar page this post belongs to. Use this format exactly: [LINK TO PILLAR PAGE: (Pillar Page Title)]. Every cluster post must link back to its pillar page to build the site's topic authority. If you don't know the pillar page title, check the Content Cluster Map.
+**6. Real review quotes**
+Include 2-3 sourced quotes from real people woven naturally into the evidence and safety sections. These are reported observations — you are telling Maya what other moms and dads have actually said. Format each one using the SourceReviewQuote component placeholder:
 
-**7. Affiliate link placeholder**
+[SOURCEREVIEWQUOTE firstName="[First name only]" sourceName="[Reddit / Amazon / BabyCenter / etc]" sourceUrl="[URL if available]"]
+"[Exact or paraphrased quote from that source]"
+[/SOURCEREVIEWQUOTE]
+
+Use a mix of positive and negative quotes depending on what is being discussed. If the evidence section is making a case for the product, a positive quote reinforces it. If the safety section is flagging a concern, a negative quote from a real mom makes it land harder. The goal is to show Maya that real people have experienced exactly what we're describing.
+
+Find quotes by searching Reddit, Amazon reviews, BabyCenter forums, or similar real-user sources. Never fabricate a quote. If you cannot find a real quote for a section, note [QUOTE NEEDED: brief description of what to look for] as a placeholder.
+
+**7. Community call-to-action**
+At the end of the post, before the pillar link, write one sentence inviting Maya to share her experience in the comments. Every post should phrase this differently. The goal is to make her feel like her voice adds real value to other moms making this decision — not like she's being prompted to leave a review.
+
+Examples of the spirit (do not copy these verbatim — write a fresh version each time):
+- "If you've used this with your baby, drop a comment — other moms making this call would love to hear what your real experience was."
+- "Had a different experience? Leave a note below. The more honest data we have, the better we can help the next mom researching this."
+- "Tried it? Loved it? Returned it? Tell us what happened — your experience is exactly the kind of real information that helps other families decide."
+
+**8. Internal link to pillar page**
+Use this format: [LINK TO PILLAR PAGE: (Pillar Page Title) | pillarPageUrl: [url] | pillarPageLabel: [label]]. Every cluster post must link back to its pillar page. If you don't know the pillar page URL, check the Content Cluster Map.
+
+**9. Affiliate link placeholder**
 Write exactly: [INSERT AFFILIATE LINK HERE]
 
 ## Voice rules — non-negotiable
@@ -67,6 +86,8 @@ Run through this before submitting the draft:
 - Is the budget alternative named with an actual dollar amount?
 - Does the longevity note say something concrete about the product's useful lifespan?
 - Is the price named as an actual number (not "affordable" or "an investment")?
+- Are 2-3 SourceReviewQuote blocks included with real sourced quotes?
+- Is the community CTA present, phrased freshly (not copied from an example)?
 - Does any sentence contain an em dash, a question opener, stacked hedges, passive voice recommendation, or the words "actually" / "finally"?
 - Do any headers or titles contain an em dash? Check every header, not just body copy.
 - Does any sentence sound like it was generated rather than written by a real person?

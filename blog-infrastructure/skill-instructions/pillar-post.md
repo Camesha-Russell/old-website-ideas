@@ -128,7 +128,29 @@ These are NOT generic tips. They should be specific to the category and reflect 
 
 ---
 
-**9. The Bottom Line (2-3 sentences)**
+**9. Real review quotes**
+Each full product section (Best Overall, Best Budget, Best for Use Case) should include 1-2 sourced quotes from real users woven naturally into the description. Format each one using the SourceReviewQuote component placeholder:
+
+[SOURCEREVIEWQUOTE firstName="[First name only]" sourceName="[Reddit / Amazon / BabyCenter / etc]" sourceUrl="[URL if available]"]
+"[Exact or paraphrased quote]"
+[/SOURCEREVIEWQUOTE]
+
+The "What We Wouldn't Buy" section should always include at least one negative quote from a real user that supports the skip reasoning. Positive quotes support recommendations; negative quotes reinforce skips. Both are equally valuable.
+
+Find quotes by searching Reddit, Amazon reviews, BabyCenter forums, or similar real-user sources. Never fabricate a quote. If you cannot find a real quote, note [QUOTE NEEDED: brief description] as a placeholder.
+
+---
+
+**10. Community call-to-action**
+Before the internal links section, write one sentence inviting Maya to share her own experience in the comments. Phrase it differently every post. The framing should make her feel like her input genuinely helps other moms — not like a generic comment prompt.
+
+Examples of the spirit (write fresh each time):
+- "If you've tried any of these with your little one, share what happened below — real experiences from real moms are exactly what makes this list worth trusting."
+- "Used one of these? Tell us what your experience was. The more moms weigh in, the sharper this guide gets."
+
+---
+
+**11. The Bottom Line (2-3 sentences)**
 
 Warm, direct close. Restate the top pick and the core reason in one sentence. Acknowledge that different situations point to different picks (briefly, without hedge-spiraling). End with one line that feels like a genuine send-off from a friend — not a summary, not a CTA disguised as a conclusion.
 
@@ -136,7 +158,7 @@ Optional email capture hook: if this post covers a topic where Maya would benefi
 
 ---
 
-**10. Internal links**
+**12. Internal links**
 
 Pillar pages link DOWN to their cluster posts. Do not link up to another pillar — this IS the pillar.
 
@@ -146,7 +168,7 @@ If no cluster posts exist yet, include a placeholder for the first comparison po
 
 ---
 
-**11. Affiliate link placeholders**
+**13. Affiliate link placeholders**
 
 Write [INSERT AFFILIATE LINK: (Product Name)] for each product recommended in the post.
 
@@ -186,6 +208,9 @@ Run through every item before presenting the draft:
 - Does any sentence contain "actually," "finally," or "it's worth noting"?
 - Does any sentence sound generated rather than written?
 - Is the FTC disclosure at the very top?
+- Does each full product section include 1-2 SourceReviewQuote blocks with real sourced quotes?
+- Does the "What We Wouldn't Buy" section include at least one negative real-user quote?
+- Is the community CTA present and freshly phrased?
 - Are there affiliate link placeholders for every product recommended?
 - Are there internal links down to cluster/comparison posts (or future link placeholders)?
 - Is the post within 1,800-2,400 words?

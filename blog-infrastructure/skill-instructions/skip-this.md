@@ -81,17 +81,35 @@ This section is not an afterthought — it is the point. Maya came here with a p
 
 If there are two strong alternatives (one premium, one budget), give both.
 
-**5. Methodology Note (1 sentence)**
+**5. Real review quotes**
+Include 2-3 SourceReviewQuote blocks using real sourced quotes from Reddit, Amazon, BabyCenter, or similar platforms. On Skip This posts, these are almost always negative — a mom who bought the product and experienced exactly the concern you're naming. That quote turns your research into lived confirmation.
+
+Format each one as:
+
+[SOURCEREVIEWQUOTE firstName="[First name only]" sourceName="[Reddit / Amazon / BabyCenter / etc]" sourceUrl="[URL if available]"]
+"[Exact or paraphrased quote from that source]"
+[/SOURCEREVIEWQUOTE]
+
+Never fabricate a quote. If you cannot find a real one, write [QUOTE NEEDED: brief description of what to look for] as a placeholder.
+
+**6. Community call-to-action**
+Before the methodology note, write one sentence inviting Maya to share her own experience. On Skip This posts this has a different energy than on product posts — it is less "what did you think" and more "if this happened to you too, other moms need to know." Phrase it freshly every time.
+
+Examples of the spirit (write fresh each time):
+- "If you bought this and ran into the same issue, leave a comment — other moms are researching this right now and your experience matters."
+- "Had a different experience? We want to know that too. Drop a comment below."
+
+**7. Methodology Note (1 sentence)**
 
 One sentence on how you arrived at the skip. What sources were used. This is important on Skip This posts because Maya needs to trust that the negative recommendation was as carefully researched as a positive one.
 
 Good: *"We reviewed CPSC recall records, AAP safe sleep guidelines, and 1,200+ one-star Amazon reviews before writing this."*
 
-**6. Internal link to pillar page**
+**8. Internal link to pillar page**
 
-Every cluster post links back to its pillar page. Format: [LINK TO PILLAR PAGE: (Pillar Page Title)]
+Every cluster post links back to its pillar page. Format: [LINK TO PILLAR PAGE: (Pillar Page Title) | pillarPageUrl: [url] | pillarPageLabel: [label]]
 
-**7. Affiliate link placeholder for the recommended alternative**
+**9. Affiliate link placeholder for the recommended alternative**
 
 Write [INSERT AFFILIATE LINK: (Product Name)] for each recommended alternative.
 
@@ -165,6 +183,8 @@ Target 800-1,200 words. This is the shortest content type on the site. The tight
 - Does the post lead with the skip verdict in the first two sentences?
 - Is the specific reason for the skip named (not implied, named)?
 - Is there at least one concrete data point supporting the skip (recall record, review pattern, AAP warning, specific test result)?
+- Are 2-3 SourceReviewQuote blocks included with real negative quotes from real users?
+- Is the community CTA present and freshly phrased for a skip context?
 - Is there a recommended alternative with an actual dollar amount?
 - Does the methodology note name actual sources (not "after extensive research")?
 - Does any sentence or header contain an em dash?
