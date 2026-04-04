@@ -85,7 +85,7 @@ const About = () => {
               WHAT WE DO
             </span>
             <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[40px] leading-snug max-w-3xl mx-auto text-foreground">
-              We help moms of babies and toddlers cut through the noise with honest, research-backed picks they can actually trust.
+              We say yes when the research earns it. We say no when it doesn't. And we always show our work.
             </h2>
           </div>
 
