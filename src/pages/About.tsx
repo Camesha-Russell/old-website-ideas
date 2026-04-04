@@ -84,7 +84,7 @@ const About = () => {
             <span className="nav-link text-muted-foreground text-[11px] tracking-[0.25em] block mb-8 md:mb-10">
               WHAT WE DO
             </span>
-            <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[52px] leading-[1.35] max-w-5xl mx-auto text-foreground whitespace-pre-line">
+            <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[52px] leading-[1.65] max-w-5xl mx-auto text-foreground whitespace-pre-line">
               We say yes when the research earns it.{"\n"}
               We say no when it doesn't.{"\n"}
               And we always show our work.
