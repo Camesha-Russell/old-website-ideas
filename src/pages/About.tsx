@@ -126,7 +126,7 @@ const About = () => {
             </div>
 
             {/* OUR COMMITMENT */}
-            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-x-20 gap-y-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-x-12 gap-y-6 py-12">
               <div>
                 <h3 className="nav-link text-[12px] tracking-[0.18em] mb-4 text-foreground">OUR COMMITMENT</h3>
                 <p className="font-serif-body text-base leading-[1.8] text-foreground">
