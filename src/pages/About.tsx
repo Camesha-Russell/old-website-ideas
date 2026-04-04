@@ -5,6 +5,7 @@ import NewsletterBlock from "@/components/NewsletterBlock";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutFounder from "@/assets/about-founder.png";
 import aboutFriends from "@/assets/about-friends.png";
+import aboutGroup from "@/assets/about-group.png";
 
 const About = () => {
   return (
@@ -64,6 +65,14 @@ const About = () => {
 
             {/* Col 3: Photo */}
             <div className="hidden lg:flex flex-col gap-4">
+              <img
+                src={aboutGroup}
+                alt="Moms laughing together with kids"
+                className="w-full h-auto object-cover"
+                loading="lazy"
+                width={640}
+                height={430}
+              />
               <img
                 src={aboutFriends}
                 alt="Women laughing together over smartphone"
