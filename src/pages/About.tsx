@@ -78,13 +78,13 @@ const About = () => {
 
       {/* SECTION 3: WHAT WE DO */}
       <section className="bg-background">
-        <div className="max-w-[1200px] mx-auto px-6 py-16 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           {/* Header */}
-          <div className="text-center mb-16">
-            <span className="nav-link text-muted-foreground text-[10px] tracking-[0.2em] block mb-4">
+          <div className="text-center mb-20">
+            <span className="nav-link text-muted-foreground text-[11px] tracking-[0.25em] block mb-6">
               WHAT WE DO
             </span>
-            <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[40px] leading-snug max-w-3xl mx-auto text-foreground">
+            <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[46px] leading-[1.25] max-w-4xl mx-auto text-foreground">
               We say yes when the research earns it. We say no when it doesn't. And we always show our work.
             </h2>
           </div>
@@ -92,45 +92,47 @@ const About = () => {
           {/* Value / Mission / Commitment rows */}
           <div className="space-y-0">
             {/* OUR VALUE */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-x-16 gap-y-4 py-10 border-b border-border">
+            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-x-20 gap-y-6 py-12">
               <div>
-                <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR VALUE</h3>
-                <p className="font-serif-body text-sm leading-relaxed text-foreground">
+                <h3 className="nav-link text-[12px] tracking-[0.18em] mb-4 text-foreground">OUR VALUE</h3>
+                <p className="font-serif-body text-base leading-[1.8] text-foreground mb-8">
                   We recommend less so that what we do recommend actually means something. Every pick on this site earned its place. Most things didn't make it.
                 </p>
+                <div className="w-2/3 border-b border-foreground/20" />
               </div>
-              <div>
-                <p className="font-serif-body text-sm leading-relaxed text-foreground">
+              <div className="flex items-start pt-10">
+                <p className="font-serif-body text-base leading-[1.8] text-foreground">
                   Its Mom Approved is built on one idea: a site that recommends everything is recommending nothing. We protect the yes by saying no often, with real research behind every call.
                 </p>
               </div>
             </div>
 
             {/* OUR MISSION */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-x-16 gap-y-4 py-10 border-b border-border">
+            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-x-20 gap-y-6 py-12">
               <div>
-                <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR MISSION</h3>
-                <p className="font-serif-body text-sm leading-relaxed text-foreground">
+                <h3 className="nav-link text-[12px] tracking-[0.18em] mb-4 text-foreground">OUR MISSION</h3>
+                <p className="font-serif-body text-base leading-[1.8] text-foreground mb-8">
                   To get every mom to a clear, confident answer in seconds, not hours. No rabbit holes. No conflicting opinions. Just the real verdict.
                 </p>
+                <div className="w-2/3 border-b border-foreground/20" />
               </div>
-              <div>
-                <p className="font-serif-display italic text-2xl md:text-3xl leading-snug text-foreground">
+              <div className="flex items-start">
+                <p className="font-serif-display italic text-2xl md:text-[28px] lg:text-[32px] leading-[1.4] text-foreground">
                   Less time researching. More time with your baby. That's the whole point.
                 </p>
               </div>
             </div>
 
             {/* OUR COMMITMENT */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-x-16 gap-y-4 py-10">
+            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-x-20 gap-y-6 py-12">
               <div>
-                <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR COMMITMENT</h3>
-                <p className="font-serif-body text-sm leading-relaxed text-foreground">
+                <h3 className="nav-link text-[12px] tracking-[0.18em] mb-4 text-foreground">OUR COMMITMENT</h3>
+                <p className="font-serif-body text-base leading-[1.8] text-foreground">
                   Every recommendation is backed by real data. We look at the safety record, the reviews, the recalls, and the real-mom feedback. Then we tell you what we actually think.
                 </p>
               </div>
-              <div>
-                <p className="font-serif-body text-sm leading-relaxed text-foreground">
+              <div className="flex items-start pt-10">
+                <p className="font-serif-body text-base leading-[1.8] text-foreground">
                   When a product cleared the bar, we tell you why and what to look for. When it didn't, we say so and point you to what actually works. No vague praise. No buried verdicts.
                 </p>
               </div>
