@@ -47,10 +47,10 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6">
                 <div className="space-y-6">
                   <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                    If you're here, you're probably the mom who Googled this at 11pm while the baby finally slept. You've been burned by a review that made something sound life-changing, and then it wasn't. You've returned things. You've seen through the sponsored content. You just want someone who will be straight with you. That's exactly why this site exists.
+                    If you're here, you're probably the mom who Googled this at 11pm while the baby finally slept. You've been let down by a review that made something sound essential, and then it wasn't. You've seen through the sponsored content. You've returned things you were sure about. You just want someone who will be straight with you. That's exactly why this site exists.
                   </p>
                   <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                    Its Mom Approved was built for the mom who doesn't have time to wade through ten conflicting reviews and figure out which ones are real. You need someone who already did the work and will give you the honest answer, including when that answer is: don't buy it.
+                    Its Mom Approved was built for the mom who doesn't have time to read ten conflicting reviews and figure out which ones are real. You need a team that already did the work and will give you the honest answer, including when that answer is: don't buy it.
                   </p>
                 </div>
                 <div>
