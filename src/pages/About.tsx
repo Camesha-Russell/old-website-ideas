@@ -33,36 +33,36 @@ const About = () => {
 
       {/* SECTION 2: FOUNDER */}
       <section className="bg-background">
-        <div className="max-w-[1200px] mx-auto px-6 py-16 md:py-24">
+        <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           {/* Headline + subtitle */}
-          <h2 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-2">
+          <h2 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-3">
             You found your people.
           </h2>
-          <p className="font-serif-display italic text-lg md:text-xl text-muted-foreground mb-10">
+          <p className="font-serif-display text-lg md:text-xl text-muted-foreground mb-14">
             For the mom who's done buying things that didn't deliver
           </p>
 
           {/* 3-column grid: two text cols + photo */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.1fr] gap-x-10 gap-y-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1.1fr] gap-x-12 gap-y-8 items-end">
             {/* Col 1 */}
-            <div className="space-y-6">
-              <p className="font-serif-body text-sm leading-relaxed text-foreground">
+            <div className="space-y-8">
+              <p className="font-serif-body text-[15px] leading-[1.8] text-foreground">
                 If you're here, you're probably the mom who Googled this at 11pm while the baby finally slept. You've been let down by a review that made something sound essential, and then it wasn't. You've seen through the sponsored content. You've returned things you were sure about. You just want someone who will be straight with you. That's exactly why this site exists.
               </p>
-              <p className="font-serif-body text-sm leading-relaxed text-foreground">
+              <p className="font-serif-body text-[15px] leading-[1.8] text-foreground">
                 Its Mom Approved was built for the mom who doesn't have time to read ten conflicting reviews and figure out which ones are real. You need a team that already did the work and will give you the honest answer, including when that answer is: don't buy it.
               </p>
             </div>
 
             {/* Col 2 */}
             <div>
-              <p className="font-serif-body text-sm leading-relaxed text-foreground">
+              <p className="font-serif-body text-[15px] leading-[1.8] text-foreground">
                 We say skip it just as readily as we say buy it, and we back both with real research. Every recommendation on this site is earned, not paid for. We reviewed the safety data, dug through the one-star reviews, and looked at real-mom feedback before we said yes. When something didn't clear the bar, we tell you exactly what to get instead. One honest skip earns more trust than ten breathless recommendations.
               </p>
             </div>
 
             {/* Col 3: Photo */}
-            <div className="hidden lg:block lg:row-span-1">
+            <div className="hidden lg:block">
               <img
                 src={aboutFounder}
                 alt="Founder portrait"
