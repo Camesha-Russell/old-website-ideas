@@ -78,7 +78,7 @@ const About = () => {
 
       {/* SECTION 3: WHAT WE DO */}
       <section className="bg-background">
-        <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28">
+        <div className="max-w-[1400px] mx-auto px-10 md:px-16 py-20 md:py-28">
           {/* Header */}
           <div className="text-center mb-20">
             <span className="nav-link text-muted-foreground text-[11px] tracking-[0.25em] block mb-6">
@@ -94,7 +94,7 @@ const About = () => {
           {/* Value / Mission / Commitment rows */}
           <div className="space-y-0">
             {/* OUR VALUE */}
-            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-x-20 gap-y-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-x-12 gap-y-6 py-12">
               <div>
                 <h3 className="nav-link text-[12px] tracking-[0.18em] mb-4 text-foreground">OUR VALUE</h3>
                 <p className="font-serif-body text-base leading-[1.8] text-foreground mb-8">
@@ -110,7 +110,7 @@ const About = () => {
             </div>
 
             {/* OUR MISSION */}
-            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-x-20 gap-y-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-x-12 gap-y-6 py-12">
               <div>
                 <h3 className="nav-link text-[12px] tracking-[0.18em] mb-4 text-foreground">OUR MISSION</h3>
                 <p className="font-serif-body text-base leading-[1.8] text-foreground mb-8">
@@ -126,7 +126,7 @@ const About = () => {
             </div>
 
             {/* OUR COMMITMENT */}
-            <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1.2fr] gap-x-20 gap-y-6 py-12">
+            <div className="grid grid-cols-1 md:grid-cols-[0.7fr_1.3fr] gap-x-12 gap-y-6 py-12">
               <div>
                 <h3 className="nav-link text-[12px] tracking-[0.18em] mb-4 text-foreground">OUR COMMITMENT</h3>
                 <p className="font-serif-body text-base leading-[1.8] text-foreground">
