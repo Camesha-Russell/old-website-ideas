@@ -102,10 +102,10 @@ const About = () => {
             <span className="nav-link text-muted-foreground text-[11px] tracking-[0.25em] block mb-8 md:mb-10">
               WHAT WE DO
             </span>
-            <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[52px] leading-[1.65] max-w-5xl mx-auto text-foreground whitespace-pre-line">
-              We say yes when the research earns it.{"\n"}
-              We say no when it doesn't.{"\n"}
-              And we always show our work.
+            <h2 className="font-serif-display text-3xl md:text-4xl lg:text-[52px] max-w-6xl mx-auto text-foreground text-center flex flex-col items-center gap-3 md:gap-4 lg:gap-5">
+              <span className="block leading-[1.08]">We say yes when the research earns it.</span>
+              <span className="block leading-[1.08]">We say no when it doesn't.</span>
+              <span className="block leading-[1.08]">And we always show our work.</span>
             </h2>
           </div>
 
