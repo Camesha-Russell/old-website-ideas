@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import NewsletterBlock from "@/components/NewsletterBlock";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutFounder from "@/assets/about-founder.png";
+import aboutFriends from "@/assets/about-friends.png";
 
 const About = () => {
   return (
