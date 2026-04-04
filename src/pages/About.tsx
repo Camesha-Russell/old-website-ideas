@@ -3,7 +3,7 @@ import MainHeader from "@/components/MainHeader";
 import Footer from "@/components/Footer";
 import NewsletterBlock from "@/components/NewsletterBlock";
 import aboutHero from "@/assets/about-hero.jpg";
-import aboutFounder from "@/assets/about-founder.jpg";
+import aboutFounder from "@/assets/about-founder.png";
 
 const About = () => {
   return (
