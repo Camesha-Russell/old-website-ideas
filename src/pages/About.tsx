@@ -111,12 +111,12 @@ const About = () => {
               <div>
                 <h3 className="nav-link text-[11px] tracking-[0.15em] mb-3 text-foreground">OUR MISSION</h3>
                 <p className="font-serif-body text-sm leading-relaxed text-foreground">
-                  To give every mom a clear, honest answer within seconds of landing here. No buried verdicts. No vague praise. Just the real call and exactly how we got there.
+                  To get every mom to a clear, confident answer in seconds, not hours. No rabbit holes. No conflicting opinions. Just the real verdict.
                 </p>
               </div>
               <div>
                 <p className="font-serif-display italic text-2xl md:text-3xl leading-snug text-foreground">
-                  Our mission is to help moms spend less time researching and more time with the babies they're shopping for. We give you the real answer, and we show our work.
+                  Less time researching. More time with your baby. That's the whole point.
                 </p>
               </div>
             </div>
