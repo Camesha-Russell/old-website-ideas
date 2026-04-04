@@ -8,12 +8,12 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import PlaceholderPage from "./pages/PlaceholderPage";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const placeholderRoutes = [
-  "/about",
   "/start-here",
   "/top-picks",
   "/sleep",
