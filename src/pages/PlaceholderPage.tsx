@@ -17,7 +17,7 @@ const pageTitles: Record<string, string> = {
   "/hype-check": "Overhyped vs Actually Worth It",
   "/know-before-you-buy": "Know Before You Buy",
   "/ask-itsmomapproved": "Ask It's Mom Approved",
-  "/starter-kit": "The Starter Kit",
+  "/starter-kit": "The No-Regrets Baby Gear Guide",
   "/contact": "Contact",
   "/disclosure": "Disclosure",
   "/privacy-policy": "Privacy Policy",

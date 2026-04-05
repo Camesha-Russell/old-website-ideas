@@ -38,7 +38,7 @@ const MainHeader = () => {
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-4">
           <Link to="/starter-kit" className="btn-peach hidden sm:inline-block text-[10px]">
-            Get the Starter Kit
+            Free Baby Gear Guide
           </Link>
           <button
             className="lg:hidden text-foreground"
@@ -67,7 +67,7 @@ const MainHeader = () => {
             className="btn-peach inline-block mt-2 text-[10px] sm:hidden"
             onClick={() => setMobileOpen(false)}
           >
-            Get the Starter Kit
+            Free Baby Gear Guide
           </Link>
         </div>
       )}
