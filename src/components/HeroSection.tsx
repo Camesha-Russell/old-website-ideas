@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import heroBanner from "@/assets/hero-banner.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-[600px] flex items-center justify-center">
       {/* Placeholder background — swap for real image later */}
-      <div className="absolute inset-0 placeholder-img" />
+      <img src={heroBanner} alt="Mother holding baby in warm sunlight" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
 
       <div className="relative z-10 text-center px-6 max-w-3xl">
