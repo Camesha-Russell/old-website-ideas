@@ -3,12 +3,13 @@ import MainHeader from "@/components/MainHeader";
 import HeroSection from "@/components/HeroSection";
 import CurrentlyTrending from "@/components/CurrentlyTrending";
 import FeaturedSection from "@/components/FeaturedSection";
-import RecentPosts from "@/components/RecentPosts";
+import StartHereCTA from "@/components/StartHereCTA";
 import ShopThePost from "@/components/ShopThePost";
+import FreebieCTA from "@/components/FreebieCTA";
+import RecentPosts from "@/components/RecentPosts";
 import CategorySleep from "@/components/CategorySleep";
 import CategoryFeeding from "@/components/CategoryFeeding";
 import SignatureFeatures from "@/components/SignatureFeatures";
-import FreebieCTA from "@/components/FreebieCTA";
 import NewsletterBlock from "@/components/NewsletterBlock";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,8 @@ const Index = () => {
       <HeroSection />
       <CurrentlyTrending />
       <FeaturedSection />
+      {/* Mid-page CTA — catches scrollers before they hit Recent Posts */}
+      <StartHereCTA />
       <ShopThePost />
       <FreebieCTA />
       <RecentPosts />
