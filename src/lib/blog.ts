@@ -77,3 +77,26 @@ export function getAdjacentPosts(slug: string): {
     next: idx > 0 ? posts[idx - 1] : null,
   };
 }
+
+/* ── raw MDX source for editor ──────────────────────────────────────────── */
+
+const rawModules = import.meta.glob<string>("../content/posts/*.mdx", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
+
+/** Returns the raw MDX source string for a given slug (for editor use) */
+export function getRawMdxBySlug(slug: string): string | null {
+  const entry = Object.entries(rawModules).find(([path]) =>
+    path.endsWith(`/${slug}.mdx`)
+  );
+  return entry ? entry[1] : null;
+}
+
+/** Splits raw MDX into { frontmatter: string, body: string } */
+export function splitMdx(raw: string): { frontmatter: string; body: string } {
+  const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+  if (!match) return { frontmatter: "", body: raw };
+  return { frontmatter: match[1], body: match[2].trim() };
+}
