@@ -21,7 +21,7 @@ const placeholderRoutes = [
   "/feeding",
   "/carriers-and-strollers",
   "/play-and-development",
-  "/postpartum-and-mom",
+  "/for-mom",
   "/safety",
   "/we-said-no",
   "/hype-check",

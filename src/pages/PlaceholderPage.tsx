@@ -11,7 +11,7 @@ const pageTitles: Record<string, string> = {
   "/feeding": "Feeding",
   "/carriers-and-strollers": "Carriers & Strollers",
   "/play-and-development": "Play & Development",
-  "/postpartum-and-mom": "Postpartum & Mom",
+  "/for-mom": "For Mom",
   "/safety": "Safety",
   "/we-said-no": "We Said No",
   "/hype-check": "Overhyped vs Actually Worth It",

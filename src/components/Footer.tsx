@@ -14,7 +14,7 @@ const categoryLinks = [
   { name: "Feeding", path: "/feeding" },
   { name: "Carriers & Strollers", path: "/carriers-and-strollers" },
   { name: "Play & Development", path: "/play-and-development" },
-  { name: "Postpartum & Mom", path: "/postpartum-and-mom" },
+  { name: "For Mom", path: "/for-mom" },
   { name: "Safety", path: "/safety" },
 ];
 
