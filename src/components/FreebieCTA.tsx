@@ -45,10 +45,10 @@ const FreebieCTA = () => {
                 Free Download
               </p>
               <h2 className="font-display text-foreground text-xl md:text-2xl font-bold italic leading-tight">
-                Get The No-Regrets Baby Gear Guide — and stop second-guessing every purchase.
+                Get The No-Regrets Baby Gear Guide. Stop second-guessing every purchase.
               </h2>
               <p className="mt-3 text-muted-foreground text-sm font-body leading-relaxed max-w-lg">
-                Our research-backed PDF tells you exactly what to buy, what to skip, and when you actually need it — sorted by your baby's age. No fluff, no sponsored picks.
+                Our research-backed PDF tells you exactly what to buy, what to skip, and when you need it. Sorted by your baby's age. No fluff, no sponsored picks.
               </p>
 
               <div className="mt-5 space-y-3 max-w-lg">
