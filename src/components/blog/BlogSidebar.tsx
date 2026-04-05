@@ -4,7 +4,7 @@ const trendingTopics = [
   { title: "The Only Baby Monitor That Earned Our Full Trust", path: "/blog/nanit-vs-owlet" },
   { title: "Best Formula Prep Machines Ranked by Parents", path: "/blog/feeding-essentials-guide" },
   { title: "When to Start Sleep Training (And What Actually Works)", path: "/blog/best-sleep-products-2026" },
-  { title: "Carrier vs. Stroller — What Nobody Tells You", path: "/blog/ergobaby-vs-solly-baby-wrap" },
+  { title: "Carrier vs. Stroller: What Nobody Tells You", path: "/blog/ergobaby-vs-solly-baby-wrap" },
   { title: "The 5 Baby Items We Wish We'd Bought First", path: "/blog/hatch-rest-vs-hatch-rest-plus" },
 ];
 
@@ -93,7 +93,7 @@ const BlogSidebar = () => {
             marginBottom: "18px",
           }}
         >
-          Every recommendation here is earned — not paid for. Real research, real moms, real answers.
+          Every recommendation here is earned. Not paid for. Real research, real moms, real answers.
         </p>
         <div style={{ textAlign: "center" }}>
           <Link
@@ -226,7 +226,7 @@ const BlogSidebar = () => {
             marginBottom: "18px",
           }}
         >
-          What to buy, what to skip, and when — sorted by your baby's age.
+          What to buy, what to skip, and when. Sorted by your baby's age.
         </p>
         <Link
           to="/starter-kit"

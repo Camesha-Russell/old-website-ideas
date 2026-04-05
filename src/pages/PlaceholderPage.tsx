@@ -34,7 +34,7 @@ const PlaceholderPage = () => {
       <div className="max-w-[1400px] mx-auto px-4 py-20 md:py-32 text-center">
         <h1 className="font-display text-3xl md:text-5xl mb-4">{title}</h1>
         <p className="font-body text-muted-foreground text-base">
-          Coming soon — we're working on something great.
+          Coming soon. We're working on something great.
         </p>
       </div>
       <Footer />

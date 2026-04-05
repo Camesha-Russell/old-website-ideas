@@ -39,7 +39,7 @@ const StartHereCTA = () => {
           }}
         >
           We built a 2-minute guide that tells you exactly which products are worth
-          researching for your baby's age — and which ones to skip entirely.
+          researching for your baby's age, and which ones to skip entirely.
         </p>
         <Link
           to="/start-here"

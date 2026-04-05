@@ -14,7 +14,7 @@ const Blog = () => {
         <title>Blog | It's Mom Approved</title>
         <meta
           name="description"
-          content="Honest reviews, guides, and tips from a real mom — covering sleep, feeding, gear, and everything in between."
+          content="Honest reviews, guides, and tips from a real mom, covering sleep, feeding, gear, and everything in between."
         />
       </Helmet>
       <TopNavBar />
@@ -27,7 +27,7 @@ const Blog = () => {
 
         {posts.length === 0 ? (
           <p className="text-center text-muted-foreground font-body">
-            Posts coming soon — stay tuned!
+            Posts coming soon. Stay tuned!
           </p>
         ) : (
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

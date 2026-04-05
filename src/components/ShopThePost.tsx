@@ -21,7 +21,7 @@ const ShopThePost = () => {
               Our Favorite Nursery Essentials for a Cozy Space
             </h2>
             <p className="font-body text-muted-foreground text-base leading-relaxed mb-10 max-w-md">
-              Handpicked products we genuinely love — tested by real moms, approved for everyday life with little ones.
+              Handpicked products we genuinely love. Tested by real moms, approved for everyday life with little ones.
             </p>
 
             {/* Product Thumbnails */}

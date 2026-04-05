@@ -17,8 +17,8 @@ const trustPillars = [
   },
   {
     number: "03",
-    headline: "We Say No — Publicly.",
-    body: "If a product doesn't pass our standards, we publish a We Said No post so you know exactly what to avoid — and why we walked away.",
+    headline: "We Say No. Publicly.",
+    body: "If a product doesn't pass our standards, we publish a We Said No post so you know exactly what to avoid and why we walked away.",
   },
   {
     number: "04",
