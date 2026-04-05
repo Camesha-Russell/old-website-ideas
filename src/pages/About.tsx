@@ -6,13 +6,15 @@ import aboutFounder from "@/assets/about-founder.png";
 import aboutFriends from "@/assets/about-friends.png";
 import aboutGroup from "@/assets/about-group.png";
 
+const TERRACOTTA = "hsl(11 52% 47%)";
+
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <TopNavBar />
       <MainHeader />
 
-      {/* SECTION 1: HERO */}
+      {/* SECTION 1: HERO — who we are, not what we do */}
       <section className="relative w-full min-h-[500px] flex items-center justify-center overflow-hidden">
         <img
           src={aboutHero}
@@ -21,63 +23,83 @@ const About = () => {
           width={1920}
           height={800}
         />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-6 max-w-3xl">
-          <h1 className="font-serif-display font-bold text-white text-3xl md:text-4xl lg:text-[44px] leading-snug mb-4">
-            The honest answer for every baby product decision.
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "11px",
+              fontWeight: 700,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.65)",
+              marginBottom: "16px",
+            }}
+          >
+            It's Mom Approved
+          </p>
+          <h1 className="font-serif-display font-bold text-white text-3xl md:text-4xl lg:text-[44px] leading-snug mb-5">
+            We're not here to recommend everything.
+            <br />
+            We're here to recommend the right things.
           </h1>
-          <p className="font-serif-body text-white/80 text-base md:text-lg">
-            Research-backed recommendations from a team that says no more often than yes.
+          <p className="font-serif-body text-white/75 text-base md:text-lg">
+            A team that says no more often than yes, with real research behind every call.
           </p>
         </div>
       </section>
 
       {/* SECTION 2: YOU FOUND YOUR PEOPLE */}
       <section className="bg-background">
-        <div className="max-w-[1200px] mx-auto px-6 py-[120px]">
-          <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-x-14 gap-y-10 items-center">
+        <div className="max-w-[1200px] mx-auto px-6 py-[100px]">
+          <div className="grid grid-cols-1 lg:grid-cols-[55%_42%] gap-x-16 gap-y-10 items-start">
             {/* Left column */}
-            <div className="flex flex-col gap-8">
-              <h2 className="font-serif-display text-4xl md:text-5xl lg:text-[56px] leading-[1.1] text-foreground">
+            <div className="flex flex-col gap-7">
+              <h2 className="font-serif-display text-4xl md:text-5xl lg:text-[54px] leading-[1.1] text-foreground">
                 You found your people.
               </h2>
               <p className="font-serif-body text-[15px] leading-[1.85] text-foreground">
                 If you're here, you're probably the mom who Googled this at 11pm while the baby finally slept. You've been let down by a review that made something sound essential, and then it wasn't. You've seen through the sponsored content. You've returned things you were sure about. You just want someone who will be straight with you. That's exactly why this site exists.
               </p>
               <p className="font-serif-body text-[15px] leading-[1.85] text-foreground">
-                Its Mom Approved was built for the mom who doesn't have time to read ten conflicting reviews and figure out which ones are real. You need a team that already did the work and will give you the honest answer, including when that answer is: don't buy it.
+                It's Mom Approved was built for the mom who doesn't have time to read ten conflicting reviews and figure out which ones are real. You need a team that already did the work and will give you the honest answer, including when that answer is: don't buy it.
               </p>
               <p className="font-serif-body text-[15px] leading-[1.85] text-foreground">
                 We say skip it just as readily as we say buy it, and we back both with real research. Every recommendation on this site is earned, not paid for. We reviewed the safety data, dug through the one-star reviews, and looked at real-mom feedback before we said yes.
               </p>
             </div>
 
-            {/* Right column: 3 stacked images */}
+            {/* Right column: top image + two side-by-side below */}
             <div className="hidden lg:flex flex-col gap-4">
               <img
                 src={aboutGroup}
                 alt="Moms laughing together with kids"
-                className="w-full h-auto object-cover rounded-lg"
+                className="w-full object-cover rounded-lg"
+                style={{ aspectRatio: "4/3" }}
                 loading="lazy"
                 width={640}
-                height={430}
+                height={480}
               />
-              <img
-                src={aboutFriends}
-                alt="Women laughing together over smartphone"
-                className="w-full h-auto object-cover rounded-lg"
-                loading="lazy"
-                width={640}
-                height={430}
-              />
-              <img
-                src={aboutFounder}
-                alt="Moms chatting at the park"
-                className="w-full h-auto object-cover rounded-lg"
-                loading="lazy"
-                width={640}
-                height={430}
-              />
+              <div className="grid grid-cols-2 gap-4">
+                <img
+                  src={aboutFriends}
+                  alt="Women laughing together"
+                  className="w-full object-cover rounded-lg"
+                  style={{ aspectRatio: "1/1" }}
+                  loading="lazy"
+                  width={320}
+                  height={320}
+                />
+                <img
+                  src={aboutFounder}
+                  alt="Moms chatting at the park"
+                  className="w-full object-cover rounded-lg"
+                  style={{ aspectRatio: "1/1" }}
+                  loading="lazy"
+                  width={320}
+                  height={320}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -87,11 +109,19 @@ const About = () => {
       <section style={{ backgroundColor: "#F9F6F2" }}>
         <div className="max-w-[1200px] mx-auto px-6 py-[100px] text-center">
           <span
-            className="block mb-8 uppercase font-sans-nav font-semibold"
-            style={{ fontSize: "12px", letterSpacing: "3px", color: "#C4836A" }}
+            className="block mb-3 uppercase font-sans-nav font-semibold"
+            style={{ fontSize: "11px", letterSpacing: "0.18em", color: TERRACOTTA }}
           >
-            WHAT WE DO
+            What We Do
           </span>
+          <div
+            style={{
+              width: "32px",
+              height: "2px",
+              backgroundColor: TERRACOTTA,
+              margin: "0 auto 28px",
+            }}
+          />
           <h2 className="font-serif-display text-foreground text-[28px] md:text-[40px] lg:text-[48px] leading-[1.3]">
             We say yes when the research earns it.
             <br />
@@ -111,10 +141,10 @@ const About = () => {
               className="font-sans-nav uppercase text-muted-foreground mb-0"
               style={{ fontSize: "11px", letterSpacing: "2px" }}
             >
-              OUR VALUE
+              Our Value
             </h3>
             <p className="font-serif-body text-[17px] leading-[1.7] text-foreground">
-              We recommend less so that what we do recommend actually means something. Every pick on this site earned its place. Most things didn't make it. Its Mom Approved is built on one idea: a site that recommends everything is recommending nothing. We protect the yes by saying no often, with real research behind every call.
+              We recommend less so that what we do recommend actually means something. Every pick on this site earned its place. Most things didn't make it. It's Mom Approved is built on one idea: a site that recommends everything is recommending nothing. We protect the yes by saying no often, with real research behind every call.
             </p>
           </div>
 
@@ -124,7 +154,7 @@ const About = () => {
               className="font-sans-nav uppercase text-muted-foreground mb-0"
               style={{ fontSize: "11px", letterSpacing: "2px" }}
             >
-              OUR MISSION
+              Our Mission
             </h3>
             <p className="font-serif-body text-[17px] leading-[1.7] text-foreground">
               To get every mom to a clear, confident answer in seconds, not hours. No rabbit holes. No conflicting opinions. Just the real verdict. Less time researching. More time with your baby. That's the whole point.
@@ -137,10 +167,10 @@ const About = () => {
               className="font-sans-nav uppercase text-muted-foreground mb-0"
               style={{ fontSize: "11px", letterSpacing: "2px" }}
             >
-              OUR COMMITMENT
+              Our Commitment
             </h3>
             <p className="font-serif-body text-[17px] leading-[1.7] text-foreground">
-              Every recommendation is backed by real data. We look at the safety record, the reviews, the recalls, and the real-mom feedback. Then we tell you what we actually think. When a product cleared the bar, we tell you why. When it didn't, we say so and point you to what actually works. No vague praise. No buried verdicts.
+              Every recommendation is backed by real data. We look at the safety record, the reviews, the recalls, and the real-mom feedback. Then we give you the honest verdict. When a product cleared the bar, we tell you why. When it didn't, we say so and point you somewhere better. No vague praise. No buried verdicts.
             </p>
           </div>
         </div>
@@ -157,16 +187,16 @@ const About = () => {
               <input
                 type="text"
                 placeholder="Name"
-                className="flex-1 px-4 py-3 rounded-sm border border-white/20 bg-white/10 font-sans-nav text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-white/40"
+                className="flex-1 px-4 py-3 rounded-none border border-white/20 bg-white/10 font-sans-nav text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-white/40"
               />
               <input
                 type="email"
                 placeholder="Email"
-                className="flex-1 px-4 py-3 rounded-sm border border-white/20 bg-white/10 font-sans-nav text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-white/40"
+                className="flex-1 px-4 py-3 rounded-none border border-white/20 bg-white/10 font-sans-nav text-sm text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-white/40"
               />
               <button
-                className="whitespace-nowrap px-6 py-3 rounded-[20px] text-xs uppercase tracking-[0.1em] font-sans-nav font-medium transition-colors"
-                style={{ backgroundColor: "#C4836A", color: "#fff" }}
+                className="whitespace-nowrap px-6 py-3 rounded-none text-xs uppercase tracking-[0.1em] font-sans-nav font-medium transition-opacity hover:opacity-85"
+                style={{ backgroundColor: TERRACOTTA, color: "#fff" }}
               >
                 Sign Up
               </button>
