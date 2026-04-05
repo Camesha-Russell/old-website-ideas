@@ -10,6 +10,11 @@ export interface PostFrontmatter {
   featuredImageAlt: string;
   canonicalUrl?: string;
   excerpt: string;
+  primaryKeyword?: string;
+  topPickName?: string;
+  topPickPrice?: string;
+  budgetPickName?: string;
+  budgetPickPrice?: string;
 }
 
 export interface PostModule {
@@ -29,6 +34,15 @@ export function getAllPosts(): PostFrontmatter[] {
       (post) =>
         post.status === "published" && new Date(post.publishDate) <= now
     )
+    .sort(
+      (a, b) =>
+        new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+    );
+}
+
+export function getAllPostsIncludingDrafts(): PostFrontmatter[] {
+  return Object.values(modules)
+    .map((m) => m.frontmatter)
     .sort(
       (a, b) =>
         new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()

@@ -24,10 +24,14 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
     Sitemap({
       hostname: "https://itsmomapproved.com",
+      generateRobotsTxt: false,
       dynamicRoutes: [
         "/blog",
         "/blog/best-sleep-products-2026",
         "/blog/feeding-essentials-guide",
+        "/blog/hatch-rest-vs-hatch-rest-plus",
+        "/blog/ergobaby-vs-solly-baby-wrap",
+        "/blog/nanit-vs-owlet",
       ],
     }),
   ].filter(Boolean),
