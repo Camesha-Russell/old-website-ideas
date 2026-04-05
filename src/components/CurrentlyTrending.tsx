@@ -1,3 +1,7 @@
+const DM = "'DM Sans', sans-serif";
+const CORMORANT = "'Cormorant Garamond', serif";
+const TERRACOTTA = "hsl(11 52% 47%)";
+
 const trendingPosts = [
   {
     category: "Sleep",
@@ -22,26 +26,95 @@ const CurrentlyTrending = () => {
   const [featured, ...side] = trendingPosts;
 
   return (
-    <section className="py-[100px]">
-      <div className="max-w-[1400px] mx-auto px-4">
-        {/* Section label — 50% larger than original 11px → 17px */}
-        <p className="text-center uppercase text-[17px] tracking-[3px] font-body font-semibold text-foreground mb-12">
-          Currently Trending
-        </p>
+    <section style={{ padding: "80px 0" }}>
+      <div style={{ maxWidth: "1400px", margin: "0 auto", padding: "0 48px" }}>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-6">
+        {/* Section label — anchored with terracotta rule */}
+        <div style={{ textAlign: "center", marginBottom: "48px" }}>
+          <p
+            style={{
+              fontFamily: DM,
+              fontSize: "11px",
+              fontWeight: 700,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "hsl(0 0% 20%)",
+              marginBottom: "10px",
+            }}
+          >
+            Currently Trending
+          </p>
+          <div
+            style={{
+              width: "32px",
+              height: "2px",
+              backgroundColor: TERRACOTTA,
+              margin: "0 auto",
+            }}
+          />
+        </div>
+
+        {/* Two-column grid — generous gap */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "40px",
+            alignItems: "start",
+          }}
+          className="grid-cols-1 lg:grid-cols-2"
+        >
           {/* Large featured card */}
-          <div className="bg-white border border-border rounded-lg overflow-hidden cursor-pointer group">
-            <div className="placeholder-img aspect-[16/10]" />
-            <div className="p-6">
-              <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">
+          <div
+            className="group"
+            style={{
+              backgroundColor: "#ffffff",
+              border: "1px solid hsl(34 15% 90%)",
+              overflow: "hidden",
+              cursor: "pointer",
+            }}
+          >
+            <div
+              className="placeholder-img"
+              style={{ width: "100%", aspectRatio: "4/3" }}
+            />
+            <div style={{ padding: "24px 28px 28px" }}>
+              <span
+                style={{
+                  fontFamily: DM,
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: TERRACOTTA,
+                  display: "block",
+                  marginBottom: "10px",
+                }}
+              >
                 {featured.category}
               </span>
-              <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">
+              <h3
+                style={{
+                  fontFamily: CORMORANT,
+                  fontSize: "clamp(20px, 2.2vw, 28px)",
+                  fontWeight: 400,
+                  lineHeight: 1.25,
+                  color: "hsl(0 0% 10%)",
+                  marginBottom: "10px",
+                }}
+                className="group-hover:opacity-70 transition-opacity"
+              >
                 {featured.title}
               </h3>
               {featured.excerpt && (
-                <p className="font-body text-foreground text-sm mt-2 line-clamp-1">
+                <p
+                  style={{
+                    fontFamily: DM,
+                    fontSize: "14px",
+                    color: "hsl(0 0% 38%)",
+                    lineHeight: 1.7,
+                  }}
+                >
                   {featured.excerpt}
                 </p>
               )}
@@ -49,18 +122,56 @@ const CurrentlyTrending = () => {
           </div>
 
           {/* Stacked side cards */}
-          <div className="flex flex-col gap-4">
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
             {side.map((post, i) => (
               <div
                 key={i}
-                className="bg-white border border-border rounded-lg overflow-hidden flex gap-4 items-center cursor-pointer group p-4"
+                className="group"
+                style={{
+                  backgroundColor: "#ffffff",
+                  border: "1px solid hsl(34 15% 90%)",
+                  overflow: "hidden",
+                  display: "flex",
+                  gap: "0",
+                  alignItems: "stretch",
+                  cursor: "pointer",
+                }}
               >
-                <div className="placeholder-img w-28 h-24 flex-shrink-0 rounded" />
-                <div>
-                  <span className="text-terracotta uppercase text-[10px] tracking-[2px] font-body font-semibold">
+                {/* Thumbnail — taller and wider */}
+                <div
+                  className="placeholder-img"
+                  style={{
+                    width: "160px",
+                    flexShrink: 0,
+                    minHeight: "120px",
+                  }}
+                />
+                {/* Text */}
+                <div style={{ padding: "18px 20px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                  <span
+                    style={{
+                      fontFamily: DM,
+                      fontSize: "11px",
+                      fontWeight: 700,
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      color: TERRACOTTA,
+                      display: "block",
+                      marginBottom: "8px",
+                    }}
+                  >
                     {post.category}
                   </span>
-                  <h4 className="font-display text-base md:text-lg mt-1 leading-snug group-hover:opacity-70 transition-opacity">
+                  <h4
+                    style={{
+                      fontFamily: CORMORANT,
+                      fontSize: "clamp(17px, 1.6vw, 20px)",
+                      fontWeight: 400,
+                      lineHeight: 1.3,
+                      color: "hsl(0 0% 10%)",
+                    }}
+                    className="group-hover:opacity-70 transition-opacity"
+                  >
                     {post.title}
                   </h4>
                 </div>
