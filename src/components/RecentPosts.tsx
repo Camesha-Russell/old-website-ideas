@@ -34,7 +34,7 @@ const RecentPosts = () => {
             )}
             <div className="p-5">
               <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">{hero.category}</span>
-              <h3 className="font-display text-lg md:text-xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">
+              <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">
                 {hero.title}
               </h3>
               {hero.excerpt && (
@@ -57,8 +57,8 @@ const RecentPosts = () => {
                   <div className="placeholder-img aspect-[4/3]" />
                 )}
                 <div className="p-4">
-                  <span className="text-terracotta uppercase text-[10px] tracking-[2px] font-body font-semibold">{post.category}</span>
-                  <h3 className="font-display text-sm md:text-base mt-1.5 leading-snug group-hover:opacity-70 transition-opacity">
+                  <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">{post.category}</span>
+                  <h3 className="font-display text-lg md:text-xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">
                     {post.title}
                   </h3>
                 </div>
