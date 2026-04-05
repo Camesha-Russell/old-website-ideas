@@ -63,9 +63,9 @@ export default {
         nearblack: "hsl(var(--nearblack))",
       },
       fontFamily: {
-        'display': ['"Playfair Display"', 'serif'],
-        'body': ['"Poppins"', 'sans-serif'],
-        'nav': ['"Montserrat"', 'sans-serif'],
+        'display': ['"Cormorant Garamond"', 'serif'],
+        'body': ['"DM Sans"', 'sans-serif'],
+        'nav': ['"DM Sans"', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
