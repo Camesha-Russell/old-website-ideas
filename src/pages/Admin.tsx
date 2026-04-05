@@ -189,7 +189,7 @@ function PostsTab({ posts }: { posts: PostFrontmatter[] }) {
                     {estimateReadTime(post.excerpt)}
                   </td>
                   <td className="px-4 py-4 whitespace-nowrap">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <Link
                         to={`/blog/${post.slug}`}
                         className="text-xs font-nav text-foreground underline underline-offset-2 hover:opacity-70 transition-opacity"

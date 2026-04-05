@@ -10,6 +10,7 @@ import BlogPost from "./pages/BlogPost";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
+import PostEditor from "./pages/PostEditor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,7 +22,7 @@ const placeholderRoutes = [
   "/feeding",
   "/carriers-and-strollers",
   "/play-and-development",
-  "/for-mom",
+  "/for-moms",
   "/safety",
   "/we-said-no",
   "/hype-check",
@@ -46,6 +47,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/edit/:slug" element={<PostEditor />} />
             {placeholderRoutes.map((path) => (
               <Route key={path} path={path} element={<PlaceholderPage />} />
             ))}

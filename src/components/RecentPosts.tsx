@@ -1,11 +1,19 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getAllPosts } from "@/lib/blog";
 import { RECENT_POSTS_COUNT } from "@/config/homepage";
 
-const RecentPosts = () => {
-  const posts = getAllPosts().slice(0, RECENT_POSTS_COUNT);
+const CATEGORIES = ["All", "Sleep", "Feeding", "Carriers and Strollers", "Play and Development", "For Moms", "Safety"];
 
-  if (posts.length === 0) {
+const RecentPosts = () => {
+  const allPublished = getAllPosts();
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filtered = activeCategory === "All"
+    ? allPublished.slice(0, RECENT_POSTS_COUNT)
+    : allPublished.filter((p) => p.category === activeCategory).slice(0, RECENT_POSTS_COUNT);
+
+  if (allPublished.length === 0) {
     return (
       <section className="py-[100px]">
         <div className="max-w-[1400px] mx-auto px-4">
@@ -16,13 +24,37 @@ const RecentPosts = () => {
     );
   }
 
+  // Only show categories that actually have posts
+  const activeCats = new Set(allPublished.map((p) => p.category));
+  const visibleCategories = CATEGORIES.filter((c) => c === "All" || activeCats.has(c));
+
   // Single post: full-width hero only
-  if (posts.length === 1) {
-    const [hero] = posts;
+  if (filtered.length === 1) {
+    const [hero] = filtered;
     return (
       <section className="py-[100px]">
         <div className="max-w-[1400px] mx-auto px-4">
-          <h2 className="section-title text-foreground mb-10">Recent Posts</h2>
+          <h2 className="section-title text-foreground mb-6">Recent Posts</h2>
+
+          {/* Category filter strip */}
+          {visibleCategories.length > 2 && (
+            <div className="flex flex-wrap gap-2 justify-center mb-10">
+              {visibleCategories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-1.5 rounded-full text-xs font-nav uppercase tracking-wider transition-colors ${
+                    activeCategory === cat
+                      ? "bg-foreground text-background"
+                      : "bg-muted text-muted-foreground hover:bg-foreground/10"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
+
           <Link to={`/blog/${hero.slug}`} className="group bg-white border border-border rounded-lg overflow-hidden block max-w-2xl mx-auto">
             {hero.featuredImage && hero.featuredImage !== "/placeholder.svg" ? (
               <img src={hero.featuredImage} alt={hero.featuredImageAlt || hero.title} className="w-full aspect-[16/9] object-cover" />
@@ -43,15 +75,63 @@ const RecentPosts = () => {
     );
   }
 
-  const [hero, ...rest] = posts;
-  // Cap grid at 4 posts; use 1 or 2 columns based on how many we have
+  if (filtered.length === 0) {
+    return (
+      <section className="py-[100px]">
+        <div className="max-w-[1400px] mx-auto px-4">
+          <h2 className="section-title text-foreground mb-6">Recent Posts</h2>
+
+          {visibleCategories.length > 2 && (
+            <div className="flex flex-wrap gap-2 justify-center mb-10">
+              {visibleCategories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`px-4 py-1.5 rounded-full text-xs font-nav uppercase tracking-wider transition-colors ${
+                    activeCategory === cat
+                      ? "bg-foreground text-background"
+                      : "bg-muted text-muted-foreground hover:bg-foreground/10"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <p className="text-center text-muted-foreground font-body">No posts in this category yet.</p>
+        </div>
+      </section>
+    );
+  }
+
+  const [hero, ...rest] = filtered;
   const gridPosts = rest.slice(0, 4);
   const gridCols = gridPosts.length <= 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-2";
 
   return (
     <section className="py-[100px]">
       <div className="max-w-[1400px] mx-auto px-4">
-        <h2 className="section-title text-foreground mb-10">Recent Posts</h2>
+        <h2 className="section-title text-foreground mb-6">Recent Posts</h2>
+
+        {/* Category filter strip */}
+        {visibleCategories.length > 2 && (
+          <div className="flex flex-wrap gap-2 justify-center mb-10">
+            {visibleCategories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-1.5 rounded-full text-xs font-nav uppercase tracking-wider transition-colors ${
+                  activeCategory === cat
+                    ? "bg-foreground text-background"
+                    : "bg-muted text-muted-foreground hover:bg-foreground/10"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        )}
 
         <div className={`grid grid-cols-1 ${gridPosts.length >= 2 ? "lg:grid-cols-[40%_60%]" : "lg:grid-cols-1 max-w-2xl mx-auto"} gap-6`}>
           {/* Large left hero post */}
@@ -68,7 +148,7 @@ const RecentPosts = () => {
             </div>
           </Link>
 
-          {/* Right grid — only renders if there are grid posts */}
+          {/* Right grid */}
           {gridPosts.length > 0 && (
             <div className={`grid ${gridCols} gap-5 content-start`}>
               {gridPosts.map((post) => (
