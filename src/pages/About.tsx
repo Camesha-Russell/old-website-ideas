@@ -180,7 +180,7 @@ const About = () => {
       <section className="bg-nearblack">
         <div className="max-w-[1200px] mx-auto px-6 py-[80px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <h2 className="font-serif-display italic text-white text-2xl md:text-3xl lg:text-4xl leading-snug">
+            <h2 className="font-serif-display italic text-white text-2xl md:text-3xl lg:text-[30px] leading-snug">
               Be the first to know what's worth it, and what to skip.
             </h2>
             <div className="flex flex-col sm:flex-row gap-3">
