@@ -25,16 +25,16 @@ const features = [
 
 const SignatureFeatures = () => {
   return (
-    <section className="bg-taupe">
-      <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
+    <section className="py-[100px]">
+      <div className="max-w-[1400px] mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {features.map((feature) => (
             <Link
               key={feature.path}
               to={feature.path}
-              className="bg-white/40 hover:bg-white/70 transition-colors rounded-sm p-6 text-center group"
+              className="bg-white border border-border rounded-lg p-6 text-center group hover:border-foreground/30 transition-colors"
             >
-              <h3 className="font-display text-base md:text-lg mb-2 group-hover:text-muted-foreground transition-colors">
+              <h3 className="font-display text-base md:text-lg mb-2 group-hover:opacity-70 transition-opacity">
                 {feature.title}
               </h3>
               <p className="font-body text-muted-foreground text-xs leading-relaxed">

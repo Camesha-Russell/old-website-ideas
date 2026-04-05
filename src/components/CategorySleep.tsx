@@ -4,46 +4,35 @@ const sleepPosts = [
   { title: "Best Sound Machines for Nurseries" },
   { title: "Blackout Curtains That Actually Work" },
   { title: "Sleep Sack Size Guide by Age" },
+  { title: "Building the Perfect Sleep Environment" },
 ];
 
 const CategorySleep = () => {
   return (
-    <section className="bg-white">
-      <div className="max-w-[1400px] mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Column */}
-          <div>
-            <span className="category-label text-muted-foreground">Category</span>
-            <h2 className="font-display text-3xl md:text-4xl mt-2 mb-4">Sleep</h2>
-            <p className="font-body text-muted-foreground text-sm leading-relaxed mb-8 max-w-md">
-              Evidence-based guides and honest product reviews to help your little one (and you) get the rest you deserve.
-            </p>
+    <section className="py-[100px]">
+      <div className="max-w-[1400px] mx-auto px-4">
+        <h2 className="uppercase text-[11px] tracking-[3px] font-body font-semibold text-foreground mb-10">
+          Sleep
+        </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {sleepPosts.map((post, i) => (
-                <div key={i} className="group cursor-pointer">
-                  <div className="placeholder-img aspect-square rounded-sm mb-2" />
-                  <h4 className="font-display text-xs leading-snug group-hover:text-muted-foreground transition-colors">
-                    {post.title}
-                  </h4>
-                </div>
-              ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {sleepPosts.map((post, i) => (
+            <div key={i} className="group cursor-pointer bg-white border border-border rounded-lg overflow-hidden">
+              <div className="placeholder-img aspect-[4/3]" />
+              <div className="p-4">
+                <span className="text-terracotta uppercase text-[10px] tracking-[2px] font-body font-semibold">Sleep</span>
+                <h3 className="font-display text-sm md:text-base mt-1.5 leading-snug group-hover:opacity-70 transition-opacity">
+                  {post.title}
+                </h3>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right Column - Large Image with Overlay */}
-          <div className="relative rounded-sm overflow-hidden">
-            <div className="placeholder-img aspect-[3/4] lg:aspect-auto lg:h-full lg:min-h-[420px]" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-nearblack/80 to-transparent">
-              <span className="category-label text-white/70">Sleep Essentials</span>
-              <h3 className="font-display text-white text-lg md:text-xl mt-1 mb-3 leading-snug">
-                Building the Perfect Sleep Environment
-              </h3>
-              <Link to="/sleep" className="btn-peach text-[10px]">
-                Read More
-              </Link>
-            </div>
-          </div>
+        <div className="text-right mt-8">
+          <Link to="/sleep" className="text-terracotta font-body text-sm font-medium hover:opacity-70 transition-opacity">
+            Browse all Sleep posts →
+          </Link>
         </div>
       </div>
     </section>

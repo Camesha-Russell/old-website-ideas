@@ -61,6 +61,7 @@ export default {
         taupe: "hsl(var(--taupe))",
         peach: "hsl(var(--peach))",
         nearblack: "hsl(var(--nearblack))",
+        terracotta: "hsl(var(--terracotta))",
       },
       fontFamily: {
         'display': ['"Cormorant Garamond"', 'serif'],
