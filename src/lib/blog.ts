@@ -15,6 +15,8 @@ export interface PostFrontmatter {
   topPickPrice?: string;
   budgetPickName?: string;
   budgetPickPrice?: string;
+  /** Editorial star rating for top pick e.g. "4.5" — enables Review schema rich snippet */
+  topPickRating?: string;
   /** "standard" = no sidebar (default), "with-sidebar" = 33% variant */
   layout?: "standard" | "with-sidebar";
   /** Estimated read time in minutes — defaults to 5 if not set */

@@ -10,6 +10,8 @@ import BudgetCallout from "@/components/blog/BudgetCallout";
 import PillarLink from "@/components/blog/PillarLink";
 import SourceReviewQuote from "@/components/blog/SourceReviewQuote";
 import ImagePlaceholder from "@/components/blog/ImagePlaceholder";
+import QuickAnswerBox from "@/components/blog/QuickAnswerBox";
+import ShopButton from "@/components/blog/ShopButton";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import PrevNextNav from "@/components/blog/PrevNextNav";
@@ -29,6 +31,7 @@ const mdxComponents = {
   PillarLink,
   SourceReviewQuote,
   ImagePlaceholder,
+  ShopButton,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       style={{
@@ -141,18 +144,60 @@ const BlogPost = () => {
   const { prev, next } = getAdjacentPosts(fm.slug);
   const isSidebar = fm.layout === "with-sidebar";
 
-  const jsonLd = {
+  // Article schema — base for all posts
+  const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: fm.title,
     datePublished: fm.publishDate,
+    dateModified: fm.publishDate,
     description: fm.metaDescription,
-    image: fm.featuredImage,
+    image: fm.featuredImage !== "/placeholder.svg" ? fm.featuredImage : undefined,
+    url: canonicalUrl,
     author: {
       "@type": "Organization",
       name: "itsmomapproved.com",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "itsmomapproved.com",
+      url: SITE_URL,
     },
   };
+
+  // Review + Product schema — only when top pick data is present
+  const reviewSchema =
+    fm.topPickName && fm.topPickPrice && fm.topPickRating
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Review",
+          name: `${fm.topPickName} Review`,
+          url: canonicalUrl,
+          author: {
+            "@type": "Organization",
+            name: "itsmomapproved.com",
+          },
+          datePublished: fm.publishDate,
+          reviewBody: fm.metaDescription,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: fm.topPickRating,
+            bestRating: "5",
+            worstRating: "1",
+          },
+          itemReviewed: {
+            "@type": "Product",
+            name: fm.topPickName,
+            offers: {
+              "@type": "Offer",
+              price: fm.topPickPrice.replace(/[^0-9.]/g, ""),
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+            },
+          },
+        }
+      : null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -169,7 +214,10 @@ const BlogPost = () => {
         <meta name="twitter:title" content={fm.seoTitle || fm.title} />
         <meta name="twitter:description" content={fm.metaDescription} />
         <meta name="twitter:image" content={fm.featuredImage} />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        {reviewSchema && (
+          <script type="application/ld+json">{JSON.stringify(reviewSchema)}</script>
+        )}
       </Helmet>
 
       <TopNavBar />
@@ -202,6 +250,16 @@ const BlogPost = () => {
                 aspect="featured"
               />
             </div>
+          )}
+
+          {/* Quick Answer Box — auto-renders when frontmatter has pick data */}
+          {fm.topPickName && fm.topPickPrice && fm.budgetPickName && fm.budgetPickPrice && (
+            <QuickAnswerBox
+              topPickName={fm.topPickName}
+              topPickPrice={fm.topPickPrice}
+              budgetPickName={fm.budgetPickName}
+              budgetPickPrice={fm.budgetPickPrice}
+            />
           )}
 
           <div className="prose-custom">
@@ -242,6 +300,16 @@ const BlogPost = () => {
                   />
                 </div>
               )}
+              {/* Quick Answer Box — auto-renders when frontmatter has pick data */}
+              {fm.topPickName && fm.topPickPrice && fm.budgetPickName && fm.budgetPickPrice && (
+                <QuickAnswerBox
+                  topPickName={fm.topPickName}
+                  topPickPrice={fm.topPickPrice}
+                  budgetPickName={fm.budgetPickName}
+                  budgetPickPrice={fm.budgetPickPrice}
+                />
+              )}
+
               <div className="prose-custom">
                 <MDXProvider components={mdxComponents}>
                   <Component />
