@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import { RECENT_POSTS_COUNT } from "@/config/homepage";
 
 const RecentPosts = () => {
-  const posts = getAllPosts().slice(0, Math.max(RECENT_POSTS_COUNT, 5));
+  const posts = getAllPosts().slice(0, RECENT_POSTS_COUNT);
 
   if (posts.length === 0) {
     return (
@@ -16,16 +16,45 @@ const RecentPosts = () => {
     );
   }
 
+  // Single post: full-width hero only
+  if (posts.length === 1) {
+    const [hero] = posts;
+    return (
+      <section className="py-[100px]">
+        <div className="max-w-[1400px] mx-auto px-4">
+          <h2 className="section-title text-foreground mb-10">Recent Posts</h2>
+          <Link to={`/blog/${hero.slug}`} className="group bg-white border border-border rounded-lg overflow-hidden block max-w-2xl mx-auto">
+            {hero.featuredImage && hero.featuredImage !== "/placeholder.svg" ? (
+              <img src={hero.featuredImage} alt={hero.featuredImageAlt || hero.title} className="w-full aspect-[16/9] object-cover" />
+            ) : (
+              <div className="placeholder-img aspect-[16/9]" />
+            )}
+            <div className="p-5">
+              <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">{hero.category}</span>
+              <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">{hero.title}</h3>
+              {hero.excerpt && <p className="font-body text-muted-foreground text-sm mt-2 line-clamp-2">{hero.excerpt}</p>}
+            </div>
+          </Link>
+          <div className="text-center mt-14">
+            <Link to="/blog" className="btn-peach text-[10px]">Explore All Posts</Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const [hero, ...rest] = posts;
-  const grid = rest.slice(0, 4);
+  // Cap grid at 4 posts; use 1 or 2 columns based on how many we have
+  const gridPosts = rest.slice(0, 4);
+  const gridCols = gridPosts.length <= 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-2";
 
   return (
     <section className="py-[100px]">
       <div className="max-w-[1400px] mx-auto px-4">
         <h2 className="section-title text-foreground mb-10">Recent Posts</h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-6">
-          {/* Large left post */}
+        <div className={`grid grid-cols-1 ${gridPosts.length >= 2 ? "lg:grid-cols-[40%_60%]" : "lg:grid-cols-1 max-w-2xl mx-auto"} gap-6`}>
+          {/* Large left hero post */}
           <Link to={`/blog/${hero.slug}`} className="group bg-white border border-border rounded-lg overflow-hidden block">
             {hero.featuredImage && hero.featuredImage !== "/placeholder.svg" ? (
               <img src={hero.featuredImage} alt={hero.featuredImageAlt || hero.title} className="w-full aspect-[3/4] object-cover" />
@@ -34,37 +63,33 @@ const RecentPosts = () => {
             )}
             <div className="p-5">
               <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">{hero.category}</span>
-              <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">
-                {hero.title}
-              </h3>
-              {hero.excerpt && (
-                <p className="font-body text-muted-foreground text-sm mt-2 line-clamp-2">{hero.excerpt}</p>
-              )}
+              <h3 className="font-display text-xl md:text-2xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">{hero.title}</h3>
+              {hero.excerpt && <p className="font-body text-muted-foreground text-sm mt-2 line-clamp-2">{hero.excerpt}</p>}
             </div>
           </Link>
 
-          {/* 2x2 grid right */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {grid.map((post) => (
-              <Link
-                key={post.slug}
-                to={`/blog/${post.slug}`}
-                className="group bg-white border border-border rounded-lg overflow-hidden block"
-              >
-                {post.featuredImage && post.featuredImage !== "/placeholder.svg" ? (
-                  <img src={post.featuredImage} alt={post.featuredImageAlt || post.title} className="w-full aspect-[4/3] object-cover" />
-                ) : (
-                  <div className="placeholder-img aspect-[4/3]" />
-                )}
-                <div className="p-4">
-                  <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">{post.category}</span>
-                  <h3 className="font-display text-lg md:text-xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">
-                    {post.title}
-                  </h3>
-                </div>
-              </Link>
-            ))}
-          </div>
+          {/* Right grid — only renders if there are grid posts */}
+          {gridPosts.length > 0 && (
+            <div className={`grid ${gridCols} gap-5 content-start`}>
+              {gridPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="group bg-white border border-border rounded-lg overflow-hidden block"
+                >
+                  {post.featuredImage && post.featuredImage !== "/placeholder.svg" ? (
+                    <img src={post.featuredImage} alt={post.featuredImageAlt || post.title} className="w-full aspect-[4/3] object-cover" />
+                  ) : (
+                    <div className="placeholder-img aspect-[4/3]" />
+                  )}
+                  <div className="p-4">
+                    <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">{post.category}</span>
+                    <h3 className="font-display text-lg md:text-xl mt-2 leading-snug group-hover:opacity-70 transition-opacity">{post.title}</h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="text-center mt-14">

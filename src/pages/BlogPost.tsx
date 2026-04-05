@@ -9,6 +9,7 @@ import SafetyNote from "@/components/blog/SafetyNote";
 import BudgetCallout from "@/components/blog/BudgetCallout";
 import PillarLink from "@/components/blog/PillarLink";
 import SourceReviewQuote from "@/components/blog/SourceReviewQuote";
+import ImagePlaceholder from "@/components/blog/ImagePlaceholder";
 import BlogPostHeader from "@/components/blog/BlogPostHeader";
 import BlogSidebar from "@/components/blog/BlogSidebar";
 import PrevNextNav from "@/components/blog/PrevNextNav";
@@ -27,6 +28,7 @@ const mdxComponents = {
   BudgetCallout,
   PillarLink,
   SourceReviewQuote,
+  ImagePlaceholder,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       style={{
