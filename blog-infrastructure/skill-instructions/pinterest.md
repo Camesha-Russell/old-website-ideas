@@ -85,7 +85,7 @@ Every pin should be saved to the most relevant board on itsmomapproved.com's Pin
 - Baby Feeding Must-Haves (Feeding pillar)
 - Baby Carriers and Strollers (Carriers and Strollers pillar)
 - Baby Play and Development (Play and Development pillar)
-- Just for Mama (Just for Mama pillar)
+- For Moms (For Moms pillar)
 - Baby Safety and Recalls (Safety pillar)
 - Baby Registry Must-Haves (Registry Reality posts, gift guides)
 - Baby Products to Skip (Skip This posts — this board builds serious trust and gets saves from skeptical moms)

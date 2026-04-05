@@ -5,7 +5,7 @@
 
 ## What This Project Is
 
-itsmomapproved.com is a research-backed product recommendation site for moms of babies and toddlers aged 0-4. It is built in Lovable (React + Vite). The site has six content pillars: Sleep, Feeding, Carriers and Strollers, Play and Development, Just for Mama, and Safety.
+itsmomapproved.com is a research-backed product recommendation site for moms of babies and toddlers aged 0-4. It is built in Lovable (React + Vite). The site has six content pillars: Sleep, Feeding, Carriers and Strollers, Play and Development, For Moms, and Safety.
 
 ---
 
@@ -48,7 +48,7 @@ Usage: `<BudgetCallout productName="LectroFan" price="$34.99" affiliateUrl="http
 
 **`<PillarLink slug="sleep" label="Sleep" />`** — Internal link card to the pillar page. Goes at the bottom of every post.
 Usage: `<PillarLink slug="sleep" label="Sleep" />`
-Pillar slugs: `sleep` | `feeding` | `carriers-and-strollers` | `play-and-development` | `just-for-mama` | `safety`
+Pillar slugs: `sleep` | `feeding` | `carriers-and-strollers` | `play-and-development` | `for-moms` | `safety`
 
 ---
 
@@ -62,7 +62,7 @@ title: ""
 slug: ""
 status: "draft"           # "draft" | "published"
 publishDate: "YYYY-MM-DD" # Future date = stays hidden until that date
-category: ""              # sleep | feeding | carriers-and-strollers | play-and-development | just-for-mama | safety
+category: ""              # sleep | feeding | carriers-and-strollers | play-and-development | for-moms | safety
 seoTitle: ""              # 50-60 chars
 metaDescription: ""       # 150-160 chars
 featuredImage: ""         # /images/posts/[slug].jpg — leave blank if not yet added

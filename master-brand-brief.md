@@ -465,9 +465,9 @@ Last Updated: April 2026  |  Version 1.4
 
 **Content Architecture — Topic Clusters**
 
-itsmomapproved.com is built around six content pillars: Sleep, Feeding, Carriers and Strollers, Play and Development, Postpartum and Mom, and Safety. Every post produced belongs to one of these six pillars. Each pillar has one authoritative pillar page — a best-of category post — supported by cluster pages that link back to it. This architecture builds domain authority systematically rather than producing disconnected posts.
+itsmomapproved.com is built around six content pillars: Sleep, Feeding, Carriers and Strollers, Play and Development, For Moms, and Safety. Every post produced belongs to one of these six pillars. Each pillar has one authoritative pillar page — a best-of category post — supported by cluster pages that link back to it. This architecture builds domain authority systematically rather than producing disconnected posts.
 
-The six pillar pages are: Best White Noise Machines for Babies (Sleep), Best Baby Bottles for Breastfed Babies (Feeding), Best Baby Carriers for Newborns (Carriers and Strollers), Best Play Mats for Babies (Play and Development), Best Postpartum Recovery Essentials (Postpartum and Mom), and Best Baby Monitors (Safety).
+The six pillar pages are: Best White Noise Machines for Babies (Sleep), Best Baby Bottles for Breastfed Babies (Feeding), Best Baby Carriers for Newborns (Carriers and Strollers), Best Play Mats for Babies (Play and Development), Best Postpartum Recovery Essentials (For Moms), and Best Baby Monitors (Safety).
 
 Within each pillar, comparison posts are the priority format. They capture high-intent search traffic from moms already close to a purchase decision, carry the strongest affiliate link potential, and align directly with how Maya actually searches — she already knows the category, she wants someone to make the call between two specific products.
 

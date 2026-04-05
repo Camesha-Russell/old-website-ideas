@@ -23,7 +23,7 @@ Every gap should be assigned to one:
 - Feeding
 - Carriers and Strollers
 - Play and Development
-- Just for Mama
+- For Moms
 - Safety
 
 ## Before you start
@@ -62,7 +62,7 @@ Run all twelve searches (two per pillar × six pillars) in the same turn if anal
 - Feeding: "best baby feeding products" / "baby bottles high chairs breast pumps weaning"
 - Carriers and Strollers: "best baby carriers strollers" / "baby wearing stroller comparisons"
 - Play and Development: "best baby play development toys" / "play mats activity centers sensory"
-- Just for Mama: "best postpartum recovery products" / "new mom essentials self care"
+- For Moms: "best postpartum recovery products" / "new mom essentials self care"
 - Safety: "best baby safety products" / "baby monitors recalls safety gear"
 
 ### Step 3: Identify gaps

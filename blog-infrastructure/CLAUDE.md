@@ -85,7 +85,7 @@ title: ""
 slug: ""
 status: "draft"
 publishDate: "YYYY-MM-DD"
-category: ""          # matches pillar: sleep | feeding | carriers-and-strollers | play-and-development | just-for-mama | safety
+category: ""          # matches pillar: sleep | feeding | carriers-and-strollers | play-and-development | for-moms | safety
 seoTitle: ""
 metaDescription: ""
 featuredImage: ""     # path to image: /images/posts/[slug].jpg — leave blank if not yet added

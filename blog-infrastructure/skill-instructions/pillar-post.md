@@ -11,7 +11,7 @@ This is different from /product-post (Skinny Confidential: verdict first, cold a
 Gather these inputs before starting. Ask the user if any are missing.
 
 - **Pillar topic** — the category this page covers (e.g., "Best Baby Carriers for Newborns")
-- **Pillar page this belongs to** — confirm which of the six pillars this is (Sleep, Feeding, Carriers and Strollers, Play and Development, Just for Mama, Safety)
+- **Pillar page this belongs to** — confirm which of the six pillars this is (Sleep, Feeding, Carriers and Strollers, Play and Development, For Moms, Safety)
 - **Products to consider** — the products being evaluated (names, prices, key features or review data)
 - **Related cluster/comparison posts** — any comparison posts already written in this pillar that this page should link down to
 - **Research notes** — ratings, review patterns, safety flags, expert sources, standout features, any products to explicitly skip

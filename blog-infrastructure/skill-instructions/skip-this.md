@@ -17,7 +17,7 @@ Confirm these inputs before starting. Ask the user if anything is missing.
 - **The core concern** — the specific reason for the skip: safety issue, recall, doesn't work as advertised, overpriced relative to alternatives, poor longevity, misleading marketing
 - **What to get instead** — the specific alternative product(s) with actual prices (required — every skip comes with a redirect)
 - **Research data** — review patterns, recall records, safety flags, CPSC or AAP warnings, specific complaints from verified reviews
-- **Pillar this belongs to** — which of the six pillars (Sleep, Feeding, Carriers and Strollers, Play and Development, Just for Mama, Safety)
+- **Pillar this belongs to** — which of the six pillars (Sleep, Feeding, Carriers and Strollers, Play and Development, For Moms, Safety)
 
 ## Two formats
 

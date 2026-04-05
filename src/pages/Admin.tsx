@@ -5,7 +5,7 @@ import { FEATURED_SLUGS } from "@/config/homepage";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
-const CATEGORIES = ["All", "Sleep", "Feeding", "Carriers and Strollers", "Play and Development", "Postpartum and Mom", "Safety"];
+const CATEGORIES = ["All", "Sleep", "Feeding", "Carriers and Strollers", "Play and Development", "For Moms", "Safety"];
 
 function estimateReadTime(excerpt: string): string {
   const words = excerpt.split(/\s+/).length * 12; // rough body estimate

@@ -47,7 +47,7 @@ These are pre-built and live at `src/components/blog/`. Use them exactly as show
 **`<BudgetCallout productName="X" price="$XX" affiliateUrl="https://...">text here</BudgetCallout>`** — green card for budget alternative pick
 
 **`<PillarLink to="/sleep" label="Sleep" />`** — internal pillar link at bottom of every post
-Valid `to` values: `/sleep` | `/feeding` | `/carriers-and-strollers` | `/play-and-development` | `/just-for-mama` | `/safety`
+Valid `to` values: `/sleep` | `/feeding` | `/carriers-and-strollers` | `/play-and-development` | `/for-moms` | `/safety`
 
 **`<SourceReviewQuote firstName="Tiffany" sourceName="Reddit" sourceUrl="https://...">`** — attributed real-user quote block
 Usage:
@@ -70,7 +70,7 @@ title: ""
 slug: ""
 status: "draft"
 publishDate: "YYYY-MM-DD"
-category: ""              # sleep | feeding | carriers-and-strollers | play-and-development | just-for-mama | safety
+category: ""              # sleep | feeding | carriers-and-strollers | play-and-development | for-moms | safety
 seoTitle: ""              # 50-60 chars
 metaDescription: ""       # 150-160 chars
 featuredImage: ""         # /images/posts/[slug].jpg — leave blank if not yet added

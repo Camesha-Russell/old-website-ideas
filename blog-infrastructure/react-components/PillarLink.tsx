@@ -20,7 +20,7 @@ const PILLAR_EMOJIS: Record<string, string> = {
   feeding: '🍼',
   'carriers-and-strollers': '🚼',
   'play-and-development': '🧸',
-  'just-for-mama': '💛',
+  'for-moms': '💛',
   safety: '🛡️',
 };
 

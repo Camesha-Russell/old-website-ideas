@@ -88,7 +88,7 @@ Supporting cluster pages:
 
 ---
 
-## Pillar 5: Just for Mama
+## Pillar 5: For Moms
 
 **Pillar page:** Best Postpartum Recovery Essentials (Best-of, Planned)
 

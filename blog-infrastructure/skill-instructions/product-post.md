@@ -8,7 +8,7 @@ You are writing a product recommendation post for itsmomapproved.com. This site 
 
 Read the inputs the user has provided:
 - **Product name** — the title of the post (e.g., a single product or a comparison)
-- **Category and pillar** — which of the six site pillars this belongs to (Sleep, Feeding, Carriers and Strollers, Play and Development, Postpartum and Mom, Safety)
+- **Category and pillar** — which of the six site pillars this belongs to (Sleep, Feeding, Carriers and Strollers, Play and Development, For Moms, Safety)
 - **Top pick price** — the actual dollar amount(s)
 - **Budget alternative name and price** — the lower-cost option and its actual dollar amount
 - **Key research notes** — ratings, review patterns, safety flags, standout features, longevity observations
