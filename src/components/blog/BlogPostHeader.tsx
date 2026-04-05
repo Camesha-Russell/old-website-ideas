@@ -79,8 +79,8 @@ const BlogPostHeader = ({ category, title, publishDate, readTime = 5 }: BlogPost
         }}
       >
         {formattedDate} &bull; {readTime} min read
-        </p>
-    </div
+      </p>
+    </div>
   );
 };
 
