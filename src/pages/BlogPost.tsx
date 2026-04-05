@@ -18,6 +18,9 @@ import { getPostBySlug, getAllPosts, getAdjacentPosts } from "@/lib/blog";
 
 const SITE_URL = "https://itsmomapproved.com";
 
+const LORA = "'Lora', serif";
+const DM = "'DM Sans', sans-serif";
+
 const mdxComponents = {
   AffiliateDisclosure,
   SafetyNote,
@@ -26,77 +29,101 @@ const mdxComponents = {
   SourceReviewQuote,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
-      className="text-foreground mt-8 mb-4"
       style={{
-        fontFamily: "'Cormorant Garamond', serif",
-        fontSize: "clamp(24px, 3vw, 36px)",
-        fontWeight: 400,
-        lineHeight: 1.2,
+        fontFamily: LORA,
+        fontSize: "clamp(22px, 3vw, 32px)",
+        fontWeight: 600,
+        lineHeight: 1.25,
+        color: "hsl(0 0% 10%)",
+        marginTop: "40px",
+        marginBottom: "16px",
+        letterSpacing: "-0.01em",
       }}
       {...props}
     />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="text-foreground mt-8 mb-3"
       style={{
-        fontFamily: "'Cormorant Garamond', serif",
-        fontSize: "clamp(20px, 2.5vw, 28px)",
-        fontWeight: 400,
-        lineHeight: 1.25,
+        fontFamily: LORA,
+        fontSize: "clamp(18px, 2.5vw, 26px)",
+        fontWeight: 600,
+        lineHeight: 1.3,
+        color: "hsl(0 0% 10%)",
+        marginTop: "36px",
+        marginBottom: "12px",
+        letterSpacing: "-0.01em",
       }}
       {...props}
     />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
-      className="text-foreground mt-6 mb-2"
       style={{
-        fontFamily: "'Cormorant Garamond', serif",
-        fontSize: "clamp(18px, 2vw, 22px)",
-        fontWeight: 400,
+        fontFamily: LORA,
+        fontSize: "clamp(16px, 2vw, 20px)",
+        fontWeight: 600,
+        lineHeight: 1.35,
+        color: "hsl(0 0% 12%)",
+        marginTop: "28px",
+        marginBottom: "10px",
       }}
       {...props}
     />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
-      className="text-foreground mb-4"
       style={{
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: DM,
         fontSize: "16px",
-        lineHeight: 1.8,
+        lineHeight: 1.85,
+        color: "hsl(0 0% 18%)",
+        marginBottom: "18px",
       }}
       {...props}
     />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
     <ul
-      className="text-foreground list-disc pl-6 mb-4 space-y-1"
-      style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.8 }}
+      className="list-disc pl-6 mb-5 space-y-1"
+      style={{ fontFamily: DM, fontSize: "16px", lineHeight: 1.8, color: "hsl(0 0% 18%)" }}
       {...props}
     />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
     <ol
-      className="text-foreground list-decimal pl-6 mb-4 space-y-1"
-      style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.8 }}
+      className="list-decimal pl-6 mb-5 space-y-1"
+      style={{ fontFamily: DM, fontSize: "16px", lineHeight: 1.8, color: "hsl(0 0% 18%)" }}
       {...props}
     />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a
-      className="text-terracotta underline hover:opacity-70 transition-opacity"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      className="underline hover:opacity-70 transition-opacity"
+      style={{ fontFamily: DM, color: "hsl(11 52% 47%)" }}
       {...props}
     />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
-      className="border-l-4 border-terracotta pl-4 italic text-muted-foreground my-6"
-      style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "18px" }}
+      style={{
+        borderLeft: "4px solid hsl(11 52% 47%)",
+        paddingLeft: "20px",
+        fontFamily: LORA,
+        fontSize: "18px",
+        fontStyle: "italic",
+        color: "hsl(0 0% 40%)",
+        margin: "28px 0",
+        lineHeight: 1.65,
+      }}
       {...props}
     />
+  ),
+  hr: () => (
+    <hr style={{ border: "none", borderTop: "1px solid hsl(34 15% 88%)", margin: "32px 0" }} />
+  ),
+  strong: (props: React.HTMLAttributes<HTMLElement>) => (
+    <strong style={{ fontFamily: DM, fontWeight: 600, color: "hsl(0 0% 10%)" }} {...props} />
   ),
 };
 
@@ -156,7 +183,7 @@ const BlogPost = () => {
 
       {/* ── LAYOUT A: Standard (no sidebar) ── */}
       {!isSidebar && (
-        <article className="mx-auto bg-white" style={{ maxWidth: "780px", padding: "48px 24px 64px" }}>
+        <article className="mx-auto" style={{ maxWidth: "780px", padding: "56px 40px 72px", backgroundColor: "#ffffff" }}>
           {/* Featured image — only shown if not placeholder */}
           {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" && (
             <img
@@ -178,12 +205,17 @@ const BlogPost = () => {
       {/* ── LAYOUT B: With sidebar (33% of posts) ── */}
       {isSidebar && (
         <div
-          className="max-w-[1200px] mx-auto px-6 bg-white"
-          style={{ paddingTop: "48px", paddingBottom: "64px" }}
+          className="max-w-[1200px] mx-auto px-6"
+          style={{ paddingTop: "0", paddingBottom: "64px", backgroundColor: "hsl(34 33% 96%)" }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-[65%_33%] gap-10">
-            {/* Main content column */}
-            <article>
+          <div className="grid grid-cols-1 lg:grid-cols-[64%_34%] gap-8 items-start">
+            {/* Main content column — white card */}
+            <article
+              style={{
+                backgroundColor: "#ffffff",
+                padding: "48px 40px 64px",
+              }}
+            >
               {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" && (
                 <img
                   src={fm.featuredImage}
@@ -200,7 +232,7 @@ const BlogPost = () => {
             </article>
 
             {/* Sticky sidebar */}
-            <div style={{ position: "sticky", top: "100px", alignSelf: "start" }}>
+            <div style={{ position: "sticky", top: "32px", alignSelf: "start" }}>
               <BlogSidebar />
             </div>
           </div>

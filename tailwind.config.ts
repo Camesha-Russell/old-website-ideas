@@ -62,9 +62,12 @@ export default {
         peach: "hsl(var(--peach))",
         nearblack: "hsl(var(--nearblack))",
         terracotta: "hsl(var(--terracotta))",
+        sage: "hsl(var(--sage))",
+        sageLight: "hsl(var(--sage-light))",
       },
       fontFamily: {
         'display': ['"Cormorant Garamond"', 'serif'],
+        'article': ['"Lora"', 'serif'],
         'body': ['"DM Sans"', 'sans-serif'],
         'nav': ['"DM Sans"', 'sans-serif'],
       },

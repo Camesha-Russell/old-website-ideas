@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 const trendingTopics = [
-  "The Only Baby Monitor That Earned Our Full Trust",
-  "Best Formula Prep Machines Ranked by Parents",
-  "When to Start Sleep Training (And What Actually Works)",
-  "Carrier vs. Stroller — What Nobody Tells You",
-  "The 5 Baby Items We Wish We'd Bought First",
+  { title: "The Only Baby Monitor That Earned Our Full Trust", path: "/blog/nanit-vs-owlet" },
+  { title: "Best Formula Prep Machines Ranked by Parents", path: "/blog/feeding-essentials-guide" },
+  { title: "When to Start Sleep Training (And What Actually Works)", path: "/blog/best-sleep-products-2026" },
+  { title: "Carrier vs. Stroller — What Nobody Tells You", path: "/blog/ergobaby-vs-solly-baby-wrap" },
+  { title: "The 5 Baby Items We Wish We'd Bought First", path: "/blog/hatch-rest-vs-hatch-rest-plus" },
 ];
 
 const categories = [
@@ -13,185 +13,366 @@ const categories = [
   { name: "Feeding", path: "/feeding" },
   { name: "Carriers & Strollers", path: "/carriers-and-strollers" },
   { name: "Play & Development", path: "/play-and-development" },
-  { name: "Postpartum & Mom", path: "/postpartum-and-mom" },
   { name: "Safety", path: "/safety" },
+  { name: "We Said No", path: "/we-said-no" },
 ];
+
+const LORA = "'Lora', serif";
+const DM = "'DM Sans', sans-serif";
 
 const BlogSidebar = () => {
   return (
-    <aside className="flex flex-col gap-10">
+    <aside
+      style={{
+        backgroundColor: "hsl(147 18% 94%)",
+        borderLeft: "3px solid hsl(11 52% 47%)",
+        padding: "28px 24px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "36px",
+      }}
+    >
 
-      {/* Widget 1: Portrait about card */}
+      {/* Widget 1: About card */}
       <div>
+        {/* Portrait placeholder */}
         <div
-          className="w-full overflow-hidden"
-          style={{ aspectRatio: "3/4", position: "relative" }}
+          style={{
+            width: "100%",
+            aspectRatio: "3/4",
+            position: "relative",
+            overflow: "hidden",
+            backgroundColor: "hsl(147 16% 72%)",
+            marginBottom: "20px",
+          }}
         >
+          {/* subtle IMA text overlay */}
           <div
-            className="absolute inset-0 w-full h-full"
-            style={{ backgroundColor: "hsl(34 14% 82%)" }}
-          />
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: LORA,
+                fontSize: "13px",
+                fontStyle: "italic",
+                color: "rgba(255,255,255,0.7)",
+                letterSpacing: "0.05em",
+              }}
+            >
+              It's Mom Approved
+            </span>
+          </div>
         </div>
-        <div className="pt-5 text-center">
-          <p
-            className="text-foreground mb-3"
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "22px",
-              fontStyle: "italic",
-              fontWeight: 400,
-            }}
-          >
-            Hey, friends!
-          </p>
-          <p
-            className="text-muted-foreground mb-5"
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "13px",
-              lineHeight: 1.7,
-            }}
-          >
-            We're so glad you stopped by. Every recommendation here is earned — not paid for. Real research, real moms, real answers.
-          </p>
+
+        <p
+          style={{
+            fontFamily: LORA,
+            fontSize: "21px",
+            fontStyle: "italic",
+            fontWeight: 400,
+            color: "hsl(0 0% 11%)",
+            textAlign: "center",
+            marginBottom: "10px",
+          }}
+        >
+          Hey, friends!
+        </p>
+        <p
+          style={{
+            fontFamily: DM,
+            fontSize: "13px",
+            lineHeight: 1.75,
+            color: "hsl(0 0% 35%)",
+            textAlign: "center",
+            marginBottom: "18px",
+          }}
+        >
+          Every recommendation here is earned — not paid for. Real research, real moms, real answers.
+        </p>
+        <div style={{ textAlign: "center" }}>
           <Link
             to="/start-here"
-            className="inline-block px-6 py-2.5 uppercase tracking-widest text-foreground hover:opacity-70 transition-opacity"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              display: "inline-block",
+              padding: "10px 24px",
+              backgroundColor: "hsl(11 52% 47%)",
+              color: "#ffffff",
+              fontFamily: DM,
               fontSize: "11px",
               fontWeight: 600,
-              letterSpacing: "0.1em",
-              backgroundColor: "hsl(var(--accent))",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              transition: "opacity 0.2s",
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
           >
             Start Here
           </Link>
         </div>
       </div>
 
+      {/* Divider */}
+      <div style={{ height: "1px", backgroundColor: "hsl(147 16% 82%)" }} />
+
       {/* Widget 2: Trending Topics */}
       <div>
         <h3
-          className="text-foreground mb-5"
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "20px",
-            fontWeight: 400,
+            fontFamily: LORA,
+            fontSize: "19px",
+            fontWeight: 600,
+            color: "hsl(0 0% 11%)",
+            marginBottom: "16px",
+            letterSpacing: "-0.01em",
           }}
         >
           Trending Topics
         </h3>
-        <ol className="flex flex-col">
+        <ol style={{ display: "flex", flexDirection: "column", margin: 0, padding: 0, listStyle: "none" }}>
           {trendingTopics.map((topic, i) => (
             <li
               key={i}
-              className="flex gap-4 items-start py-3"
-              style={{ borderBottom: "1px solid hsl(34 15% 90%)" }}
+              style={{
+                display: "flex",
+                gap: "14px",
+                alignItems: "flex-start",
+                padding: "12px 0",
+                borderBottom: i < trendingTopics.length - 1 ? "1px solid hsl(147 16% 82%)" : "none",
+              }}
             >
               <span
-                className="flex-shrink-0 pt-0.5"
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: DM,
                   fontSize: "11px",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "hsl(var(--terracotta))",
-                  minWidth: "24px",
+                  fontWeight: 700,
+                  letterSpacing: "0.08em",
+                  color: "hsl(11 52% 47%)",
+                  flexShrink: 0,
+                  paddingTop: "2px",
+                  minWidth: "22px",
                 }}
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span
-                className="text-foreground"
+              <Link
+                to={topic.path}
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: DM,
                   fontSize: "13px",
                   lineHeight: 1.5,
+                  color: "hsl(0 0% 15%)",
+                  textDecoration: "none",
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(11 52% 47%)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(0 0% 15%)")}
               >
-                {topic}
-              </span>
+                {topic.title}
+              </Link>
             </li>
           ))}
         </ol>
       </div>
 
-      {/* Widget 3: Subscribe */}
-      <div>
-        <h3
-          className="text-foreground mb-5 text-center"
+      {/* Divider */}
+      <div style={{ height: "1px", backgroundColor: "hsl(147 16% 82%)" }} />
+
+      {/* Widget 3: Free Guide CTA */}
+      <div
+        style={{
+          backgroundColor: "hsl(0 0% 11%)",
+          padding: "24px 20px",
+          textAlign: "center",
+        }}
+      >
+        <p
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "20px",
-            fontWeight: 400,
+            fontFamily: DM,
+            fontSize: "10px",
+            fontWeight: 600,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            color: "hsl(11 52% 47%)",
+            marginBottom: "10px",
           }}
         >
-          Subscribe
+          Free Download
+        </p>
+        <p
+          style={{
+            fontFamily: LORA,
+            fontSize: "17px",
+            fontStyle: "italic",
+            color: "#ffffff",
+            lineHeight: 1.4,
+            marginBottom: "8px",
+          }}
+        >
+          The No-Regrets Baby Gear Guide
+        </p>
+        <p
+          style={{
+            fontFamily: DM,
+            fontSize: "12px",
+            color: "rgba(255,255,255,0.6)",
+            lineHeight: 1.6,
+            marginBottom: "18px",
+          }}
+        >
+          What to buy, what to skip, and when — sorted by your baby's age.
+        </p>
+        <Link
+          to="/starter-kit"
+          style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            backgroundColor: "hsl(11 52% 47%)",
+            color: "#ffffff",
+            fontFamily: DM,
+            fontSize: "11px",
+            fontWeight: 600,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            textDecoration: "none",
+          }}
+        >
+          Get It Free
+        </Link>
+      </div>
+
+      {/* Divider */}
+      <div style={{ height: "1px", backgroundColor: "hsl(147 16% 82%)" }} />
+
+      {/* Widget 4: Subscribe */}
+      <div>
+        <h3
+          style={{
+            fontFamily: LORA,
+            fontSize: "19px",
+            fontWeight: 600,
+            color: "hsl(0 0% 11%)",
+            marginBottom: "14px",
+            textAlign: "center",
+          }}
+        >
+          Stay in the Loop
         </h3>
-        <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3">
+        <p
+          style={{
+            fontFamily: DM,
+            fontSize: "12px",
+            color: "hsl(0 0% 35%)",
+            lineHeight: 1.65,
+            textAlign: "center",
+            marginBottom: "16px",
+          }}
+        >
+          Research drops, honest reviews, and zero spam.
+        </p>
+        <form onSubmit={(e) => e.preventDefault()} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <input
             type="text"
-            placeholder="Name"
-            className="w-full border border-border px-3 py-3 text-foreground focus:outline-none focus:border-foreground/50"
+            placeholder="First Name"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              width: "100%",
+              border: "1px solid hsl(147 16% 78%)",
+              padding: "11px 14px",
+              fontFamily: DM,
               fontSize: "13px",
-              borderRadius: "8px",
+              borderRadius: "6px",
+              backgroundColor: "#ffffff",
+              outline: "none",
+              boxSizing: "border-box",
             }}
           />
           <input
             type="email"
-            placeholder="Email"
-            className="w-full border border-border px-3 py-3 text-foreground focus:outline-none focus:border-foreground/50"
+            placeholder="Email Address"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              width: "100%",
+              border: "1px solid hsl(147 16% 78%)",
+              padding: "11px 14px",
+              fontFamily: DM,
               fontSize: "13px",
-              borderRadius: "8px",
+              borderRadius: "6px",
+              backgroundColor: "#ffffff",
+              outline: "none",
+              boxSizing: "border-box",
             }}
           />
           <button
             type="submit"
-            className="w-full bg-foreground text-background py-3 hover:opacity-80 transition-opacity"
             style={{
-              fontFamily: "'DM Sans', sans-serif",
+              width: "100%",
+              padding: "12px",
+              backgroundColor: "hsl(11 52% 47%)",
+              color: "#ffffff",
+              fontFamily: DM,
               fontSize: "11px",
               fontWeight: 600,
-              letterSpacing: "0.1em",
+              letterSpacing: "0.12em",
               textTransform: "uppercase",
+              border: "none",
+              cursor: "pointer",
+              borderRadius: "6px",
             }}
           >
-            Sign Up
+            Send It to Me
           </button>
         </form>
       </div>
 
-      {/* Widget 4: Categories */}
+      {/* Divider */}
+      <div style={{ height: "1px", backgroundColor: "hsl(147 16% 82%)" }} />
+
+      {/* Widget 5: Categories */}
       <div>
         <h3
-          className="text-foreground mb-5 text-center"
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
-            fontSize: "20px",
-            fontWeight: 400,
+            fontFamily: LORA,
+            fontSize: "19px",
+            fontWeight: 600,
+            color: "hsl(0 0% 11%)",
+            marginBottom: "14px",
+            textAlign: "center",
           }}
         >
-          Categories
+          Browse by Category
         </h3>
-        <ul className="flex flex-col items-center gap-2.5">
+        <ul
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "10px",
+            listStyle: "none",
+            padding: 0,
+            margin: 0,
+          }}
+        >
           {categories.map((cat) => (
             <li key={cat.path}>
               <Link
                 to={cat.path}
-                className="text-foreground hover:text-terracotta transition-colors"
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  letterSpacing: "0.1em",
+                  fontFamily: DM,
+                  fontSize: "11px",
+                  fontWeight: 600,
+                  letterSpacing: "0.12em",
                   textTransform: "uppercase",
+                  color: "hsl(0 0% 22%)",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "hsl(11 52% 47%)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "hsl(0 0% 22%)")}
               >
                 {cat.name}
               </Link>

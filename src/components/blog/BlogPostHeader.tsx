@@ -5,6 +5,9 @@ interface BlogPostHeaderProps {
   readTime?: number;
 }
 
+const LORA = "'Lora', serif";
+const DM = "'DM Sans', sans-serif";
+
 const BlogPostHeader = ({ category, title, publishDate, readTime = 5 }: BlogPostHeaderProps) => {
   const formattedDate = new Date(publishDate).toLocaleDateString("en-US", {
     year: "numeric",
@@ -14,45 +17,65 @@ const BlogPostHeader = ({ category, title, publishDate, readTime = 5 }: BlogPost
 
   return (
     <div
-      className="w-full text-center px-6"
-      style={{ backgroundColor: "hsl(var(--background))", paddingTop: "56px", paddingBottom: "40px" }}
+      style={{
+        width: "100%",
+        textAlign: "center",
+        backgroundColor: "#ffffff",
+        padding: "60px 24px 44px",
+        borderBottom: "1px solid hsl(34 15% 90%)",
+      }}
     >
-      {/* Category */}
+      {/* Category — terracotta, uppercase */}
       <span
-        className="block mb-4 uppercase text-foreground"
         style={{
-          fontFamily: "'Montserrat', sans-serif",
+          display: "inline-block",
+          fontFamily: DM,
           fontSize: "11px",
-          fontWeight: 600,
-          letterSpacing: "1.1px",
+          fontWeight: 700,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "hsl(11 52% 47%)",
+          marginBottom: "6px",
         }}
       >
         {category}
       </span>
 
-      {/* Title */}
-      <h1
-        className="mx-auto text-foreground"
+      {/* Terracotta rule under category */}
+      <div
         style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: "clamp(30px, 4.5vw, 48px)",
-          fontWeight: 400,
-          lineHeight: 1.15,
-          maxWidth: "800px",
-          marginBottom: "20px",
+          width: "32px",
+          height: "2px",
+          backgroundColor: "hsl(11 52% 47%)",
+          margin: "0 auto 20px",
+        }}
+      />
+
+      {/* Title — Lora, strong but elegant */}
+      <h1
+        style={{
+          fontFamily: LORA,
+          fontSize: "clamp(28px, 4.5vw, 50px)",
+          fontWeight: 600,
+          lineHeight: 1.18,
+          color: "hsl(0 0% 10%)",
+          maxWidth: "820px",
+          margin: "0 auto 22px",
+          letterSpacing: "-0.01em",
         }}
       >
         {title}
       </h1>
 
-      {/* Meta: author • date • read time */}
+      {/* Meta — DM Sans, muted */}
       <p
-        className="uppercase text-foreground"
         style={{
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: DM,
           fontSize: "11px",
           fontWeight: 400,
-          letterSpacing: "1.1px",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: "hsl(0 0% 50%)",
         }}
       >
         By Its Mom Approved &bull; {formattedDate} &bull; {readTime} min read
