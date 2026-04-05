@@ -10,14 +10,23 @@ function resolveSlots(): (PostFrontmatter | null)[] {
   });
 }
 
-function PlaceholderCard({ className = "" }: { className?: string }) {
+const dummyTitles = [
+  { category: "Sleep", title: "The Baby Monitor We Actually Trust" },
+  { category: "Feeding", title: "Formula Prep Machines That Save You Time" },
+  { category: "Gear", title: "The Stroller That Replaced Our Entire Collection" },
+  { category: "Safety", title: "Baby-Proofing Your Home: Room-by-Room Checklist" },
+  { category: "Sleep", title: "Blackout Curtains That Actually Work" },
+];
+
+function PlaceholderCard({ index = 0, className = "" }: { index?: number; className?: string }) {
+  const dummy = dummyTitles[index % dummyTitles.length];
   return (
-    <div className={`border border-border rounded-lg overflow-hidden opacity-40 ${className}`}>
+    <div className={`border border-border rounded-lg overflow-hidden ${className}`}>
       <div className="placeholder-img h-[240px]" />
       <div className="p-4 md:p-6">
-        <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">Coming soon</span>
+        <span className="text-terracotta uppercase text-[11px] tracking-[2px] font-body font-semibold">{dummy.category}</span>
         <h3 className="font-display text-foreground text-xl md:text-2xl mt-2 leading-snug">
-          A new post is on its way
+          {dummy.title}
         </h3>
       </div>
     </div>
@@ -62,20 +71,20 @@ const FeaturedSection = () => {
         {/* Row 1 */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-4">
           <div className="md:col-span-3">
-            {s0 ? <PostCard post={s0} imageFirst={false} /> : <PlaceholderCard />}
+            {s0 ? <PostCard post={s0} imageFirst={false} /> : <PlaceholderCard index={0} />}
           </div>
           <div className="md:col-span-5">
-            {s1 ? <PostCard post={s1} /> : <PlaceholderCard />}
+            {s1 ? <PostCard post={s1} /> : <PlaceholderCard index={1} />}
           </div>
           <div className="md:col-span-4">
-            {s2 ? <PostCard post={s2} imageFirst={false} /> : <PlaceholderCard />}
+            {s2 ? <PostCard post={s2} imageFirst={false} /> : <PlaceholderCard index={2} />}
           </div>
         </div>
 
         {/* Row 2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {s3 ? <PostCard post={s3} /> : <PlaceholderCard />}
-          {s4 ? <PostCard post={s4} imageFirst={false} /> : <PlaceholderCard />}
+          {s3 ? <PostCard post={s3} /> : <PlaceholderCard index={3} />}
+          {s4 ? <PostCard post={s4} imageFirst={false} /> : <PlaceholderCard index={4} />}
         </div>
       </div>
     </section>

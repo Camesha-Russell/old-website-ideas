@@ -24,8 +24,8 @@ const CurrentlyTrending = () => {
   return (
     <section className="py-[100px]">
       <div className="max-w-[1400px] mx-auto px-4">
-        {/* Section label */}
-        <p className="text-center uppercase text-[11px] tracking-[3px] font-body font-medium text-muted-foreground mb-12">
+        {/* Section label — 50% larger than original 11px → 17px */}
+        <p className="text-center uppercase text-[17px] tracking-[3px] font-body font-semibold text-foreground mb-12">
           Currently Trending
         </p>
 
@@ -41,7 +41,7 @@ const CurrentlyTrending = () => {
                 {featured.title}
               </h3>
               {featured.excerpt && (
-                <p className="font-body text-muted-foreground text-sm mt-2 line-clamp-1">
+                <p className="font-body text-foreground text-sm mt-2 line-clamp-1">
                   {featured.excerpt}
                 </p>
               )}
@@ -60,7 +60,7 @@ const CurrentlyTrending = () => {
                   <span className="text-terracotta uppercase text-[10px] tracking-[2px] font-body font-semibold">
                     {post.category}
                   </span>
-                  <h4 className="font-display text-sm md:text-base mt-1 leading-snug group-hover:opacity-70 transition-opacity">
+                  <h4 className="font-display text-base md:text-lg mt-1 leading-snug group-hover:opacity-70 transition-opacity">
                     {post.title}
                   </h4>
                 </div>

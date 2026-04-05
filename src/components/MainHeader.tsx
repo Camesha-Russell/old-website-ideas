@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/its-mom-approved-logo.svg";
 
 const navLinks = [
+  { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Start Here", path: "/start-here" },
   { name: "Top Picks", path: "/top-picks" },

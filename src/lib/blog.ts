@@ -15,6 +15,10 @@ export interface PostFrontmatter {
   topPickPrice?: string;
   budgetPickName?: string;
   budgetPickPrice?: string;
+  /** "standard" = no sidebar (default), "with-sidebar" = 33% variant */
+  layout?: "standard" | "with-sidebar";
+  /** Estimated read time in minutes — defaults to 5 if not set */
+  readTime?: number;
 }
 
 export interface PostModule {
@@ -59,6 +63,15 @@ export function getPostBySlug(
   return { frontmatter: entry.frontmatter, Component: entry.default };
 }
 
-export function getPostsByCategory(category: string): PostFrontmatter[] {
-  return getAllPosts().filter((post) => post.category === category);
+/** Returns { prev, next } relative to the given slug in chronological order */
+export function getAdjacentPosts(slug: string): {
+  prev: PostFrontmatter | null;
+  next: PostFrontmatter | null;
+} {
+  const posts = getAllPosts();
+  const idx = posts.findIndex((p) => p.slug === slug);
+  return {
+    prev: idx < posts.length - 1 ? posts[idx + 1] : null,
+    next: idx > 0 ? posts[idx - 1] : null,
+  };
 }

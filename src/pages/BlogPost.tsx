@@ -9,7 +9,12 @@ import SafetyNote from "@/components/blog/SafetyNote";
 import BudgetCallout from "@/components/blog/BudgetCallout";
 import PillarLink from "@/components/blog/PillarLink";
 import SourceReviewQuote from "@/components/blog/SourceReviewQuote";
-import { getPostBySlug } from "@/lib/blog";
+import BlogPostHeader from "@/components/blog/BlogPostHeader";
+import BlogSidebar from "@/components/blog/BlogSidebar";
+import PrevNextNav from "@/components/blog/PrevNextNav";
+import SimilarPosts from "@/components/blog/SimilarPosts";
+import LeaveAReply from "@/components/blog/LeaveAReply";
+import { getPostBySlug, getAllPosts, getAdjacentPosts } from "@/lib/blog";
 
 const SITE_URL = "https://itsmomapproved.com";
 
@@ -20,28 +25,78 @@ const mdxComponents = {
   PillarLink,
   SourceReviewQuote,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h1 className="font-headline text-3xl md:text-4xl italic text-foreground mt-8 mb-4" {...props} />
+    <h1
+      className="text-foreground mt-8 mb-4"
+      style={{
+        fontFamily: "'Cormorant Garamond', serif",
+        fontSize: "clamp(24px, 3vw, 36px)",
+        fontWeight: 400,
+        lineHeight: 1.2,
+      }}
+      {...props}
+    />
   ),
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h2 className="font-headline text-2xl md:text-3xl text-foreground mt-8 mb-3" {...props} />
+    <h2
+      className="text-foreground mt-8 mb-3"
+      style={{
+        fontFamily: "'Cormorant Garamond', serif",
+        fontSize: "clamp(20px, 2.5vw, 28px)",
+        fontWeight: 400,
+        lineHeight: 1.25,
+      }}
+      {...props}
+    />
   ),
   h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
-    <h3 className="font-headline text-xl md:text-2xl text-foreground mt-6 mb-2" {...props} />
+    <h3
+      className="text-foreground mt-6 mb-2"
+      style={{
+        fontFamily: "'Cormorant Garamond', serif",
+        fontSize: "clamp(18px, 2vw, 22px)",
+        fontWeight: 400,
+      }}
+      {...props}
+    />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="font-body text-foreground leading-relaxed mb-4" {...props} />
+    <p
+      className="text-foreground mb-4"
+      style={{
+        fontFamily: "'DM Sans', sans-serif",
+        fontSize: "16px",
+        lineHeight: 1.8,
+      }}
+      {...props}
+    />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="font-body text-foreground list-disc pl-6 mb-4 space-y-1" {...props} />
+    <ul
+      className="text-foreground list-disc pl-6 mb-4 space-y-1"
+      style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.8 }}
+      {...props}
+    />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
-    <ol className="font-body text-foreground list-decimal pl-6 mb-4 space-y-1" {...props} />
+    <ol
+      className="text-foreground list-decimal pl-6 mb-4 space-y-1"
+      style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", lineHeight: 1.8 }}
+      {...props}
+    />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a className="text-accent-foreground underline hover:text-foreground transition-colors" {...props} />
+    <a
+      className="text-terracotta underline hover:opacity-70 transition-opacity"
+      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      {...props}
+    />
   ),
   blockquote: (props: React.HTMLAttributes<HTMLQuoteElement>) => (
-    <blockquote className="border-l-4 border-accent pl-4 italic text-muted-foreground my-6" {...props} />
+    <blockquote
+      className="border-l-4 border-terracotta pl-4 italic text-muted-foreground my-6"
+      style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "18px" }}
+      {...props}
+    />
   ),
 };
 
@@ -53,6 +108,9 @@ const BlogPost = () => {
 
   const { frontmatter: fm, Component } = post;
   const canonicalUrl = fm.canonicalUrl || `${SITE_URL}/blog/${fm.slug}`;
+  const allPosts = getAllPosts();
+  const { prev, next } = getAdjacentPosts(fm.slug);
+  const isSidebar = fm.layout === "with-sidebar";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -73,58 +131,94 @@ const BlogPost = () => {
         <title>{fm.seoTitle || fm.title}</title>
         <meta name="description" content={fm.metaDescription} />
         <link rel="canonical" href={canonicalUrl} />
-
-        {/* Open Graph */}
         <meta property="og:title" content={fm.seoTitle || fm.title} />
         <meta property="og:description" content={fm.metaDescription} />
         <meta property="og:image" content={fm.featuredImage} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
-
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={fm.seoTitle || fm.title} />
         <meta name="twitter:description" content={fm.metaDescription} />
         <meta name="twitter:image" content={fm.featuredImage} />
-
-        {/* JSON-LD */}
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
       <TopNavBar />
       <MainHeader />
 
-      <article className="mx-auto max-w-3xl px-6 py-12">
-        <header className="mb-10">
-          <span className="text-xs font-nav uppercase tracking-wider text-muted-foreground">
-            {fm.category}
-          </span>
-          <h1 className="mt-2 font-headline text-3xl md:text-5xl italic text-foreground leading-tight">
-            {fm.title}
-          </h1>
-          <time className="mt-3 block text-sm text-muted-foreground font-nav">
-            {new Date(fm.publishDate).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </time>
-        </header>
+      {/* ── Shared editorial post header ── */}
+      <BlogPostHeader
+        category={fm.category}
+        title={fm.title}
+        publishDate={fm.publishDate}
+        readTime={fm.readTime ?? 5}
+      />
 
-        {fm.featuredImage && (
-          <img
-            src={fm.featuredImage}
-            alt={fm.featuredImageAlt || fm.title}
-            className="mb-10 w-full rounded-xl object-cover aspect-[16/9]"
-          />
-        )}
+      {/* ── LAYOUT A: Standard (no sidebar) ── */}
+      {!isSidebar && (
+        <article className="mx-auto bg-white" style={{ maxWidth: "780px", padding: "48px 24px 64px" }}>
+          {/* Featured image — only shown if not placeholder */}
+          {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" && (
+            <img
+              src={fm.featuredImage}
+              alt={fm.featuredImageAlt || fm.title}
+              className="w-full rounded-none object-cover mb-10"
+              style={{ aspectRatio: "16/9" }}
+            />
+          )}
 
-        <div className="prose-custom">
-          <MDXProvider components={mdxComponents}>
-            <Component />
-          </MDXProvider>
+          <div className="prose-custom">
+            <MDXProvider components={mdxComponents}>
+              <Component />
+            </MDXProvider>
+          </div>
+        </article>
+      )}
+
+      {/* ── LAYOUT B: With sidebar (33% of posts) ── */}
+      {isSidebar && (
+        <div
+          className="max-w-[1200px] mx-auto px-6 bg-white"
+          style={{ paddingTop: "48px", paddingBottom: "64px" }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-[65%_33%] gap-10">
+            {/* Main content column */}
+            <article>
+              {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" && (
+                <img
+                  src={fm.featuredImage}
+                  alt={fm.featuredImageAlt || fm.title}
+                  className="w-full rounded-none object-cover mb-10"
+                  style={{ aspectRatio: "16/9" }}
+                />
+              )}
+              <div className="prose-custom">
+                <MDXProvider components={mdxComponents}>
+                  <Component />
+                </MDXProvider>
+              </div>
+            </article>
+
+            {/* Sticky sidebar */}
+            <div style={{ position: "sticky", top: "100px", alignSelf: "start" }}>
+              <BlogSidebar />
+            </div>
+          </div>
         </div>
-      </article>
+      )}
+
+      {/* ── Prev / Next navigation ── */}
+      <PrevNextNav prev={prev} next={next} />
+
+      {/* ── Similar Posts ── */}
+      <SimilarPosts
+        allPosts={allPosts}
+        currentSlug={fm.slug}
+        currentCategory={fm.category}
+      />
+
+      {/* ── Leave a Reply ── */}
+      <LeaveAReply />
 
       <Footer />
     </div>

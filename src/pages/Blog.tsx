@@ -21,7 +21,7 @@ const Blog = () => {
       <MainHeader />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
-        <h1 className="font-headline text-4xl md:text-5xl italic text-foreground mb-10 text-center">
+        <h1 className="font-display text-4xl md:text-5xl italic text-foreground mb-10 text-center">
           The Blog
         </h1>
 
@@ -37,25 +37,37 @@ const Blog = () => {
                 to={`/blog/${post.slug}`}
                 className="group block overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-lg"
               >
-                {post.featuredImage && (
-                  <img
-                    src={post.featuredImage}
-                    alt={post.featuredImageAlt || post.title}
-                    className="aspect-[16/10] w-full object-cover"
-                    loading="lazy"
-                  />
-                )}
+                {/* Gray placeholder box — no broken SVG renders */}
+                <div className="placeholder-img aspect-[16/10] w-full" />
+
                 <div className="p-5">
-                  <span className="text-xs font-nav uppercase tracking-wider text-muted-foreground">
+                  <span
+                    className="text-[11px] font-semibold uppercase tracking-wider"
+                    style={{
+                      fontFamily: "'Montserrat', sans-serif",
+                      letterSpacing: "0.1em",
+                      color: "hsl(var(--terracotta))",
+                    }}
+                  >
                     {post.category}
                   </span>
-                  <h2 className="mt-1 font-headline text-xl text-foreground group-hover:underline">
+                  <h2
+                    className="mt-2 text-foreground group-hover:opacity-70 transition-opacity leading-snug"
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "20px",
+                      fontWeight: 400,
+                    }}
+                  >
                     {post.title}
                   </h2>
-                  <p className="mt-2 text-sm text-muted-foreground font-body line-clamp-3">
+                  <p className="mt-2 text-sm text-foreground font-body line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <time className="mt-3 block text-xs text-muted-foreground font-nav">
+                  <time
+                    className="mt-3 block text-[11px] uppercase tracking-wider text-muted-foreground"
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
                     {new Date(post.publishDate).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
