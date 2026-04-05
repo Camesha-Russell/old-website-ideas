@@ -69,15 +69,15 @@
 
 @layer components {
   .font-serif-display {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 
   .font-serif-body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
   }
 
   .font-sans-nav {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'DM Sans', sans-serif;
   }
 
   .section-title {
