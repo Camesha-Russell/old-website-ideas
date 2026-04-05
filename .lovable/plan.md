@@ -1,16 +1,25 @@
 
 
-## Fix: Align image stack with text content in "You found your people" section
+## Update Main Navigation Links
 
-**Problem**: The three stacked images on the right don't align with the text. There's a large gap, and the images should span from the "You found your people." headline (top) down to the "don't buy it." line (bottom).
+**What changes:** One file edit in `src/components/MainHeader.tsx` — update the `navLinks` array.
 
-**Solution**: Change the image column from `gap-5` spacing to `justify-between`, so the images stretch to fill the exact same vertical space as the text. Also set the grid to `items-stretch` so both columns share the same height.
+**Current nav:** Home / About / Top Picks / We Said No / Contact
 
-### Changes to `src/pages/About.tsx`
+**New nav:** About / Start Here / Top Picks / We Said No
 
-1. **Grid container** (line 39): Change `items-start` to `items-stretch` so the image column matches the full height of the text column.
+### Changes to `src/components/MainHeader.tsx`
 
-2. **Image column** (line 71): Change `gap-5` to `justify-between` so images distribute evenly from top to bottom of the text block, with the first image aligned to "You found your people." and the last image aligned to the end of the body text.
+Replace the `navLinks` array (lines 6-12) with:
 
-This is a two-line CSS change — no structural or content changes needed.
+```ts
+const navLinks = [
+  { name: "About", path: "/about" },
+  { name: "Start Here", path: "/start-here" },
+  { name: "Top Picks", path: "/top-picks" },
+  { name: "We Said No", path: "/we-said-no" },
+];
+```
+
+That's it. The "Get the Starter Kit" CTA button already exists. The `/start-here` route is already registered as a placeholder page. Logo already links to `/`. Contact stays in footer.
 
