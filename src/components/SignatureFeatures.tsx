@@ -80,7 +80,7 @@ const SignatureFeatures = () => {
               fontSize: "15px",
               color: MUTED,
               lineHeight: 1.75,
-              maxWidth: "520px",
+              maxWidth: "620px",
               margin: "0 auto",
             }}
           >
