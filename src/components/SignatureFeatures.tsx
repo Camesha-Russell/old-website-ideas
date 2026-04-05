@@ -84,7 +84,7 @@ const SignatureFeatures = () => {
               margin: "0 auto",
             }}
           >
-            Every recommendation on this site has been vetted against safety standards, pediatric guidelines, and real parent experience — not a press kit.
+            Every recommendation on this site is vetted against safety standards, pediatric guidelines, and real parent experience. Not a press kit.
           </p>
         </div>
 
