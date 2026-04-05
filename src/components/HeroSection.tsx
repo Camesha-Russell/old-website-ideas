@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import heroBanner from "@/assets/hero-banner.png";
 
 const HeroSection = () => {
   return (
