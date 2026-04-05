@@ -78,9 +78,9 @@ const BlogPostHeader = ({ category, title, publishDate, readTime = 5 }: BlogPost
           color: "hsl(0 0% 50%)",
         }}
       >
-        By Its Mom Approved &bull; {formattedDate} &bull; {readTime} min read
-      </p>
-    </div>
+        {formattedDate} &bull; {readTime} min read
+        </p>
+    </div
   );
 };
 
