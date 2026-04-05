@@ -186,14 +186,22 @@ const BlogPost = () => {
       {/* ── LAYOUT A: Standard (no sidebar) ── */}
       {!isSidebar && (
         <article className="mx-auto" style={{ maxWidth: "780px", padding: "56px 40px 72px", backgroundColor: "#ffffff" }}>
-          {/* Featured image — only shown if not placeholder */}
-          {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" && (
+          {/* Hero image — real image or placeholder */}
+          {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" ? (
             <img
               src={fm.featuredImage}
               alt={fm.featuredImageAlt || fm.title}
               className="w-full rounded-none object-cover mb-10"
               style={{ aspectRatio: "16/9" }}
             />
+          ) : (
+            <div className="mb-10">
+              <ImagePlaceholder
+                label={`Hero image — ${fm.title}`}
+                dimensions="1200×630 px"
+                aspect="featured"
+              />
+            </div>
           )}
 
           <div className="prose-custom">
@@ -218,13 +226,21 @@ const BlogPost = () => {
                 padding: "48px 40px 64px",
               }}
             >
-              {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" && (
+              {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" ? (
                 <img
                   src={fm.featuredImage}
                   alt={fm.featuredImageAlt || fm.title}
                   className="w-full rounded-none object-cover mb-10"
                   style={{ aspectRatio: "16/9" }}
                 />
+              ) : (
+                <div className="mb-10">
+                  <ImagePlaceholder
+                    label={`Hero image — ${fm.title}`}
+                    dimensions="1200×630 px"
+                    aspect="featured"
+                  />
+                </div>
               )}
               <div className="prose-custom">
                 <MDXProvider components={mdxComponents}>
