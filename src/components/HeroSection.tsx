@@ -3,7 +3,7 @@ import heroBanner from "@/assets/hero-banner.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[600px] md:min-h-[700px] flex items-end justify-start">
+    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-start">
       {/* Hero image */}
       <img
         src={heroBanner}
@@ -13,10 +13,10 @@ const HeroSection = () => {
       {/* Left-to-right gradient: dark on left for text legibility, fades out toward the subject */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
       {/* Subtle bottom fade so the floor doesn't blow out */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
 
-      {/* Content anchored bottom-left */}
-      <div className="relative z-10 text-left px-10 md:px-16 lg:px-20 pb-16 md:pb-24 max-w-xl lg:max-w-2xl">
+      {/* Content vertically centered, left-aligned */}
+      <div className="relative z-10 text-left px-10 md:px-16 lg:px-20 max-w-xl lg:max-w-2xl">
         <p className="text-white/65 font-body uppercase tracking-[0.18em] text-[10px] mb-4">
           It's Mom Approved
         </p>
