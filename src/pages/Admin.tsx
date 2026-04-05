@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { getAllPostsIncludingDrafts, PostFrontmatter } from "@/lib/blog";
+import { FEATURED_SLUGS } from "@/config/homepage";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -438,12 +439,122 @@ function CommentsTab() {
   );
 }
 
+
+function HomepageTab({ posts }: { posts: PostFrontmatter[] }) {
+  const publishedPosts = posts.filter((p) => p.status === "published");
+  const [slots, setSlots] = useState<(string | null)[]>([...FEATURED_SLUGS]);
+  const [copied, setCopied] = useState(false);
+
+  const slotLabels = [
+    "Slot 1 — Top left (text above, image below)",
+    "Slot 2 — Top center hero (image above, text below)",
+    "Slot 3 — Top right (text above, image below)",
+    "Slot 4 — Bottom left (image above, text below)",
+    "Slot 5 — Bottom right (text above, image below)",
+  ];
+
+  const hasChanges = slots.some((s, i) => s !== FEATURED_SLUGS[i]);
+
+  function generatePrompt(): string {
+    const lines = slots.map((slug, i) => `  Slot ${i + 1}: ${slug ?? "empty"}`).join("\n");
+    return `Please update src/config/homepage.ts with these featured slot assignments and push to GitHub:\n\n${lines}\n\nKeep everything else in the file the same.`;
+  }
+
+  function copyPrompt() {
+    navigator.clipboard.writeText(generatePrompt()).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    });
+  }
+
+  return (
+    <div className="space-y-6">
+      <div className="rounded-xl border border-border bg-card p-5 space-y-1">
+        <p className="font-headline text-lg">Featured Slots</p>
+        <p className="text-sm text-muted-foreground">
+          Choose which published posts appear in each slot on the homepage. Pick from the dropdowns, then copy the prompt and paste it to Claude to save your changes.
+        </p>
+      </div>
+
+      <div className="space-y-3">
+        {slotLabels.map((label, i) => {
+          const currentPost = slots[i] ? publishedPosts.find((p) => p.slug === slots[i]) : null;
+          return (
+            <div key={i} className="rounded-xl border border-border bg-card p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-nav uppercase tracking-wider text-muted-foreground mb-1">{label}</p>
+                {currentPost ? (
+                  <p className="text-sm font-medium text-foreground truncate">{currentPost.title}</p>
+                ) : (
+                  <p className="text-sm text-muted-foreground italic">Empty — showing placeholder</p>
+                )}
+              </div>
+              <select
+                value={slots[i] ?? ""}
+                onChange={(e) => {
+                  const next = [...slots];
+                  next[i] = e.target.value || null;
+                  setSlots(next);
+                }}
+                className="rounded-lg border border-border bg-background px-3 py-2 text-sm font-nav text-foreground focus:outline-none focus:ring-1 focus:ring-foreground w-full sm:w-64"
+              >
+                <option value="">— Empty slot —</option>
+                {publishedPosts.map((p) => (
+                  <option key={p.slug} value={p.slug}>{p.title}</option>
+                ))}
+              </select>
+            </div>
+          );
+        })}
+      </div>
+
+      {hasChanges && (
+        <div className="rounded-xl border border-[#E8B4A0] bg-[#FDF6F2] p-5 space-y-3">
+          <p className="font-headline text-base">You have unsaved changes</p>
+          <p className="text-sm text-muted-foreground">
+            This site does not have a backend yet, so changes are saved by updating the config file in GitHub.
+            Copy the prompt below and paste it to Claude — changes will be pushed and live within a minute.
+          </p>
+          <div className="rounded-lg border border-border bg-card p-3 text-xs font-nav text-muted-foreground whitespace-pre-wrap">
+            {generatePrompt()}
+          </div>
+          <button
+            onClick={copyPrompt}
+            className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-80 transition-opacity"
+          >
+            {copied ? "Copied!" : "Copy prompt for Claude →"}
+          </button>
+        </div>
+      )}
+
+      {!hasChanges && (
+        <div className="rounded-xl border border-border bg-muted/30 px-5 py-4 text-sm text-muted-foreground">
+          Current slots match what is live on the homepage. Change a dropdown above to reassign a slot.
+        </div>
+      )}
+
+      <div className="rounded-xl border border-border bg-card p-5 space-y-2">
+        <p className="font-headline text-base">Recent Posts section</p>
+        <p className="text-sm text-muted-foreground">
+          The Recent Posts section below the featured grid automatically shows your {publishedPosts.length} most recently published post{publishedPosts.length !== 1 ? "s" : ""} in date order. No configuration needed — new published posts appear there automatically.
+        </p>
+        {publishedPosts.length === 0 && (
+          <p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+            No published posts yet. Flip a draft to published to see it appear on the homepage.
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ─── main page ───────────────────────────────────────────────────────────────
 
-type Tab = "posts" | "keywords" | "analytics" | "comments";
+type Tab = "posts" | "keywords" | "analytics" | "comments" | "homepage";
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: "posts", label: "Posts", icon: "📝" },
+  { id: "homepage", label: "Homepage", icon: "🏠" },
   { id: "keywords", label: "Keywords", icon: "🔑" },
   { id: "analytics", label: "Analytics", icon: "📊" },
   { id: "comments", label: "Comments", icon: "💬" },
@@ -504,6 +615,7 @@ const Admin = () => {
         {/* Tab content */}
         <div>
           {activeTab === "posts" && <PostsTab posts={allPosts} />}
+          {activeTab === "homepage" && <HomepageTab posts={allPosts} />}
           {activeTab === "keywords" && <KeywordsTab posts={allPosts} />}
           {activeTab === "analytics" && <AnalyticsTab posts={allPosts} />}
           {activeTab === "comments" && <CommentsTab />}

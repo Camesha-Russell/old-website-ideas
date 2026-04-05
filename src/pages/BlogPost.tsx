@@ -8,6 +8,7 @@ import AffiliateDisclosure from "@/components/blog/AffiliateDisclosure";
 import SafetyNote from "@/components/blog/SafetyNote";
 import BudgetCallout from "@/components/blog/BudgetCallout";
 import PillarLink from "@/components/blog/PillarLink";
+import SourceReviewQuote from "@/components/blog/SourceReviewQuote";
 import { getPostBySlug } from "@/lib/blog";
 
 const SITE_URL = "https://itsmomapproved.com";
@@ -17,6 +18,7 @@ const mdxComponents = {
   SafetyNote,
   BudgetCallout,
   PillarLink,
+  SourceReviewQuote,
   h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1 className="font-headline text-3xl md:text-4xl italic text-foreground mt-8 mb-4" {...props} />
   ),
