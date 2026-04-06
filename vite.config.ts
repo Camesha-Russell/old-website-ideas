@@ -20,6 +20,7 @@ export default defineConfig(({ mode }) => ({
     mdx({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       providerImportSource: "@mdx-js/react",
+      development: mode === "development",
     }),
     react(),
     mode === "development" && componentTagger(),
