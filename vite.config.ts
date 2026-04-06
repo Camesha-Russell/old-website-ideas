@@ -8,7 +8,7 @@ import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 import Sitemap from "vite-plugin-sitemap";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ mode, command }) => ({
   server: {
     host: "::",
     port: 8080,
@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     mdx({
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       providerImportSource: "@mdx-js/react",
-      development: mode === "development",
+      development: command === "serve",
     }),
     react(),
     mode === "development" && componentTagger(),
