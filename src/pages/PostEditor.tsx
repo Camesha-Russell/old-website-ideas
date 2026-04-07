@@ -307,10 +307,7 @@ function BodyPanel({
 const PostEditor = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : null;
-
-  if (!post) return <Navigate to="/admin" replace />;
-
-  const { frontmatter: original } = post;
+  const original = post?.frontmatter ?? ({} as PostFrontmatter);
 
   // State
   const [tab, setTab] = useState<Tab>("fields");
@@ -346,6 +343,8 @@ const PostEditor = () => {
   const bodyMdx = useMemo(() => htmlToMdx(bodyHtml), [bodyHtml]);
   const bodyChanged = useMemo(() => bodyMdx.trim() !== initialBody.trim(), [bodyMdx, initialBody]);
   const hasChanges = fmChanged || bodyChanged;
+
+  if (!post) return <Navigate to="/admin" replace />;
 
   function update<K extends keyof PostFrontmatter>(key: K, value: PostFrontmatter[K]) {
     setFm((prev) => ({ ...prev, [key]: value }));
