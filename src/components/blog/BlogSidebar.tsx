@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const trendingTopics = [
   { title: "The Only Baby Monitor That Earned Our Full Trust", path: "/blog/nanit-vs-owlet" },
-  { title: "Best Formula Prep Machines Ranked by Parents", path: "/blog/feeding-essentials-guide" },
-  { title: "When to Start Sleep Training (And What Actually Works)", path: "/blog/best-sleep-products-2026" },
+  { title: "Ergobaby vs Solly Baby Wrap: Which Carrier Is Worth It?", path: "/blog/ergobaby-vs-solly-baby-wrap" },
+  { title: "Hatch Rest vs Hatch Rest+: Is the Upgrade Worth It?", path: "/blog/hatch-rest-vs-hatch-rest-plus" },
   { title: "Carrier vs. Stroller: What Nobody Tells You", path: "/blog/ergobaby-vs-solly-baby-wrap" },
   { title: "The 5 Baby Items We Wish We'd Bought First", path: "/blog/hatch-rest-vs-hatch-rest-plus" },
 ];
@@ -35,40 +35,14 @@ const BlogSidebar = () => {
 
       {/* Widget 1: About card */}
       <div>
-        {/* Portrait placeholder */}
-        <div
-          style={{
-            width: "100%",
-            aspectRatio: "3/4",
-            position: "relative",
-            overflow: "hidden",
-            backgroundColor: "hsl(147 16% 72%)",
-            marginBottom: "20px",
-          }}
-        >
-          {/* subtle IMA text overlay */}
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: LORA,
-                fontSize: "13px",
-                fontStyle: "italic",
-                color: "rgba(255,255,255,0.7)",
-                letterSpacing: "0.05em",
-              }}
-            >
-              It's Mom Approved
-            </span>
-          </div>
-        </div>
+        {/* Skip This lead magnet graphic */}
+        <a href="/starter-kit" style={{ display: "block", textDecoration: "none", marginBottom: "20px" }}>
+          <img
+            src="/images/skip-this-sidebar.png"
+            alt="Skip This — 7 Baby Products Every New Mom Should Avoid — Get the Free Guide"
+            style={{ width: "100%", display: "block" }}
+          />
+        </a>
 
         <p
           style={{
@@ -215,7 +189,7 @@ const BlogSidebar = () => {
             marginBottom: "8px",
           }}
         >
-          The No-Regrets Baby Gear Guide
+          Skip This: 7 Baby Products to Avoid
         </p>
         <p
           style={{
@@ -226,7 +200,7 @@ const BlogSidebar = () => {
             marginBottom: "18px",
           }}
         >
-          What to buy, what to skip, and when. Sorted by your baby's age.
+          Save hundreds before your baby arrives. Free guide, no fluff.
         </p>
         <Link
           to="/starter-kit"
