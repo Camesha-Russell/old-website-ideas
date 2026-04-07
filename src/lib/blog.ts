@@ -80,18 +80,18 @@ export function getAdjacentPosts(slug: string): {
 
 /* ── raw MDX source for editor ──────────────────────────────────────────── */
 
-const rawModules = import.meta.glob<string>("../content/posts/*.mdx", {
-  eager: true,
+const rawModuleLoaders = import.meta.glob<string>("../content/posts/*.mdx", {
   query: "?raw",
   import: "default",
 });
 
 /** Returns the raw MDX source string for a given slug (for editor use) */
-export function getRawMdxBySlug(slug: string): string | null {
-  const entry = Object.entries(rawModules).find(([path]) =>
+export async function getRawMdxBySlug(slug: string): Promise<string | null> {
+  const entry = Object.entries(rawModuleLoaders).find(([path]) =>
     path.endsWith(`/${slug}.mdx`)
   );
-  return entry ? entry[1] : null;
+  if (!entry) return null;
+  return entry[1]();
 }
 
 /** Splits raw MDX into { frontmatter: string, body: string } */

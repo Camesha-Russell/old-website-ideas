@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import {
   getPostBySlug,
@@ -307,28 +307,44 @@ function BodyPanel({
 const PostEditor = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : null;
-
-  if (!post) return <Navigate to="/admin" replace />;
-
-  const { frontmatter: original } = post;
-
-  // Load the raw MDX body for editing
-  const rawMdx = slug ? getRawMdxBySlug(slug) : null;
-  const initialBody = rawMdx ? splitMdx(rawMdx).body : "";
-  const initialHtml = useMemo(() => mdxToHtml(initialBody), [initialBody]);
+  const original = post?.frontmatter ?? ({} as PostFrontmatter);
 
   // State
   const [tab, setTab] = useState<Tab>("fields");
   const [fm, setFm] = useState<PostFrontmatter>({ ...original });
-  const [bodyHtml, setBodyHtml] = useState(initialHtml);
+  const [initialBody, setInitialBody] = useState("");
+  const [bodyHtml, setBodyHtml] = useState("");
   const [copied, setCopied] = useState(false);
   const [showMdxPreview, setShowMdxPreview] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadRawMdx() {
+      if (!slug) return;
+
+      const rawMdx = await getRawMdxBySlug(slug);
+      if (cancelled) return;
+
+      const nextBody = rawMdx ? splitMdx(rawMdx).body : "";
+      setInitialBody(nextBody);
+      setBodyHtml(mdxToHtml(nextBody));
+    }
+
+    loadRawMdx();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
 
   // Derived
   const fmChanged = useMemo(() => JSON.stringify(fm) !== JSON.stringify(original), [fm, original]);
   const bodyMdx = useMemo(() => htmlToMdx(bodyHtml), [bodyHtml]);
   const bodyChanged = useMemo(() => bodyMdx.trim() !== initialBody.trim(), [bodyMdx, initialBody]);
   const hasChanges = fmChanged || bodyChanged;
+
+  if (!post) return <Navigate to="/admin" replace />;
 
   function update<K extends keyof PostFrontmatter>(key: K, value: PostFrontmatter[K]) {
     setFm((prev) => ({ ...prev, [key]: value }));
