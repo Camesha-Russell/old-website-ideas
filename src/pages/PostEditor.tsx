@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import {
   getPostBySlug,
@@ -312,17 +312,34 @@ const PostEditor = () => {
 
   const { frontmatter: original } = post;
 
-  // Load the raw MDX body for editing
-  const rawMdx = slug ? getRawMdxBySlug(slug) : null;
-  const initialBody = rawMdx ? splitMdx(rawMdx).body : "";
-  const initialHtml = useMemo(() => mdxToHtml(initialBody), [initialBody]);
-
   // State
   const [tab, setTab] = useState<Tab>("fields");
   const [fm, setFm] = useState<PostFrontmatter>({ ...original });
-  const [bodyHtml, setBodyHtml] = useState(initialHtml);
+  const [initialBody, setInitialBody] = useState("");
+  const [bodyHtml, setBodyHtml] = useState("");
   const [copied, setCopied] = useState(false);
   const [showMdxPreview, setShowMdxPreview] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadRawMdx() {
+      if (!slug) return;
+
+      const rawMdx = await getRawMdxBySlug(slug);
+      if (cancelled) return;
+
+      const nextBody = rawMdx ? splitMdx(rawMdx).body : "";
+      setInitialBody(nextBody);
+      setBodyHtml(mdxToHtml(nextBody));
+    }
+
+    loadRawMdx();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
 
   // Derived
   const fmChanged = useMemo(() => JSON.stringify(fm) !== JSON.stringify(original), [fm, original]);
