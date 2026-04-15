@@ -10,6 +10,8 @@ import {
 import BodyEditor from "@/components/editor/BodyEditor";
 import ComponentInserter from "@/components/editor/ComponentInserter";
 import { mdxToHtml, htmlToMdx } from "@/components/editor/mdx-serializer";
+import ImagePicker from "@/components/admin/ImagePicker";
+import { commitFile, getStoredPat } from "@/lib/github";
 
 /* ── constants ────────────────────────────────────────────────────────────── */
 
@@ -250,10 +252,14 @@ function FieldsPanel({
       </div>
 
       {/* Image fields */}
-      <div className="rounded-xl border border-border bg-card p-6 space-y-5">
+      <div className="rounded-xl border border-border bg-card p-6 space-y-5 relative">
         <h2 className="font-headline text-lg">Featured Image</h2>
-        <Field label="Image URL" value={fm.featuredImage} onChange={(v) => update("featuredImage", v)} hint="Paste a URL or /images/posts/filename.jpg" />
-        <Field label="Alt Text" value={fm.featuredImageAlt} onChange={(v) => update("featuredImageAlt", v)} />
+        <ImagePicker
+          label="Image"
+          value={fm.featuredImage}
+          onChange={(url) => update("featuredImage", url)}
+        />
+        <Field label="Alt Text" value={fm.featuredImageAlt} onChange={(v) => update("featuredImageAlt", v)} hint="Describe the image for accessibility and SEO" />
         {fm.featuredImage && fm.featuredImage !== "/placeholder.svg" && (
           <img src={fm.featuredImage} alt={fm.featuredImageAlt} className="w-full rounded-lg object-cover" style={{ maxHeight: "200px" }} />
         )}
@@ -316,6 +322,8 @@ const PostEditor = () => {
   const [bodyHtml, setBodyHtml] = useState("");
   const [copied, setCopied] = useState(false);
   const [showMdxPreview, setShowMdxPreview] = useState(false);
+  const [updating, setUpdating] = useState(false);
+  const [updateStatus, setUpdateStatus] = useState<null | { kind: "ok" | "err"; msg: string }>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -386,6 +394,35 @@ readTime: ${fm.readTime ?? 5}
     []
   );
 
+  async function publishUpdate() {
+    if (!getStoredPat()) {
+      setUpdateStatus({
+        kind: "err",
+        msg: "No GitHub token saved. Open Admin → Settings and add your token first.",
+      });
+      return;
+    }
+    setUpdating(true);
+    setUpdateStatus(null);
+    try {
+      await commitFile({
+        path: `src/content/posts/${fm.slug}.mdx`,
+        content: generateFullMdx(),
+        message: `Update post: ${fm.title}`,
+      });
+      setUpdateStatus({
+        kind: "ok",
+        msg: "Update pushed. Lovable is redeploying — your changes will be live within 1–2 minutes.",
+      });
+      // Reset the baseline so the "unsaved" indicator clears.
+      setInitialBody(bodyMdx);
+    } catch (e) {
+      setUpdateStatus({ kind: "err", msg: (e as Error).message });
+    } finally {
+      setUpdating(false);
+    }
+  }
+
   function copyForClaude() {
     const fullMdx = generateFullMdx();
     const prompt = `Please replace the entire contents of src/content/posts/${fm.slug}.mdx with the following and push to GitHub:\n\n${fullMdx}`;
@@ -432,15 +469,17 @@ readTime: ${fm.readTime ?? 5}
               <>
                 <button
                   onClick={downloadMdx}
-                  className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
+                  className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted transition-colors"
+                  title="Fallback: download the .mdx file"
                 >
-                  Download .mdx
+                  Download
                 </button>
                 <button
-                  onClick={copyForClaude}
-                  className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-80 transition-opacity"
+                  onClick={publishUpdate}
+                  disabled={updating}
+                  className="inline-flex items-center gap-2 rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background hover:opacity-80 transition-opacity disabled:opacity-50"
                 >
-                  {copied ? "Copied!" : "Copy for Claude"}
+                  {updating ? "Updating…" : "Update"}
                 </button>
               </>
             )}
@@ -530,18 +569,38 @@ readTime: ${fm.readTime ?? 5}
                 </div>
                 <div className="space-y-2">
                   <button
-                    onClick={copyForClaude}
-                    className="w-full rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background hover:opacity-80 transition-opacity"
+                    onClick={publishUpdate}
+                    disabled={updating}
+                    className="w-full rounded-lg bg-foreground px-4 py-2.5 text-sm font-medium text-background hover:opacity-80 transition-opacity disabled:opacity-50"
                   >
-                    {copied ? "Copied!" : "Copy full MDX for Claude"}
+                    {updating ? "Updating…" : "Update (push to live site)"}
                   </button>
-                  <button
-                    onClick={downloadMdx}
-                    className="w-full rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
-                  >
-                    Download .mdx file
-                  </button>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={copyForClaude}
+                      className="flex-1 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
+                    >
+                      {copied ? "Copied!" : "Copy MDX"}
+                    </button>
+                    <button
+                      onClick={downloadMdx}
+                      className="flex-1 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
+                    >
+                      Download
+                    </button>
+                  </div>
                 </div>
+              </div>
+            )}
+            {updateStatus && (
+              <div
+                className={`rounded-xl border p-3 text-sm ${
+                  updateStatus.kind === "ok"
+                    ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+                    : "border-red-200 bg-red-50 text-red-800"
+                }`}
+              >
+                {updateStatus.msg}
               </div>
             )}
           </div>

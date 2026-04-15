@@ -2,6 +2,8 @@ import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { getAllPostsIncludingDrafts, PostFrontmatter } from "@/lib/blog";
 import { FEATURED_SLUGS } from "@/config/homepage";
+import ImageLibraryTab from "@/components/admin/ImageLibraryTab";
+import SettingsTab from "@/components/admin/SettingsTab";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -195,6 +197,12 @@ function PostsTab({ posts }: { posts: PostFrontmatter[] }) {
                         className="text-xs font-nav text-foreground underline underline-offset-2 hover:opacity-70 transition-opacity"
                       >
                         Preview
+                      </Link>
+                      <Link
+                        to={`/admin/edit/${post.slug}`}
+                        className="text-xs font-nav text-foreground underline underline-offset-2 hover:opacity-70 transition-opacity"
+                      >
+                        Edit
                       </Link>
                     </div>
                   </td>
@@ -550,14 +558,16 @@ function HomepageTab({ posts }: { posts: PostFrontmatter[] }) {
 
 // ─── main page ───────────────────────────────────────────────────────────────
 
-type Tab = "posts" | "keywords" | "analytics" | "comments" | "homepage";
+type Tab = "posts" | "library" | "keywords" | "analytics" | "comments" | "homepage" | "settings";
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: "posts", label: "Posts", icon: "📝" },
+  { id: "library", label: "Photo Library", icon: "🖼️" },
   { id: "homepage", label: "Homepage", icon: "🏠" },
   { id: "keywords", label: "Keywords", icon: "🔑" },
   { id: "analytics", label: "Analytics", icon: "📊" },
   { id: "comments", label: "Comments", icon: "💬" },
+  { id: "settings", label: "Settings", icon: "⚙️" },
 ];
 
 const Admin = () => {
@@ -615,10 +625,12 @@ const Admin = () => {
         {/* Tab content */}
         <div>
           {activeTab === "posts" && <PostsTab posts={allPosts} />}
+          {activeTab === "library" && <ImageLibraryTab />}
           {activeTab === "homepage" && <HomepageTab posts={allPosts} />}
           {activeTab === "keywords" && <KeywordsTab posts={allPosts} />}
           {activeTab === "analytics" && <AnalyticsTab posts={allPosts} />}
           {activeTab === "comments" && <CommentsTab />}
+          {activeTab === "settings" && <SettingsTab />}
         </div>
       </main>
     </div>

@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Admin from "./pages/Admin";
 import PostEditor from "./pages/PostEditor";
 import NotFound from "./pages/NotFound";
+import AdminAuthGate from "./components/admin/AdminAuthGate";
 
 const queryClient = new QueryClient();
 
@@ -46,8 +47,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/admin/edit/:slug" element={<PostEditor />} />
+            <Route path="/admin" element={<AdminAuthGate><Admin /></AdminAuthGate>} />
+            <Route path="/admin/edit/:slug" element={<AdminAuthGate><PostEditor /></AdminAuthGate>} />
             {placeholderRoutes.map((path) => (
               <Route key={path} path={path} element={<PlaceholderPage />} />
             ))}
