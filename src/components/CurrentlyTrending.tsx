@@ -12,30 +12,40 @@ const FALLBACK_POSTS = [
     category: "Sleep",
     title: "The Snoo vs. Budget Bassinets: Is It Worth $1,695?",
     excerpt: "We put the viral favourite against three budget alternatives. The results surprised even us.",
+    featuredImage: null,
+    featuredImageAlt: null,
   },
   {
     slug: null,
     category: "Gear",
     title: "Why We Changed Our Mind on This Popular Monitor",
     excerpt: null,
+    featuredImage: null,
+    featuredImageAlt: null,
   },
   {
     slug: null,
     category: "Feeding",
     title: "Formula Prep Machines Ranked by Actual Parents",
     excerpt: null,
+    featuredImage: null,
+    featuredImageAlt: null,
   },
   {
     slug: null,
     category: "Gear",
     title: "The Stroller That Replaced Our Entire Collection",
     excerpt: null,
+    featuredImage: null,
+    featuredImageAlt: null,
   },
   {
     slug: null,
     category: "Safety",
     title: "Baby Gear That Looks Safe But Isn't",
     excerpt: null,
+    featuredImage: null,
+    featuredImageAlt: null,
   },
 ];
 
@@ -46,6 +56,8 @@ const CurrentlyTrending = () => {
     category: p.category,
     title: p.title,
     excerpt: p.excerpt ?? null,
+    featuredImage: p.featuredImage,
+    featuredImageAlt: p.featuredImageAlt ?? p.title,
   }));
 
   // Merge: fill any slots not covered by real posts with fallback
@@ -128,10 +140,20 @@ const CurrentlyTrending = () => {
               textDecoration: "none",
             }}
           >
-            <div
-              className="placeholder-img"
-              style={{ width: "100%", aspectRatio: "4/3" }}
-            />
+            {featured.featuredImage && featured.featuredImage !== "/placeholder.svg" ? (
+              <img
+                src={featured.featuredImage}
+                alt={featured.featuredImageAlt || featured.title}
+                style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }}
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <div
+                className="placeholder-img"
+                style={{ width: "100%", aspectRatio: "4/3" }}
+              />
+            )}
             <div style={{ padding: "24px 28px 28px" }}>
               <span
                 style={{
@@ -194,14 +216,30 @@ const CurrentlyTrending = () => {
                 }}
               >
                 {/* Thumbnail */}
-                <div
-                  className="placeholder-img"
-                  style={{
-                    width: "140px",
-                    flexShrink: 0,
-                    minHeight: "100px",
-                  }}
-                />
+                {post.featuredImage && post.featuredImage !== "/placeholder.svg" ? (
+                  <img
+                    src={post.featuredImage}
+                    alt={post.featuredImageAlt || post.title}
+                    style={{
+                      width: "140px",
+                      flexShrink: 0,
+                      minHeight: "100px",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <div
+                    className="placeholder-img"
+                    style={{
+                      width: "140px",
+                      flexShrink: 0,
+                      minHeight: "100px",
+                    }}
+                  />
+                )}
                 {/* Text */}
                 <div
                   style={{
