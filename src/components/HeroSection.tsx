@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroBanner from "@/assets/hero-banner.png";
+import heroBanner from "@/assets/hero-banner.webp";
 
 const HeroSection = () => {
   return (
@@ -9,6 +9,8 @@ const HeroSection = () => {
         src={heroBanner}
         alt="Mother holding baby in warm sunlight"
         className="absolute inset-0 w-full h-full object-cover object-top"
+        decoding="async"
+        fetchPriority="high"
       />
       {/* Left-to-right gradient: dark on left for text legibility, fades out toward the subject */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />

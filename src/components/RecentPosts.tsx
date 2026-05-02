@@ -57,7 +57,7 @@ const RecentPosts = () => {
 
           <Link to={`/blog/${hero.slug}`} className="group bg-white border border-border rounded-lg overflow-hidden block max-w-2xl mx-auto">
             {hero.featuredImage && hero.featuredImage !== "/placeholder.svg" ? (
-              <img src={hero.featuredImage} alt={hero.featuredImageAlt || hero.title} className="w-full aspect-[16/9] object-cover" />
+              <img src={hero.featuredImage} alt={hero.featuredImageAlt || hero.title} className="w-full aspect-[16/9] object-cover" loading="lazy" decoding="async" />
             ) : (
               <div className="placeholder-img aspect-[16/9]" />
             )}
@@ -137,7 +137,7 @@ const RecentPosts = () => {
           {/* Large left hero post */}
           <Link to={`/blog/${hero.slug}`} className="group bg-white border border-border rounded-lg overflow-hidden block">
             {hero.featuredImage && hero.featuredImage !== "/placeholder.svg" ? (
-              <img src={hero.featuredImage} alt={hero.featuredImageAlt || hero.title} className="w-full aspect-[3/4] object-cover" />
+              <img src={hero.featuredImage} alt={hero.featuredImageAlt || hero.title} className="w-full aspect-[3/4] object-cover" loading="lazy" decoding="async" />
             ) : (
               <div className="placeholder-img aspect-[3/4]" />
             )}
@@ -158,7 +158,7 @@ const RecentPosts = () => {
                   className="group bg-white border border-border rounded-lg overflow-hidden block"
                 >
                   {post.featuredImage && post.featuredImage !== "/placeholder.svg" ? (
-                    <img src={post.featuredImage} alt={post.featuredImageAlt || post.title} className="w-full aspect-[4/3] object-cover" />
+                    <img src={post.featuredImage} alt={post.featuredImageAlt || post.title} className="w-full aspect-[4/3] object-cover" loading="lazy" decoding="async" />
                   ) : (
                     <div className="placeholder-img aspect-[4/3]" />
                   )}

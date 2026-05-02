@@ -38,9 +38,11 @@ const BlogSidebar = () => {
         {/* Skip This lead magnet graphic */}
         <a href="/starter-kit" style={{ display: "block", textDecoration: "none", marginBottom: "20px" }}>
           <img
-            src="/images/skip-this-sidebar.png"
+            src="/images/skip-this-sidebar.webp"
             alt="Skip This — 7 Baby Products Every New Mom Should Avoid — Get the Free Guide"
             style={{ width: "100%", display: "block" }}
+            loading="lazy"
+            decoding="async"
           />
         </a>
 

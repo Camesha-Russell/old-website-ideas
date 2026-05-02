@@ -44,7 +44,7 @@ function PlaceholderCard({ index = 0, className = "" }: { index?: number; classN
 
 function PostCard({ post, imageFirst = true }: { post: PostFrontmatter; imageFirst?: boolean }) {
   const image = post.featuredImage && post.featuredImage !== "/placeholder.svg" ? (
-    <img src={post.featuredImage} alt={post.featuredImageAlt || post.title} className="w-full h-[240px] object-cover" />
+    <img src={post.featuredImage} alt={post.featuredImageAlt || post.title} className="w-full h-[240px] object-cover" loading="lazy" decoding="async" />
   ) : (
     <div className="placeholder-img h-[240px]" />
   );

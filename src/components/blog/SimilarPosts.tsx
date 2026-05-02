@@ -46,6 +46,8 @@ const SimilarPosts = ({ allPosts, currentSlug, currentCategory }: SimilarPostsPr
                     src={post.featuredImage}
                     alt={post.featuredImageAlt || post.title}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <div

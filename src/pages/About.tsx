@@ -1,10 +1,10 @@
 import TopNavBar from "@/components/TopNavBar";
 import MainHeader from "@/components/MainHeader";
 import Footer from "@/components/Footer";
-import aboutHero from "@/assets/about-hero.jpg";
-import aboutFounder from "@/assets/about-founder.png";
-import aboutFriends from "@/assets/about-friends.png";
-import aboutGroup from "@/assets/about-group.png";
+import aboutHero from "@/assets/about-hero.webp";
+import aboutFounder from "@/assets/about-founder.webp";
+import aboutFriends from "@/assets/about-friends.webp";
+import aboutGroup from "@/assets/about-group.webp";
 
 const TERRACOTTA = "hsl(11 52% 47%)";
 
@@ -22,6 +22,8 @@ const About = () => {
           className="absolute inset-0 w-full h-full object-cover"
           width={1920}
           height={800}
+          decoding="async"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 text-center px-6 max-w-3xl">
@@ -77,6 +79,7 @@ const About = () => {
                 className="w-full object-cover rounded-lg"
                 style={{ aspectRatio: "4/3" }}
                 loading="lazy"
+                decoding="async"
                 width={640}
                 height={480}
               />
@@ -87,6 +90,7 @@ const About = () => {
                   className="w-full object-cover rounded-lg"
                   style={{ aspectRatio: "1/1" }}
                   loading="lazy"
+                  decoding="async"
                   width={320}
                   height={320}
                 />
@@ -96,6 +100,7 @@ const About = () => {
                   className="w-full object-cover rounded-lg"
                   style={{ aspectRatio: "1/1" }}
                   loading="lazy"
+                  decoding="async"
                   width={320}
                   height={320}
                 />
